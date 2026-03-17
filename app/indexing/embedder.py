@@ -1,0 +1,37 @@
+import numpy as np
+from typing import List
+from sentence_transformers import SentenceTransformer
+
+# BGE-M3: Multilingual model with excellent Arabic support
+# Use GPU (cuda) for faster embedding
+_model = SentenceTransformer("BAAI/bge-m3", device="cpu")
+
+
+class Embedder:
+    @staticmethod
+    def get():
+        return _model
+
+
+def embed_texts(texts: List[str]) -> List[np.ndarray]:
+    """
+    Create embeddings using BAAI/bge-m3 (1024-dim).
+    BGE-M3 supports 100+ languages including Arabic.
+    Embeddings are normalized for cosine similarity.
+    """
+
+    if not texts:
+        return []
+
+    embeddings = _model.encode(
+        texts,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+        show_progress_bar=False,
+        batch_size=32,
+    )
+
+    if len(texts) == 1:
+        embeddings = embeddings.reshape(1, -1)
+
+    return [emb.astype("float32") for emb in embeddings]

@@ -1,0 +1,25 @@
+query,language,category,mode,grounding_score,grounded,confidence,retrieval_score,answer_len
+ما هي أعراض مرض السكري؟,arabic,symptoms,dense,0.57,True,0.647,0.742,165
+ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid,0.422,False,0.566,0.742,121
+ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid_rerank,0.543,True,0.749,1.0,142
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,dense,0.738,True,0.729,0.717,1387
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid,0.47,False,0.581,0.717,139
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid_rerank,0.456,False,0.701,1.0,121
+ما أسباب فشل القلب؟,arabic,causes,dense,0.542,True,0.623,0.723,160
+ما أسباب فشل القلب؟,arabic,causes,hybrid,0.542,True,0.623,0.723,160
+ما أسباب فشل القلب؟,arabic,causes,hybrid_rerank,0.411,False,0.676,1.0,115
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,dense,0.653,True,0.711,0.782,887
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid,0.723,True,0.749,0.782,1394
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid_rerank,0.692,True,0.831,1.0,2640
+ما أعراض الربو؟,arabic,symptoms,dense,0.619,True,0.634,0.653,373
+ما أعراض الربو؟,arabic,symptoms,hybrid,0.566,True,0.618,0.682,1217
+ما أعراض الربو؟,arabic,symptoms,hybrid_rerank,0.505,True,0.728,1.0,141
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,dense,0.389,False,0.53,0.702,121
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid,0.546,True,0.616,0.702,197
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid_rerank,0.537,True,0.745,1.0,173
+ما هي أعراض فقر الدم؟,arabic,symptoms,dense,0.621,True,0.663,0.715,274
+ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid,0.627,True,0.666,0.715,361
+ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid_rerank,0.525,True,0.739,1.0,129
+ما علاج الصداع؟,arabic,treatment,dense,0.544,True,0.619,0.71,107
+ما علاج الصداع؟,arabic,treatment,hybrid,0.54,True,0.617,0.712,161
+ما علاج الصداع؟,arabic,treatment,hybrid_rerank,0.507,True,0.729,1.0,114
