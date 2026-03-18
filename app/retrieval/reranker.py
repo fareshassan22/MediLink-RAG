@@ -22,9 +22,13 @@ def _get_cross_encoder():
     if not model_name:
         return None
 
+    import os
+    import torch
     from sentence_transformers import CrossEncoder
 
-    _cross_encoder = CrossEncoder(model_name)
+    # Use GPU 1 if available, to separate from LLM on GPU 0
+    device = "cuda:1" if torch.cuda.device_count() > 1 else None
+    _cross_encoder = CrossEncoder(model_name, device=device)
     return _cross_encoder
 
 
@@ -57,6 +61,7 @@ def rerank(query: str, documents: List[Dict], top_k: int = 10) -> List[Dict]:
     if not documents or encoder is None:
         return documents[:top_k]
 
+    # Keep all candidates for reranking (don't pre-filter)
     pairs = [[query, doc.get("text", "")] for doc in documents]
     scores = encoder.predict(pairs)
     if len(scores.shape) > 1 and scores.shape[1] > 1:

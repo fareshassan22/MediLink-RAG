@@ -2,9 +2,12 @@ import numpy as np
 from typing import List
 from sentence_transformers import SentenceTransformer
 
+import torch
+
 # BGE-M3: Multilingual model with excellent Arabic support
-# Use GPU (cuda) for faster embedding
-_model = SentenceTransformer("BAAI/bge-m3", device="cpu")
+# Use GPU 1 if available (GPU 0 reserved for LLM), else CPU
+_embed_device = "cuda:1" if torch.cuda.device_count() > 1 else ("cuda:0" if torch.cuda.is_available() else "cpu")
+_model = SentenceTransformer("BAAI/bge-m3", device=_embed_device)
 
 
 class Embedder:
@@ -28,7 +31,7 @@ def embed_texts(texts: List[str]) -> List[np.ndarray]:
         convert_to_numpy=True,
         normalize_embeddings=True,
         show_progress_bar=False,
-        batch_size=32,
+        batch_size=64,
     )
 
     if len(texts) == 1:

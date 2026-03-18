@@ -99,6 +99,7 @@ class BM25Index:
                 results.append(
                     {
                         "text": self.corpus[idx],
+                        "doc_idx": idx,
                         "score": score,
                         "bm25_score": score,
                         "metadata": metadata,

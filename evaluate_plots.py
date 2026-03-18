@@ -52,22 +52,32 @@ def _get_local_llm():
     if _local_pipeline is not None:
         return _local_pipeline
     import torch
-    from transformers import pipeline
-    print("  Loading local LLM on GPU 0 ...")
+    from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+    model_name = "Qwen/Qwen2.5-32B-Instruct"
+    print(f"  Loading {model_name} across GPU 0+1 (bf16) ...")
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        device_map="auto",
+        max_memory={0: "44GiB", 1: "38GiB"},
+        torch_dtype=torch.bfloat16,
+    )
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     _local_pipeline = pipeline(
         "text-generation",
-        model="meta-llama/Llama-3.2-3B-Instruct",
-        device_map={"":0},
-        torch_dtype=torch.float16,
+        model=model,
+        tokenizer=tokenizer,
         max_new_tokens=512,
     )
-    print("  ✅ Local LLM loaded")
+    print(f"  ✅ {model_name} loaded")
     return _local_pipeline
 
 
 def local_generate(prompt: str) -> str:
     pipe = _get_local_llm()
-    messages = [{"role": "user", "content": prompt}]
+    messages = [
+        {"role": "system", "content": "You are a medical AI assistant. Answer accurately based only on the provided context. Be concise."},
+        {"role": "user", "content": prompt},
+    ]
     out = pipe(messages, max_new_tokens=512, do_sample=True, temperature=0.2, top_p=0.9)
     return out[0]["generated_text"][-1]["content"]
 
@@ -207,7 +217,7 @@ def _retrieve(query: str, mode: str, vs: VectorStore, bm25: BM25Index | None):
 
     # rerank for hybrid_rerank
     if mode == "hybrid_rerank":
-        fused = rerank_documents(processed, fused, top_k=5)
+        fused = rerank_documents(processed, fused, top_k=10)
 
     return [_doc_id_from_result(r, i) for i, r in enumerate(fused)]
 
@@ -333,8 +343,8 @@ def run_generation_eval(vs: VectorStore, bm25: BM25Index | None):
     gt_data = _load_ground_truth()
     modes = ["dense", "hybrid", "hybrid_rerank"]
 
-    # sample all 8 queries — local GPU has no rate limits
-    sample = gt_data[:8]
+    # Use ALL queries — local GPU has no rate limits
+    sample = gt_data
     rows: list[dict] = []
 
     # pre-load local LLM
@@ -375,10 +385,12 @@ def run_generation_eval(vs: VectorStore, bm25: BM25Index | None):
                 fused = deduplicate_results(dense_results)[:10]
 
             if mode == "hybrid_rerank":
-                fused = rerank_documents(processed, fused, top_k=5)
+                fused = rerank_documents(processed, fused, top_k=10)
 
-            # top chunks
-            top_chunks = fused[:5]
+            # top chunks — dynamic selection with lower threshold
+            top_chunks = [c for c in fused if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.25][:10]
+            if not top_chunks:
+                top_chunks = fused[:3]
             context_texts = [c.get("text", "") for c in top_chunks if c.get("text")]
             context = "\n\n".join(context_texts[:3])
 
@@ -398,10 +410,11 @@ def run_generation_eval(vs: VectorStore, bm25: BM25Index | None):
             for d in top_chunks:
                 s = d.get("rerank_score_normalized", d.get("dense_score", 0.0))
                 retrieval_scores.append(max(0.0, min(1.0, s)))
-            ret_score = max(retrieval_scores) if retrieval_scores else 0.0
-            evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.5) * 0.03
+            top_3 = sorted(retrieval_scores, reverse=True)[:3]
+            ret_score = sum(top_3) / len(top_3) if top_3 else 0.0
+            evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.4) * 0.02
             ret_score = min(1.0, ret_score + evidence_bonus)
-            confidence = 0.55 * g_score + 0.45 * ret_score
+            confidence = 0.65 * g_score + 0.35 * ret_score
             confidence = round(max(0.0, min(0.95, confidence)), 3)
 
             rows.append({

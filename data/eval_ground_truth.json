@@ -6,10 +6,10 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_434",
       "doc_435",
       "doc_436",
       "doc_437",
+      "doc_444",
       "doc_442"
     ]
   },
@@ -20,8 +20,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_15",
-      "doc_196"
+      "doc_321",
+      "doc_175",
+      "doc_542",
+      "doc_125",
+      "doc_177"
     ]
   },
   {
@@ -31,10 +34,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_285",
+      "doc_569",
       "doc_317",
-      "doc_318",
-      "doc_569"
+      "doc_285",
+      "doc_288",
+      "doc_287"
     ]
   },
   {
@@ -44,8 +48,11 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_186",
-      "doc_27"
+      "doc_22",
+      "doc_239",
+      "doc_576",
+      "doc_23",
+      "doc_101"
     ]
   },
   {
@@ -55,8 +62,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_559",
-      "doc_116"
+      "doc_258",
+      "doc_348",
+      "doc_739",
+      "doc_570",
+      "doc_564"
     ]
   },
   {
@@ -66,8 +76,11 @@
     "category": "prevention",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_370",
-      "doc_293"
+      "doc_170",
+      "doc_234",
+      "doc_426",
+      "doc_206",
+      "doc_465"
     ]
   },
   {
@@ -77,8 +90,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_304",
-      "doc_734"
+      "doc_540",
+      "doc_541",
+      "doc_412",
+      "doc_216",
+      "doc_215"
     ]
   },
   {
@@ -88,8 +104,11 @@
     "category": "treatment",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_13",
-      "doc_213"
+      "doc_682",
+      "doc_413",
+      "doc_422",
+      "doc_295",
+      "doc_30"
     ]
   },
   {
@@ -100,9 +119,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_194",
-      "doc_195",
-      "doc_338",
-      "doc_675"
+      "doc_18",
+      "doc_453",
+      "doc_169",
+      "doc_203"
     ]
   },
   {
@@ -114,7 +134,9 @@
     "relevant_docs": [
       "doc_20",
       "doc_23",
-      "doc_27"
+      "doc_21",
+      "doc_36",
+      "doc_24"
     ]
   },
   {
@@ -124,8 +146,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_48",
-      "doc_134"
+      "doc_294",
+      "doc_235",
+      "doc_328",
+      "doc_592",
+      "doc_116"
     ]
   },
   {
@@ -135,8 +160,11 @@
     "category": "medications",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_195",
-      "doc_287"
+      "doc_177",
+      "doc_494",
+      "doc_182",
+      "doc_192",
+      "doc_542"
     ]
   },
   {
@@ -146,11 +174,11 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_434",
-      "doc_435",
-      "doc_436",
       "doc_438",
-      "doc_442"
+      "doc_435",
+      "doc_441",
+      "doc_440",
+      "doc_439"
     ]
   },
   {
@@ -160,8 +188,11 @@
     "category": "emergency",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_218",
       "doc_215",
-      "doc_285"
+      "doc_569",
+      "doc_666",
+      "doc_556"
     ]
   },
   {
@@ -172,9 +203,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_184",
-      "doc_328",
-      "doc_521",
-      "doc_712"
+      "doc_110",
+      "doc_471",
+      "doc_757",
+      "doc_74"
     ]
   },
   {
@@ -185,9 +217,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_437",
-      "doc_438",
-      "doc_442",
-      "doc_70"
+      "doc_435",
+      "doc_443",
+      "doc_318",
+      "doc_438"
     ]
   },
   {
@@ -197,8 +230,11 @@
     "category": "causes",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_213",
-      "doc_155"
+      "doc_411",
+      "doc_420",
+      "doc_421",
+      "doc_423",
+      "doc_197"
     ]
   },
   {
@@ -208,10 +244,11 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_216",
+      "doc_215",
+      "doc_231",
       "doc_304",
-      "doc_614",
-      "doc_615",
-      "doc_698"
+      "doc_570"
     ]
   },
   {
@@ -221,8 +258,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_195",
-      "doc_287"
+      "doc_318",
+      "doc_540",
+      "doc_521",
+      "doc_541",
+      "doc_321"
     ]
   },
   {
@@ -233,8 +273,10 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_20",
-      "doc_22",
-      "doc_27"
+      "doc_577",
+      "doc_23",
+      "doc_24",
+      "doc_36"
     ]
   },
   {
@@ -244,8 +286,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_458",
-      "doc_193"
+      "doc_33",
+      "doc_436",
+      "doc_464",
+      "doc_437",
+      "doc_728"
     ]
   },
   {
@@ -255,8 +300,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_100",
-      "doc_101"
+      "doc_413",
+      "doc_422",
+      "doc_230",
+      "doc_229",
+      "doc_228"
     ]
   },
   {
@@ -266,10 +314,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_203",
+      "doc_194",
       "doc_204",
-      "doc_205",
-      "doc_206"
+      "doc_162",
+      "doc_203",
+      "doc_18"
     ]
   },
   {
@@ -280,7 +329,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_180",
-      "doc_300"
+      "doc_43",
+      "doc_22",
+      "doc_688",
+      "doc_66"
     ]
   },
   {
@@ -290,10 +342,11 @@
     "category": "prevention",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_285",
-      "doc_287",
-      "doc_318",
-      "doc_48"
+      "doc_321",
+      "doc_48",
+      "doc_320",
+      "doc_317",
+      "doc_285"
     ]
   },
   {
@@ -304,7 +357,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_318",
-      "doc_285"
+      "doc_666",
+      "doc_569",
+      "doc_570",
+      "doc_53"
     ]
   },
   {
@@ -315,8 +371,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_438",
+      "doc_435",
       "doc_439",
-      "doc_445"
+      "doc_81",
+      "doc_437"
     ]
   },
   {
@@ -326,8 +384,11 @@
     "category": "procedures",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_320",
-      "doc_321"
+      "doc_44",
+      "doc_314",
+      "doc_54",
+      "doc_319",
+      "doc_50"
     ]
   },
   {
@@ -337,8 +398,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_412",
-      "doc_500"
+      "doc_733",
+      "doc_541",
+      "doc_150",
+      "doc_734",
+      "doc_404"
     ]
   },
   {
@@ -348,8 +412,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_443",
-      "doc_510"
+      "doc_738",
+      "doc_456",
+      "doc_321",
+      "doc_457",
+      "doc_455"
     ]
   },
   {
@@ -359,8 +426,11 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_331",
-      "doc_330"
+      "doc_295",
+      "doc_592",
+      "doc_493",
+      "doc_616",
+      "doc_455"
     ]
   },
   {
@@ -370,8 +440,11 @@
     "category": "emergency",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_256",
-      "doc_340"
+      "doc_412",
+      "doc_666",
+      "doc_536",
+      "doc_267",
+      "doc_87"
     ]
   },
   {
@@ -381,8 +454,11 @@
     "category": "nutrition",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_150",
-      "doc_350"
+      "doc_149",
+      "doc_243",
+      "doc_146",
+      "doc_276",
+      "doc_519"
     ]
   },
   {
@@ -392,8 +468,11 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_236",
-      "doc_360"
+      "doc_701",
+      "doc_700",
+      "doc_702",
+      "doc_348",
+      "doc_666"
     ]
   },
   {
@@ -403,8 +482,11 @@
     "category": "causes",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_321",
-      "doc_370"
+      "doc_197",
+      "doc_558",
+      "doc_150",
+      "doc_33",
+      "doc_464"
     ]
   },
   {
@@ -414,8 +496,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_183",
-      "doc_380"
+      "doc_124",
+      "doc_352",
+      "doc_675",
+      "doc_728",
+      "doc_116"
     ]
   },
   {
@@ -425,8 +510,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_565",
+      "doc_186",
+      "doc_223",
       "doc_170",
-      "doc_370"
+      "doc_365"
     ]
   },
   {
@@ -437,7 +525,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_258",
-      "doc_400"
+      "doc_232",
+      "doc_598",
+      "doc_348",
+      "doc_700"
     ]
   },
   {
@@ -448,7 +539,10 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_294",
-      "doc_410"
+      "doc_453",
+      "doc_738",
+      "doc_739",
+      "doc_504"
     ]
   },
   {
@@ -458,8 +552,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_394",
-      "doc_395"
+      "doc_746",
+      "doc_202",
+      "doc_251",
+      "doc_750",
+      "doc_757"
     ]
   },
   {
@@ -469,8 +566,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_541",
+      "doc_540",
       "doc_734",
-      "doc_541"
+      "doc_412",
+      "doc_404"
     ]
   },
   {
@@ -480,8 +580,11 @@
     "category": "nutrition",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_285",
-      "doc_287"
+      "doc_321",
+      "doc_456",
+      "doc_320",
+      "doc_175",
+      "doc_48"
     ]
   },
   {
@@ -492,7 +595,10 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_229",
-      "doc_430"
+      "doc_413",
+      "doc_483",
+      "doc_536",
+      "doc_425"
     ]
   },
   {
@@ -503,7 +609,10 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_412",
-      "doc_440"
+      "doc_414",
+      "doc_420",
+      "doc_411",
+      "doc_341"
     ]
   },
   {
@@ -514,8 +623,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_437",
-      "doc_438",
-      "doc_442"
+      "doc_43",
+      "doc_688",
+      "doc_358",
+      "doc_360"
     ]
   },
   {
@@ -525,8 +636,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_450",
-      "doc_451"
+      "doc_739",
+      "doc_570",
+      "doc_243",
+      "doc_162",
+      "doc_555"
     ]
   },
   {
@@ -536,8 +650,11 @@
     "category": "prevention",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_281",
-      "doc_460"
+      "doc_750",
+      "doc_541",
+      "doc_471",
+      "doc_483",
+      "doc_681"
     ]
   },
   {
@@ -548,7 +665,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_435",
-      "doc_442"
+      "doc_442",
+      "doc_443",
+      "doc_476",
+      "doc_436"
     ]
   },
   {
@@ -558,8 +678,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_480",
-      "doc_481"
+      "doc_541",
+      "doc_570",
+      "doc_536",
+      "doc_398",
+      "doc_556"
     ]
   },
   {
@@ -570,7 +693,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_149",
-      "doc_350"
+      "doc_147",
+      "doc_145",
+      "doc_146",
+      "doc_405"
     ]
   },
   {
@@ -580,8 +706,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_434",
-      "doc_243"
+      "doc_436",
+      "doc_444",
+      "doc_435",
+      "doc_437",
+      "doc_438"
     ]
   },
   {
@@ -591,8 +720,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_321",
-      "doc_15"
+      "doc_125",
+      "doc_192",
+      "doc_589",
+      "doc_542",
+      "doc_540"
     ]
   },
   {
@@ -602,10 +734,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_285",
       "doc_317",
-      "doc_318",
-      "doc_569"
+      "doc_287",
+      "doc_285",
+      "doc_569",
+      "doc_288"
     ]
   },
   {
@@ -615,8 +748,11 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_27",
-      "doc_20"
+      "doc_22",
+      "doc_21",
+      "doc_20",
+      "doc_576",
+      "doc_101"
     ]
   },
   {
@@ -626,9 +762,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_329",
-      "doc_331",
-      "doc_559"
+      "doc_258",
+      "doc_198",
+      "doc_464",
+      "doc_739",
+      "doc_197"
     ]
   },
   {
@@ -639,7 +777,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_370",
-      "doc_234"
+      "doc_194",
+      "doc_354",
+      "doc_234",
+      "doc_170"
     ]
   },
   {
@@ -649,8 +790,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_482",
-      "doc_541"
+      "doc_541",
+      "doc_540",
+      "doc_739",
+      "doc_87",
+      "doc_570"
     ]
   },
   {
@@ -660,10 +804,11 @@
     "category": "treatment",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_13",
       "doc_213",
-      "doc_33",
-      "doc_399"
+      "doc_13",
+      "doc_87",
+      "doc_422",
+      "doc_725"
     ]
   },
   {
@@ -673,9 +818,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_196",
-      "doc_449",
-      "doc_542"
+      "doc_194",
+      "doc_195",
+      "doc_338",
+      "doc_675",
+      "doc_203"
     ]
   },
   {
@@ -686,7 +833,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_20",
-      "doc_23"
+      "doc_23",
+      "doc_21",
+      "doc_36",
+      "doc_128"
     ]
   },
   {
@@ -696,8 +846,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_318",
-      "doc_133"
+      "doc_668",
+      "doc_631",
+      "doc_135",
+      "doc_328",
+      "doc_294"
     ]
   },
   {
@@ -707,8 +860,11 @@
     "category": "medications",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_17",
-      "doc_15"
+      "doc_177",
+      "doc_182",
+      "doc_192",
+      "doc_399",
+      "doc_494"
     ]
   },
   {
@@ -718,11 +874,11 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_435",
-      "doc_436",
-      "doc_437",
       "doc_438",
-      "doc_442"
+      "doc_435",
+      "doc_443",
+      "doc_440",
+      "doc_436"
     ]
   },
   {
@@ -732,10 +888,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_124",
-      "doc_184",
-      "doc_328",
-      "doc_712"
+      "doc_382",
+      "doc_425",
+      "doc_712",
+      "doc_755",
+      "doc_298"
     ]
   },
   {
@@ -746,9 +903,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_437",
+      "doc_435",
       "doc_438",
-      "doc_440",
-      "doc_442"
+      "doc_443",
+      "doc_318"
     ]
   },
   {
@@ -758,10 +916,11 @@
     "category": "causes",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_13",
       "doc_213",
+      "doc_212",
       "doc_214",
-      "doc_33"
+      "doc_87",
+      "doc_681"
     ]
   },
   {
@@ -772,9 +931,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_304",
-      "doc_614",
+      "doc_506",
+      "doc_698",
       "doc_615",
-      "doc_698"
+      "doc_541"
     ]
   },
   {
@@ -784,8 +944,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_195",
-      "doc_287"
+      "doc_318",
+      "doc_540",
+      "doc_541",
+      "doc_521",
+      "doc_556"
     ]
   },
   {
@@ -796,7 +959,10 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_20",
-      "doc_29"
+      "doc_29",
+      "doc_27",
+      "doc_22",
+      "doc_23"
     ]
   },
   {
@@ -806,8 +972,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_450",
-      "doc_451"
+      "doc_421",
+      "doc_540",
+      "doc_412",
+      "doc_420",
+      "doc_204"
     ]
   },
   {
@@ -817,8 +986,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_100",
-      "doc_101"
+      "doc_422",
+      "doc_413",
+      "doc_409",
+      "doc_423",
+      "doc_420"
     ]
   },
   {
@@ -829,7 +1001,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_203",
-      "doc_206"
+      "doc_204",
+      "doc_684",
+      "doc_205",
+      "doc_683"
     ]
   },
   {
@@ -839,8 +1014,11 @@
     "category": "diagnosis",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_304",
-      "doc_231"
+      "doc_180",
+      "doc_231",
+      "doc_43",
+      "doc_688",
+      "doc_66"
     ]
   },
   {
@@ -850,8 +1028,11 @@
     "category": "prevention",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_318",
-      "doc_48"
+      "doc_321",
+      "doc_317",
+      "doc_320",
+      "doc_287",
+      "doc_318"
     ]
   },
   {
@@ -862,7 +1043,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_318",
-      "doc_48"
+      "doc_569",
+      "doc_317",
+      "doc_570",
+      "doc_666"
     ]
   },
   {
@@ -872,10 +1056,11 @@
     "category": "medications",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_436",
-      "doc_437",
+      "doc_439",
       "doc_438",
-      "doc_440"
+      "doc_435",
+      "doc_437",
+      "doc_443"
     ]
   },
   {
@@ -885,8 +1070,11 @@
     "category": "procedures",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_320",
-      "doc_321"
+      "doc_44",
+      "doc_45",
+      "doc_43",
+      "doc_46",
+      "doc_319"
     ]
   },
   {
@@ -896,8 +1084,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_501",
-      "doc_500"
+      "doc_734",
+      "doc_412",
+      "doc_739",
+      "doc_404",
+      "doc_413"
     ]
   },
   {
@@ -907,8 +1098,11 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_456",
+      "doc_638",
       "doc_443",
-      "doc_455"
+      "doc_428",
+      "doc_367"
     ]
   },
   {
@@ -918,8 +1112,11 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_331",
-      "doc_161"
+      "doc_298",
+      "doc_425",
+      "doc_160",
+      "doc_296",
+      "doc_295"
     ]
   },
   {
@@ -929,8 +1126,11 @@
     "category": "emergency",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_340",
-      "doc_341"
+      "doc_568",
+      "doc_570",
+      "doc_87",
+      "doc_267",
+      "doc_415"
     ]
   },
   {
@@ -940,8 +1140,11 @@
     "category": "nutrition",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_141",
-      "doc_350"
+      "doc_710",
+      "doc_664",
+      "doc_150",
+      "doc_678",
+      "doc_709"
     ]
   },
   {
@@ -951,8 +1154,11 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_236",
-      "doc_360"
+      "doc_700",
+      "doc_701",
+      "doc_702",
+      "doc_348",
+      "doc_699"
     ]
   },
   {
@@ -962,8 +1168,11 @@
     "category": "causes",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_370",
-      "doc_371"
+      "doc_197",
+      "doc_150",
+      "doc_626",
+      "doc_31",
+      "doc_33"
     ]
   },
   {
@@ -973,8 +1182,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_380",
-      "doc_381"
+      "doc_412",
+      "doc_33",
+      "doc_124",
+      "doc_352",
+      "doc_536"
     ]
   },
   {
@@ -984,8 +1196,11 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_397",
-      "doc_170"
+      "doc_365",
+      "doc_129",
+      "doc_40",
+      "doc_565",
+      "doc_186"
     ]
   },
   {
@@ -996,7 +1211,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_258",
-      "doc_400"
+      "doc_232",
+      "doc_702",
+      "doc_257",
+      "doc_729"
     ]
   },
   {
@@ -1006,8 +1224,11 @@
     "category": "causes",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_410",
-      "doc_411"
+      "doc_294",
+      "doc_235",
+      "doc_686",
+      "doc_504",
+      "doc_668"
     ]
   },
   {
@@ -1018,7 +1239,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_395",
-      "doc_420"
+      "doc_746",
+      "doc_268",
+      "doc_750",
+      "doc_251"
     ]
   },
   {
@@ -1028,8 +1252,11 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_734",
-      "doc_541"
+      "doc_541",
+      "doc_681",
+      "doc_70",
+      "doc_404",
+      "doc_412"
     ]
   },
   {
@@ -1039,8 +1266,11 @@
     "category": "nutrition",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_285",
-      "doc_287"
+      "doc_456",
+      "doc_321",
+      "doc_320",
+      "doc_175",
+      "doc_48"
     ]
   },
   {
@@ -1050,7 +1280,10 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_161",
+      "doc_229",
+      "doc_666",
+      "doc_48",
+      "doc_230",
       "doc_397"
     ]
   },
@@ -1061,8 +1294,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
+      "doc_414",
+      "doc_412",
       "doc_411",
-      "doc_440"
+      "doc_413",
+      "doc_84"
     ]
   },
   {
@@ -1073,8 +1309,10 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_437",
-      "doc_438",
-      "doc_442"
+      "doc_231",
+      "doc_66",
+      "doc_435",
+      "doc_304"
     ]
   },
   {
@@ -1084,8 +1322,11 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_381",
       "doc_380",
-      "doc_381"
+      "doc_117",
+      "doc_464",
+      "doc_588"
     ]
   },
   {
@@ -1095,8 +1336,11 @@
     "category": "prevention",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_107",
-      "doc_108"
+      "doc_751",
+      "doc_242",
+      "doc_234",
+      "doc_418",
+      "doc_321"
     ]
   },
   {
@@ -1107,7 +1351,10 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_435",
-      "doc_442"
+      "doc_442",
+      "doc_321",
+      "doc_443",
+      "doc_37"
     ]
   },
   {
@@ -1117,8 +1364,11 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_480",
-      "doc_481"
+      "doc_739",
+      "doc_87",
+      "doc_541",
+      "doc_70",
+      "doc_73"
     ]
   },
   {
@@ -1128,8 +1378,11 @@
     "category": "procedures",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_710",
+      "doc_664",
       "doc_149",
-      "doc_350"
+      "doc_405",
+      "doc_146"
     ]
   }
 ]

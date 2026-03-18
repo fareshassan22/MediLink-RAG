@@ -74,10 +74,7 @@ def index_pdfs(pdf_folder: str = "data/raw", output_folder: str = "data/processe
     print(f"\n📚 Found {len(pdf_files)} PDF file(s)\n")
 
     from app.indexing.embedder import embed_texts
-    from sentence_transformers import SentenceTransformer
 
-    # BGE-M3: Best multilingual embedding model with Arabic support
-    embedder = SentenceTransformer("BAAI/bge-m3", device="cuda")
     embed_dim = 1024  # bge-m3 uses 1024 dimensions
 
     vector_store = VectorStore(dim=embed_dim)
@@ -102,11 +99,11 @@ def index_pdfs(pdf_folder: str = "data/raw", output_folder: str = "data/processe
                 continue
 
             chunks = semantic_chunk(
-                text, chunk_size=200, overlap=40, min_paragraph_length=40
+                text, chunk_size=80, overlap=20, min_paragraph_length=30
             )
 
             for chunk_idx, chunk in enumerate(chunks):
-                if len(chunk) < 20:
+                if len(chunk) < 15:
                     continue
 
                 chunk_with_title = f"Title: {title}. {chunk}"
@@ -162,11 +159,11 @@ def index_pdfs(pdf_folder: str = "data/raw", output_folder: str = "data/processe
 
     docs_jsonl_path = output_folder / "docs.jsonl"
     with open(docs_jsonl_path, "w", encoding="utf-8") as f:
-        for doc in vector_store.documents:
+        for idx, doc in enumerate(vector_store.documents):
             f.write(
                 json.dumps(
                     {
-                        "doc_id": f"doc_{doc.metadata.get('page', 0)}_{doc.metadata.get('chunk_id', 0)}",
+                        "doc_id": f"doc_{idx}",
                         "text": doc.text,
                         "metadata": doc.metadata,
                     },

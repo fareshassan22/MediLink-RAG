@@ -32,6 +32,7 @@ from app.generation.groq_client import generate_response
 from app.safety.emergency_detector import detect_emergency
 from app.safety.content_filter import contains_sensitive_content
 from app.safety.grounding_checker import verify_grounding
+from app.safety.hallucination_checker import check_hallucination
 
 # Core
 from app.core.messages import MESSAGES
@@ -305,10 +306,11 @@ def ask(request: QueryRequest):
         stage_latencies["reranking"] = round(time.time() - t0, 3)
         print(f"[DEBUG] Reranked {len(candidates)} candidates")
 
-        # -- 8. Dynamic Chunk Selection (score > 0.5, max 5) --
-        top_chunks = [c for c in reranked if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.5][:5]
+        # -- 8. Dynamic Chunk Selection (score > 0.3, max 7) --
+        # With smaller chunks, we need more of them for context coverage
+        top_chunks = [c for c in reranked if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.25][:10]
         if not top_chunks:
-            top_chunks = reranked[:1]  # fallback: always keep at least 1
+            top_chunks = reranked[:3]  # fallback: keep top 3
         print(f"[DEBUG] Dynamic selection: {len(top_chunks)} chunks (from {len(reranked)} reranked)")
 
         if not top_chunks:
@@ -333,7 +335,7 @@ def ask(request: QueryRequest):
         t0 = time.time()
         context_parts: list = []
         token_count = 0
-        max_context_tokens = 1200
+        max_context_tokens = 1500
 
         for doc in top_chunks[:5]:
             text = doc.get("text", "").strip()
@@ -412,6 +414,14 @@ def ask(request: QueryRequest):
                 stage_latencies=stage_latencies,
             )
 
+        # -- 11b. Hallucination Check --
+        has_hallucination, halluc_risk, flagged = check_hallucination(
+            answer, context_texts, threshold=0.55
+        )
+        if has_hallucination:
+            print(f"[WARN] Hallucination detected: risk={halluc_risk:.3f}, flagged={len(flagged)} sentences")
+            confidence_penalty = 0.15
+
         # -- 12. Confidence Scoring --
         # Use best chunk score (top-1) so more chunks never penalizes confidence
         retrieval_scores = []
@@ -419,16 +429,23 @@ def ask(request: QueryRequest):
             score = d.get("rerank_score_normalized", d.get("dense_score", 0.0))
             retrieval_scores.append(max(0.0, min(1.0, score)))
 
-        retrieval_score = max(retrieval_scores) if retrieval_scores else 0.0
-        # Evidence bonus: +0.03 per extra chunk scoring > 0.5
-        evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.5) * 0.03
+        # Use MEAN of top-3 scores instead of max — max is always ~1.0 after min-max norm
+        top_3_scores = sorted(retrieval_scores, reverse=True)[:3]
+        retrieval_score = sum(top_3_scores) / len(top_3_scores) if top_3_scores else 0.0
+        # Evidence bonus: small bump when multiple chunks agree
+        evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.4) * 0.02
         retrieval_score = min(1.0, retrieval_score + evidence_bonus)
 
-        # BM25-only uses translated queries — inherently less precise
+        # Grounding dominates confidence — it's the actual quality signal
         if retrieval_mode == "bm25":
-            confidence = 0.50 * grounding_score + 0.35 * retrieval_score
+            confidence = 0.65 * grounding_score + 0.25 * retrieval_score
         else:
-            confidence = 0.55 * grounding_score + 0.45 * retrieval_score
+            confidence = 0.65 * grounding_score + 0.35 * retrieval_score
+
+        # Apply hallucination penalty if detected
+        if has_hallucination:
+            confidence -= confidence_penalty
+
         confidence = round(max(0.0, min(0.95, confidence)), 3)
 
         print(f"[DEBUG] Grounding={grounding_score:.3f}, Retrieval={retrieval_score:.3f} (bonus={evidence_bonus:.2f}), Confidence={confidence}")
