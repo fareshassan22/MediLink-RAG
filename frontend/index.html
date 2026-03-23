@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLink - مساعدك الطبي الذكي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="dna-background">
+        <div class="dna-strand"></div>
+        <div class="dna-strand"></div>
+        <div class="dna-strand"></div>
+    </div>
+    
+    <div class="neural-network"></div>
+
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>MediLink</h1>
+                    <span class="tagline">مساعدك الطبي الذكي</span>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">متصل</span>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
+                            <path d="M12 2a10 10 0 0 1 10 10"/>
+                        </svg>
+                    </div>
+                    <h2>مرحباً بك في MediLink</h2>
+                    <p>أنا مساعدك الطبي الذكي. اطرح عليّ أي سؤال متعلق بالصحة وسأقدم لك إجابة دقيقة مبنية على مصادر طبية موثوقة.</p>
+                    <div class="quick-questions">
+                        <button class="quick-btn" data-query="ما هي أعراض السكري؟">أعراض السكري</button>
+                        <button class="quick-btn" data-query="كيف أعالج الصداع النصفي؟">علاج الصداع النصفي</button>
+                        <button class="quick-btn" data-query="ما هي أسباب ارتفاع ضغط الدم؟">أسباب ارتفاع الضغط</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pipeline-visualizer" id="pipelineVisualizer">
+                <div class="pipeline-stage" data-stage="preprocess">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <span>المعالجة</span>
+                </div>
+                <div class="pipeline-connector"></div>
+                <div class="pipeline-stage" data-stage="retrieve">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                    <span>الاسترجاع</span>
+                </div>
+                <div class="pipeline-connector"></div>
+                <div class="pipeline-stage" data-stage="generate">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <span>التوليد</span>
+                </div>
+                <div class="pipeline-connector"></div>
+                <div class="pipeline-stage" data-stage="judge">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                    </div>
+                    <span>التحقق</span>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="role-selector">
+                        <select id="roleSelect">
+                            <option value="patient">مريض</option>
+                            <option value="doctor">طبيب</option>
+                            <option value="student">طالب</option>
+                        </select>
+                    </div>
+                    <div class="mode-selector">
+                        <select id="modeSelect">
+                            <option value="hybrid">هجين</option>
+                            <option value="dense">كثيف</option>
+                            <option value="bm25">BM25</option>
+                        </select>
+                    </div>
+                    <input type="text" id="queryInput" placeholder="اكتب سؤالك الطبي هنا..." autocomplete="off">
+                    <button id="sendBtn" class="send-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="disclaimer">⚠️ هذه المعلومات للأغراض التثقيفية فقط ولا تُغني عن استشارة الطبيب</p>
+            </div>
+        </main>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,8 +1,17 @@
-"""Query translation module for bilingual (Arabic/English) retrieval."""
+"""Query translation module for bilingual (Arabic/English) retrieval.
 
+Uses Groq LLM API for Arabic→English translation (fast, no local model),
+with a dictionary fallback if the API is unavailable.
+"""
+
+import logging
+import os
 import re
 
-# Lightweight Arabic normalizer (same rules as preprocessing.py)
+logger = logging.getLogger(__name__)
+
+# ── Arabic normalizer (same rules as preprocessing.py) ───────
+
 _ALEF = re.compile("[إأآا]")
 _YA = re.compile("[ىي]")
 _TA = re.compile("[ة]")
@@ -19,7 +28,64 @@ def _norm(text: str) -> str:
     return text
 
 
-ARABIC_TO_ENGLISH = {
+# ── Groq API translation ─────────────────────────────────────
+
+_groq_client = None
+
+
+def _get_groq_client():
+    """Lazy-load the Groq client (reuses the same API key as generation)."""
+    global _groq_client
+    if _groq_client is not None:
+        return _groq_client
+
+    from dotenv import load_dotenv
+    from groq import Groq
+
+    load_dotenv()
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        return None
+    _groq_client = Groq(api_key=api_key)
+    return _groq_client
+
+
+def _api_translate(query: str) -> str:
+    """Translate Arabic→English using Groq API. Returns empty string on failure."""
+    try:
+        client = _get_groq_client()
+        if client is None:
+            return ""
+
+        response = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "Translate the following Arabic medical query to English. "
+                        "Return ONLY the English translation, nothing else. "
+                        "Do not add explanations or notes."
+                    ),
+                },
+                {"role": "user", "content": query},
+            ],
+            temperature=0,
+            max_tokens=100,
+        )
+        result = response.choices[0].message.content.strip()
+        # Strip quotes if the model wraps the translation
+        if result.startswith('"') and result.endswith('"'):
+            result = result[1:-1].strip()
+        return result if result and any(c.isalpha() for c in result) else ""
+    except Exception as e:
+        logger.warning("Groq translation failed: %s", e)
+        return ""
+
+
+# ── Dictionary fallback ──────────────────────────────────────
+
+_ARABIC_TO_ENGLISH = {
     # Questions - full phrases first
     "ما العلاقة بين": "what is the relationship between",
     "ما هو": "what is",
@@ -119,33 +185,44 @@ ARABIC_TO_ENGLISH = {
 }
 
 
-def translate_query(query: str) -> str:
-    """Translate Arabic query terms to English for cross-lingual retrieval."""
-    # Normalise Arabic characters so variants match the dictionary
+def _dictionary_translate(query: str) -> str:
+    """Translate Arabic query using the hardcoded dictionary (fallback)."""
     translated = _norm(query)
 
-    # Pre-normalise dictionary keys once (done each call — small dict, fast enough)
     sorted_terms = sorted(
-        ARABIC_TO_ENGLISH.items(), key=lambda x: len(x[0]), reverse=True
+        _ARABIC_TO_ENGLISH.items(), key=lambda x: len(x[0]), reverse=True
     )
 
     for arabic, english in sorted_terms:
         norm_key = _norm(arabic)
         translated = translated.replace(norm_key, english)
 
-    # Fix spacing issues (e.g., "andheart" -> "and heart")
-    import re
-
-    # Fix known pattern: "and" followed by word
     translated = re.sub(r"and([a-z])", r"and \1", translated)
-
-    # Fix CamelCase-like patterns
     translated = re.sub(r"(\w)([A-Z])", r"\1 \2", translated)
-
-    # Clean up extra spaces
     translated = " ".join(translated.split())
 
     return translated
+
+
+# ── Public API ────────────────────────────────────────────────
+
+
+def translate_query(query: str) -> str:
+    """Translate Arabic query to English for cross-lingual retrieval.
+
+    Uses Groq API (llama-3.1-8b-instant) as the primary translator.
+    Falls back to dictionary-based translation if the API fails.
+    """
+    if not query or not query.strip():
+        return query
+
+    # Try API-based translation first
+    api_result = _api_translate(query)
+    if api_result:
+        return api_result
+
+    # Fallback to dictionary
+    return _dictionary_translate(query)
 
 
 def translate_query_bilingual(query: str) -> str:

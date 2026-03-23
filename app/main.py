@@ -1,5 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, validator
 from typing import List, Optional, Dict
 import os
@@ -31,8 +33,7 @@ from app.generation.groq_client import generate_response
 # Safety
 from app.safety.emergency_detector import detect_emergency
 from app.safety.content_filter import contains_sensitive_content
-from app.safety.grounding_checker import verify_grounding
-from app.safety.hallucination_checker import check_hallucination
+from app.safety.judge import judge_answer
 
 # Core
 from app.core.messages import MESSAGES
@@ -85,6 +86,17 @@ from app.api.routes import router as api_router
 
 app.include_router(api_router, prefix="/api")
 
+# Serve frontend static files (mount at /static)
+import os
+
+frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
+if os.path.exists(frontend_path):
+    app.mount("/static", StaticFiles(directory=frontend_path), name="frontend")
+
+    @app.get("/")
+    async def serve_frontend():
+        return FileResponse(os.path.join(frontend_path, "index.html"))
+
 
 # ==========================
 # Startup: Load Indexes
@@ -130,7 +142,9 @@ class QueryRequest(BaseModel):
     query: str = Field(..., min_length=3, max_length=500)
     role: str = Field(default="patient")
     specialty: Optional[str] = None
-    mode: str = Field(default="hybrid", description="Retrieval mode: hybrid, dense, or bm25")
+    mode: str = Field(
+        default="hybrid", description="Retrieval mode: hybrid, dense, or bm25"
+    )
 
     @validator("query")
     def validate_query(cls, v):
@@ -275,27 +289,39 @@ def ask(request: QueryRequest):
         stage_latencies["fusion"] = round(time.time() - t0, 3)
 
         # Normalize BM25 scores to [0,1] via min-max
-        bm25_raw_scores = [d.get("bm25_score", 0.0) for d in fused if d.get("bm25_score", 0.0) > 0]
+        bm25_raw_scores = [
+            d.get("bm25_score", 0.0) for d in fused if d.get("bm25_score", 0.0) > 0
+        ]
         bm25_max = max(bm25_raw_scores) if bm25_raw_scores else 1.0
         bm25_min = min(bm25_raw_scores) if bm25_raw_scores else 0.0
         bm25_range = bm25_max - bm25_min if bm25_max > bm25_min else 1.0
         for doc in fused:
             doc.setdefault("page", doc.get("metadata", {}).get("page"))
-            doc.setdefault("source", doc.get("metadata", {}).get("source", "Medical Textbook"))
+            doc.setdefault(
+                "source", doc.get("metadata", {}).get("source", "Medical Textbook")
+            )
             # Keep real dense_score if present; normalize BM25 score as fallback
             if "dense_score" not in doc:
                 raw_bm25 = doc.get("bm25_score", 0.0)
-                doc["dense_score"] = (raw_bm25 - bm25_min) / bm25_range if raw_bm25 > 0 else 0.0
+                doc["dense_score"] = (
+                    (raw_bm25 - bm25_min) / bm25_range if raw_bm25 > 0 else 0.0
+                )
 
         # -- 6b. Drop low-score chunks --
         min_score = 0.15
         before_filter = len(fused)
-        fused = [d for d in fused if d.get("score", d.get("dense_score", 0.0)) >= min_score]
-        print(f"[DEBUG] Score filter: {before_filter} -> {len(fused)} (min={min_score})")
+        fused = [
+            d for d in fused if d.get("score", d.get("dense_score", 0.0)) >= min_score
+        ]
+        print(
+            f"[DEBUG] Score filter: {before_filter} -> {len(fused)} (min={min_score})"
+        )
 
         # -- 7. Metadata Filtering --
         t0 = time.time()
-        filtered = filter_by_metadata(fused, specialty=request.specialty, language="arabic")
+        filtered = filter_by_metadata(
+            fused, specialty=request.specialty, language="arabic"
+        )
         stage_latencies["metadata_filtering"] = round(time.time() - t0, 3)
         print(f"[DEBUG] After filter: {len(filtered)}")
 
@@ -308,10 +334,16 @@ def ask(request: QueryRequest):
 
         # -- 8. Dynamic Chunk Selection (score > 0.3, max 7) --
         # With smaller chunks, we need more of them for context coverage
-        top_chunks = [c for c in reranked if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.25][:10]
+        top_chunks = [
+            c
+            for c in reranked
+            if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.25
+        ][:10]
         if not top_chunks:
             top_chunks = reranked[:3]  # fallback: keep top 3
-        print(f"[DEBUG] Dynamic selection: {len(top_chunks)} chunks (from {len(reranked)} reranked)")
+        print(
+            f"[DEBUG] Dynamic selection: {len(top_chunks)} chunks (from {len(reranked)} reranked)"
+        )
 
         if not top_chunks:
             latency = round(time.time() - start_time, 3)
@@ -327,8 +359,10 @@ def ask(request: QueryRequest):
 
         for i, doc in enumerate(top_chunks):
             doc.setdefault("page", doc.get("metadata", {}).get("page"))
-            doc.setdefault("source", doc.get("metadata", {}).get("source", "Medical Textbook"))
-            rs = doc.get('rerank_score_normalized', doc.get('dense_score', 0))
+            doc.setdefault(
+                "source", doc.get("metadata", {}).get("source", "Medical Textbook")
+            )
+            rs = doc.get("rerank_score_normalized", doc.get("dense_score", 0))
             print(f"[DEBUG] Chunk {i}: page={doc.get('page')}, score={rs:.3f}")
 
         # -- 8. Build Context --
@@ -366,6 +400,7 @@ def ask(request: QueryRequest):
         except Exception as e:
             print(f"[ERROR] LLM generation failed: {e}")
             import traceback
+
             traceback.print_exc()
             latency = round(time.time() - start_time, 3)
             return ResponseModel(
@@ -378,18 +413,47 @@ def ask(request: QueryRequest):
                 stage_latencies=stage_latencies,
             )
 
-        # -- 10. Grounding Verification --
-        t0 = time.time()
-        context_texts = [doc.get("text", "") for doc in top_chunks[:5] if doc.get("text")]
-        grounded, grounding_score = verify_grounding(
-            answer=answer, context_chunks=context_texts, threshold=0.50
-        )
-        stage_latencies["grounding"] = round(time.time() - t0, 3)
-        print(f"[DEBUG] Grounding: grounded={grounded}, score={round(grounding_score, 3)}")
-
-        if not grounded:
+        # -- 10. Safety Check (PII / sensitive content) --
+        if contains_sensitive_content(answer):
             latency = round(time.time() - start_time, 3)
-            print(f"[WARN] Answer rejected - low grounding score: {grounding_score}")
+            print("[WARN] Answer blocked - sensitive content")
+            return ResponseModel(
+                answer="لا يمكن عرض هذه المعلومات.",
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                latency_seconds=latency,
+                status="blocked_sensitive_content",
+                stage_latencies=stage_latencies,
+            )
+
+        # -- 11. Judge Model (grounding + hallucination + confidence) --
+        t0 = time.time()
+        context_texts = [
+            doc.get("text", "") for doc in top_chunks[:5] if doc.get("text")
+        ]
+        judge_result = judge_answer(
+            query=query,
+            answer=answer,
+            context_texts=context_texts,
+        )
+        stage_latencies["judge"] = round(time.time() - t0, 3)
+
+        grounding_score = judge_result.grounding_score
+        confidence = round(max(0.0, min(0.95, judge_result.confidence)), 3)
+
+        print(
+            f"[DEBUG] Judge: grounded={judge_result.grounded}, "
+            f"grounding={grounding_score:.3f}, confidence={confidence}, "
+            f"halluc_risk={judge_result.hallucination_risk:.3f}"
+        )
+        if judge_result.flagged_claims:
+            print(f"[DEBUG] Judge flagged: {judge_result.flagged_claims}")
+        print(f"[DEBUG] Judge reasoning: {judge_result.reasoning}")
+
+        if not judge_result.grounded and grounding_score < 0.3:
+            latency = round(time.time() - start_time, 3)
+            print(f"[WARN] Answer rejected by judge - grounding={grounding_score:.3f}")
             return ResponseModel(
                 answer="لا يمكنني تقديم إجابة دقيقة بناءً على المصادر المتاحة.",
                 confidence=0.0,
@@ -399,56 +463,6 @@ def ask(request: QueryRequest):
                 status="refused_low_grounding",
                 stage_latencies=stage_latencies,
             )
-
-        # -- 11. Safety Check --
-        if contains_sensitive_content(answer):
-            latency = round(time.time() - start_time, 3)
-            print("[WARN] Answer blocked - sensitive content")
-            return ResponseModel(
-                answer="لا يمكن عرض هذه المعلومات.",
-                confidence=0.0,
-                sources=[],
-                grounding_score=round(grounding_score, 3),
-                latency_seconds=latency,
-                status="blocked_sensitive_content",
-                stage_latencies=stage_latencies,
-            )
-
-        # -- 11b. Hallucination Check --
-        has_hallucination, halluc_risk, flagged = check_hallucination(
-            answer, context_texts, threshold=0.55
-        )
-        if has_hallucination:
-            print(f"[WARN] Hallucination detected: risk={halluc_risk:.3f}, flagged={len(flagged)} sentences")
-            confidence_penalty = 0.15
-
-        # -- 12. Confidence Scoring --
-        # Use best chunk score (top-1) so more chunks never penalizes confidence
-        retrieval_scores = []
-        for d in top_chunks:
-            score = d.get("rerank_score_normalized", d.get("dense_score", 0.0))
-            retrieval_scores.append(max(0.0, min(1.0, score)))
-
-        # Use MEAN of top-3 scores instead of max — max is always ~1.0 after min-max norm
-        top_3_scores = sorted(retrieval_scores, reverse=True)[:3]
-        retrieval_score = sum(top_3_scores) / len(top_3_scores) if top_3_scores else 0.0
-        # Evidence bonus: small bump when multiple chunks agree
-        evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.4) * 0.02
-        retrieval_score = min(1.0, retrieval_score + evidence_bonus)
-
-        # Grounding dominates confidence — it's the actual quality signal
-        if retrieval_mode == "bm25":
-            confidence = 0.65 * grounding_score + 0.25 * retrieval_score
-        else:
-            confidence = 0.65 * grounding_score + 0.35 * retrieval_score
-
-        # Apply hallucination penalty if detected
-        if has_hallucination:
-            confidence -= confidence_penalty
-
-        confidence = round(max(0.0, min(0.95, confidence)), 3)
-
-        print(f"[DEBUG] Grounding={grounding_score:.3f}, Retrieval={retrieval_score:.3f} (bonus={evidence_bonus:.2f}), Confidence={confidence}")
 
         # -- 13. Citations --
         seen_pages: set = set()
@@ -498,5 +512,6 @@ def ask(request: QueryRequest):
     except Exception as e:
         print(f"[ERROR] Unexpected error: {e}")
         import traceback
+
         traceback.print_exc()
         raise HTTPException(status_code=500, detail="internal_server_error")

@@ -35,7 +35,7 @@ from app.retrieval.hybrid_fusion import hybrid_retrieval_fusion, deduplicate_res
 from app.retrieval.reranker import rerank as rerank_documents
 from app.retrieval.query_expansion import expand_query
 from app.retrieval.query_translator import translate_query, is_arabic
-from app.safety.grounding_checker import verify_grounding
+from app.safety.judge import judge_answer
 from app.generation.prompts import build_prompt
 
 PLOTS_DIR = cfg.RESULTS_DIR / "plots"
@@ -58,7 +58,7 @@ def _get_local_llm():
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         device_map="auto",
-        max_memory={0: "44GiB", 1: "38GiB"},
+        max_memory={0: "47GiB", 1: "47GiB"},
         torch_dtype=torch.bfloat16,
     )
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -402,20 +402,23 @@ def run_generation_eval(vs: VectorStore, bm25: BM25Index | None):
             except Exception as e:
                 print(f"  [WARN] Generation failed: {e}")
 
-            # ground
-            grounded, g_score = verify_grounding(answer, context_texts, threshold=0.50)
+            # judge (LLM-based grounding + hallucination + confidence)
+            judge_result = judge_answer(
+                query=query,
+                answer=answer,
+                context_texts=context_texts,
+            )
+            grounded = judge_result.grounded
+            g_score = judge_result.grounding_score
+            confidence = round(max(0.0, min(0.95, judge_result.confidence)), 3)
 
-            # confidence (same formula as main.py)
+            # retrieval score (for reference)
             retrieval_scores = []
             for d in top_chunks:
                 s = d.get("rerank_score_normalized", d.get("dense_score", 0.0))
                 retrieval_scores.append(max(0.0, min(1.0, s)))
             top_3 = sorted(retrieval_scores, reverse=True)[:3]
             ret_score = sum(top_3) / len(top_3) if top_3 else 0.0
-            evidence_bonus = sum(1 for s in retrieval_scores[1:] if s > 0.4) * 0.02
-            ret_score = min(1.0, ret_score + evidence_bonus)
-            confidence = 0.65 * g_score + 0.35 * ret_score
-            confidence = round(max(0.0, min(0.95, confidence)), 3)
 
             rows.append({
                 "query": query,
@@ -439,7 +442,7 @@ def plot_grounding_distribution(df: pd.DataFrame):
     for mode in df["mode"].unique():
         subset = df[df["mode"] == mode]["grounding_score"]
         ax.hist(subset, bins=15, alpha=0.5, label=mode)
-    ax.axvline(x=0.50, color="red", linestyle="--", label="Threshold (0.50)")
+    ax.axvline(x=0.30, color="red", linestyle="--", label="Threshold (0.30)")
     ax.set_title("4. Grounding Score Distribution", fontsize=15)
     ax.set_xlabel("Grounding Score")
     ax.set_ylabel("Queries")

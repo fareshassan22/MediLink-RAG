@@ -1,0 +1,631 @@
+nohup: ignoring input
+============================================================
+MediLink RAG — Comprehensive Evaluation
+============================================================
+Vector store loaded: 759 documents (FAISS)
+Loaded 759 documents
+
+[1/7] Indexing Analysis ...
+  ✅ Saved /home/medilink/RAG/results/plots/1_indexing_analysis.png
+
+[2/7] Retrieval Evaluation ...
+  Evaluating:   0%|          | 0/99 [00:00<?, ?it/s]  Evaluating:   1%|          | 1/99 [00:02<04:35,  2.82s/it]  Evaluating:   2%|▏         | 2/99 [00:04<03:31,  2.18s/it]  Evaluating:   3%|▎         | 3/99 [00:06<03:07,  1.95s/it]  Evaluating:   4%|▍         | 4/99 [00:08<03:04,  1.94s/it]  Evaluating:   5%|▌         | 5/99 [00:09<02:58,  1.89s/it]  Evaluating:   6%|▌         | 6/99 [00:11<02:45,  1.78s/it]  Evaluating:   7%|▋         | 7/99 [00:13<02:44,  1.79s/it]  Evaluating:   8%|▊         | 8/99 [00:15<02:41,  1.78s/it]  Evaluating:   9%|▉         | 9/99 [00:16<02:39,  1.78s/it]  Evaluating:  10%|█         | 10/99 [00:18<02:36,  1.76s/it]  Evaluating:  11%|█         | 11/99 [00:26<05:24,  3.69s/it]  Evaluating:  12%|█▏        | 12/99 [00:34<07:17,  5.03s/it]  Evaluating:  13%|█▎        | 13/99 [00:42<08:29,  5.93s/it]  Evaluating:  14%|█▍        | 14/99 [00:50<09:17,  6.56s/it]  Evaluating:  15%|█▌        | 15/99 [00:58<09:44,  6.96s/it]  Evaluating:  16%|█▌        | 16/99 [01:06<10:02,  7.25s/it]  Evaluating:  17%|█▋        | 17/99 [01:14<10:06,  7.40s/it]  Evaluating:  18%|█▊        | 18/99 [01:22<10:14,  7.58s/it]  Evaluating:  19%|█▉        | 19/99 [01:30<10:20,  7.75s/it]  Evaluating:  20%|██        | 20/99 [01:37<09:52,  7.50s/it]  Evaluating:  21%|██        | 21/99 [01:45<09:58,  7.68s/it]  Evaluating:  22%|██▏       | 22/99 [01:53<09:58,  7.77s/it]  Evaluating:  23%|██▎       | 23/99 [02:01<09:59,  7.89s/it]  Evaluating:  24%|██▍       | 24/99 [02:09<09:59,  7.99s/it]  Evaluating:  25%|██▌       | 25/99 [02:17<09:54,  8.03s/it]  Evaluating:  26%|██▋       | 26/99 [02:25<09:45,  8.02s/it]  Evaluating:  27%|██▋       | 27/99 [02:33<09:23,  7.83s/it]  Evaluating:  28%|██▊       | 28/99 [02:41<09:18,  7.86s/it]  Evaluating:  29%|██▉       | 29/99 [02:49<09:13,  7.91s/it]  Evaluating:  30%|███       | 30/99 [02:57<09:05,  7.90s/it]  Evaluating:  31%|███▏      | 31/99 [03:05<09:00,  7.95s/it]  Evaluating:  32%|███▏      | 32/99 [03:13<08:54,  7.97s/it]  Evaluating:  33%|███▎      | 33/99 [03:20<08:29,  7.72s/it]  Evaluating:  34%|███▍      | 34/99 [03:28<08:25,  7.78s/it]  Evaluating:  35%|███▌      | 35/99 [03:35<08:09,  7.65s/it]  Evaluating:  36%|███▋      | 36/99 [03:43<08:07,  7.74s/it]  Evaluating:  37%|███▋      | 37/99 [03:51<08:01,  7.77s/it]  Evaluating:  38%|███▊      | 38/99 [03:59<07:59,  7.86s/it]  Evaluating:  39%|███▉      | 39/99 [04:07<07:54,  7.91s/it]  Evaluating:  40%|████      | 40/99 [04:15<07:47,  7.93s/it]  Evaluating:  41%|████▏     | 41/99 [04:23<07:41,  7.96s/it]  Evaluating:  42%|████▏     | 42/99 [04:31<07:32,  7.93s/it]  Evaluating:  43%|████▎     | 43/99 [04:39<07:24,  7.94s/it]  Evaluating:  44%|████▍     | 44/99 [04:47<07:19,  8.00s/it]  Evaluating:  45%|████▌     | 45/99 [04:55<07:12,  8.02s/it]  Evaluating:  46%|████▋     | 46/99 [05:03<07:07,  8.06s/it]  Evaluating:  47%|████▋     | 47/99 [05:11<06:59,  8.07s/it]  Evaluating:  48%|████▊     | 48/99 [05:19<06:51,  8.07s/it]  Evaluating:  49%|████▉     | 49/99 [05:26<06:24,  7.70s/it]  Evaluating:  51%|█████     | 50/99 [05:33<06:10,  7.57s/it]  Evaluating:  52%|█████▏    | 51/99 [05:35<04:32,  5.67s/it]  Evaluating:  53%|█████▎    | 52/99 [05:36<03:24,  4.35s/it]  Evaluating:  54%|█████▎    | 53/99 [05:37<02:38,  3.44s/it]  Evaluating:  55%|█████▍    | 54/99 [05:39<02:07,  2.83s/it]  Evaluating:  56%|█████▌    | 55/99 [05:40<01:45,  2.39s/it]  Evaluating:  57%|█████▋    | 56/99 [05:41<01:26,  2.02s/it]  Evaluating:  58%|█████▊    | 57/99 [05:43<01:15,  1.80s/it]  Evaluating:  59%|█████▊    | 58/99 [05:44<01:06,  1.62s/it]  Evaluating:  60%|█████▉    | 59/99 [05:45<01:00,  1.51s/it]  Evaluating:  61%|██████    | 60/99 [05:46<00:55,  1.42s/it]  Evaluating:  62%|██████▏   | 61/99 [05:47<00:51,  1.35s/it]  Evaluating:  63%|██████▎   | 62/99 [05:49<00:48,  1.31s/it]  Evaluating:  64%|██████▎   | 63/99 [05:50<00:46,  1.30s/it]  Evaluating:  65%|██████▍   | 64/99 [05:51<00:44,  1.28s/it]  Evaluating:  66%|██████▌   | 65/99 [05:52<00:44,  1.30s/it]  Evaluating:  67%|██████▋   | 66/99 [05:54<00:42,  1.28s/it]  Evaluating:  68%|██████▊   | 67/99 [05:55<00:40,  1.26s/it]  Evaluating:  69%|██████▊   | 68/99 [05:56<00:40,  1.29s/it]  Evaluating:  70%|██████▉   | 69/99 [05:58<00:40,  1.34s/it]  Evaluating:  71%|███████   | 70/99 [05:59<00:36,  1.27s/it]  Evaluating:  72%|███████▏  | 71/99 [06:00<00:35,  1.25s/it]  Evaluating:  73%|███████▎  | 72/99 [06:01<00:35,  1.30s/it]  Evaluating:  74%|███████▎  | 73/99 [06:03<00:32,  1.25s/it]  Evaluating:  75%|███████▍  | 74/99 [06:04<00:32,  1.28s/it]  Evaluating:  76%|███████▌  | 75/99 [06:05<00:31,  1.30s/it]  Evaluating:  77%|███████▋  | 76/99 [06:07<00:29,  1.29s/it]  Evaluating:  78%|███████▊  | 77/99 [06:08<00:28,  1.28s/it]  Evaluating:  79%|███████▉  | 78/99 [06:09<00:28,  1.34s/it]  Evaluating:  80%|███████▉  | 79/99 [06:11<00:26,  1.35s/it]  Evaluating:  81%|████████  | 80/99 [06:12<00:25,  1.36s/it]  Evaluating:  82%|████████▏ | 81/99 [06:13<00:24,  1.35s/it]  Evaluating:  83%|████████▎ | 82/99 [06:15<00:22,  1.33s/it]  Evaluating:  84%|████████▍ | 83/99 [06:16<00:21,  1.34s/it]  Evaluating:  85%|████████▍ | 84/99 [06:17<00:20,  1.34s/it]  Evaluating:  86%|████████▌ | 85/99 [06:19<00:17,  1.28s/it]  Evaluating:  87%|████████▋ | 86/99 [06:20<00:16,  1.25s/it]  Evaluating:  88%|████████▊ | 87/99 [06:21<00:15,  1.28s/it]  Evaluating:  89%|████████▉ | 88/99 [06:22<00:14,  1.31s/it]  Evaluating:  90%|████████▉ | 89/99 [06:24<00:13,  1.32s/it]  Evaluating:  91%|█████████ | 90/99 [06:25<00:12,  1.35s/it]  Evaluating:  92%|█████████▏| 91/99 [06:26<00:10,  1.30s/it]  Evaluating:  93%|█████████▎| 92/99 [06:28<00:09,  1.32s/it]  Evaluating:  94%|█████████▍| 93/99 [06:29<00:08,  1.35s/it]  Evaluating:  95%|█████████▍| 94/99 [06:31<00:06,  1.36s/it]  Evaluating:  96%|█████████▌| 95/99 [06:32<00:05,  1.34s/it]  Evaluating:  97%|█████████▋| 96/99 [06:33<00:03,  1.31s/it]  Evaluating:  98%|█████████▊| 97/99 [06:34<00:02,  1.33s/it]  Evaluating:  99%|█████████▉| 98/99 [06:36<00:01,  1.36s/it]  Evaluating: 100%|██████████| 99/99 [06:37<00:00,  1.33s/it]  Evaluating: 100%|██████████| 99/99 [06:37<00:00,  4.02s/it]
+  Saved per-query retrieval metrics to results/retrieval_per_query.csv
+
+[3/7] Retrieval Quality Bar Chart ...
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/_base.py:1447: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self.plot_data[axis] = cat_data
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:403: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] /= n
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:407: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[self.orient] += offset
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:1292: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  agg_data["edge"] = agg_data[self.orient] - agg_data["width"] / 2
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:403: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] /= n
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:407: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[self.orient] += offset
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:1292: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  agg_data["edge"] = agg_data[self.orient] - agg_data["width"] / 2
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:403: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] /= n
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:407: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[self.orient] += offset
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:1292: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  agg_data["edge"] = agg_data[self.orient] - agg_data["width"] / 2
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:403: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] /= n
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:407: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[self.orient] += offset
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:1292: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  agg_data["edge"] = agg_data[self.orient] - agg_data["width"] / 2
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+  ✅ Saved /home/medilink/RAG/results/plots/2_retrieval_quality.png
+
+[4/7] Recall Distribution Histograms ...
+  ✅ Saved /home/medilink/RAG/results/plots/3_recall_distribution.png
+
+[5/7] MRR by Mode ...
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/_base.py:1447: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self.plot_data[axis] = cat_data
+/home/medilink/RAG/evaluate_plots.py:319: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(x="mode", y="mrr", data=df, palette="Set2", ax=ax)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:198: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self.plot_data["hue"] = self.plot_data[self.orient]
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:654: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats[stat] = inv(stats[stat])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:655: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats["fliers"] = stats["fliers"].map(inv)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:654: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats[stat] = inv(stats[stat])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:655: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats["fliers"] = stats["fliers"].map(inv)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:654: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats[stat] = inv(stats[stat])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:655: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats["fliers"] = stats["fliers"].map(inv)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:415: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["edge"] = inv(data[var] - hw)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:416: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data["width"] = inv(data[var] + hw) - data["edge"].to_numpy()
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:654: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats[stat] = inv(stats[stat])
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:655: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  stats["fliers"] = stats["fliers"].map(inv)
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/_base.py:1447: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  self.plot_data[axis] = cat_data
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:508: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  sub_data[self.orient] = adjusted_data
+/home/medilink/RAG/.venv/lib/python3.14/site-packages/seaborn/categorical.py:419: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  data[col] = inv(data[col])
+  ✅ Saved /home/medilink/RAG/results/plots/6_mrr_by_mode.png
+
+============================================================
+RETRIEVAL SUMMARY
+============================================================
+               recall@1  recall@5  recall@10       mrr
+mode                                                  
+bm25           0.058586  0.197980   0.286869  0.405996
+dense          0.195960  0.868687   0.973737  0.984848
+hybrid         0.177778  0.739394   0.894949  0.918266
+hybrid_rerank  0.121212  0.501010   0.894949  0.754125
+
+[6/7] End-to-End Generation Evaluation ...
+  Loading Qwen/Qwen2.5-32B-Instruct across GPUs (bf16) ...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/17 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/17 [00:00<00:12,  1.28it/s]Loading checkpoint shards:  12%|█▏        | 2/17 [00:01<00:11,  1.31it/s]Loading checkpoint shards:  18%|█▊        | 3/17 [00:02<00:10,  1.30it/s]Loading checkpoint shards:  24%|██▎       | 4/17 [00:03<00:10,  1.26it/s]Loading checkpoint shards:  29%|██▉       | 5/17 [00:03<00:09,  1.28it/s]Loading checkpoint shards:  35%|███▌      | 6/17 [00:04<00:08,  1.28it/s]Loading checkpoint shards:  41%|████      | 7/17 [00:05<00:07,  1.28it/s]Loading checkpoint shards:  47%|████▋     | 8/17 [00:06<00:07,  1.25it/s]Loading checkpoint shards:  53%|█████▎    | 9/17 [00:07<00:06,  1.25it/s]Loading checkpoint shards:  59%|█████▉    | 10/17 [00:07<00:05,  1.25it/s]Loading checkpoint shards:  65%|██████▍   | 11/17 [00:08<00:04,  1.26it/s]Loading checkpoint shards:  71%|███████   | 12/17 [00:09<00:04,  1.19it/s]Loading checkpoint shards:  76%|███████▋  | 13/17 [00:10<00:03,  1.17it/s]Loading checkpoint shards:  82%|████████▏ | 14/17 [00:11<00:02,  1.16it/s]Loading checkpoint shards:  88%|████████▊ | 15/17 [00:12<00:01,  1.16it/s]Loading checkpoint shards:  94%|█████████▍| 16/17 [00:13<00:00,  1.15it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.24it/s]Loading checkpoint shards: 100%|██████████| 17/17 [00:13<00:00,  1.23it/s]
+Device set to use cuda:0
+  ✅ Qwen/Qwen2.5-32B-Instruct loaded
+  Generating:   0%|          | 0/99 [00:00<?, ?it/s]  Generating:   1%|          | 1/99 [02:05<3:24:25, 125.16s/it]  Generating:   2%|▏         | 2/99 [05:06<4:15:24, 157.99s/it]  Generating:   3%|▎         | 3/99 [08:37<4:51:25, 182.15s/it]You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+  Generating:   4%|▍         | 4/99 [12:52<5:34:13, 211.09s/it]  Generating:   5%|▌         | 5/99 [13:31<3:53:29, 149.04s/it]  Generating:   6%|▌         | 6/99 [16:17<3:59:47, 154.70s/it]  Generating:   7%|▋         | 7/99 [16:48<2:55:10, 114.24s/it]  Generating:   8%|▊         | 8/99 [19:01<3:02:36, 120.40s/it]  Generating:   9%|▉         | 9/99 [21:32<3:14:43, 129.82s/it]  Generating:  10%|█         | 10/99 [24:06<3:23:34, 137.24s/it]  Generating:  11%|█         | 11/99 [26:45<3:31:20, 144.10s/it]  Generating:  12%|█▏        | 12/99 [27:15<2:38:31, 109.32s/it]  Generating:  13%|█▎        | 13/99 [29:20<2:43:24, 114.00s/it]  Generating:  14%|█▍        | 14/99 [30:31<2:23:22, 101.20s/it]  Generating:  15%|█▌        | 15/99 [31:49<2:11:51, 94.18s/it]   Generating:  16%|█▌        | 16/99 [34:16<2:32:09, 110.00s/it]  Generating:  17%|█▋        | 17/99 [35:27<2:14:12, 98.20s/it]   Generating:  18%|█▊        | 18/99 [36:45<2:04:37, 92.31s/it]  Generating:  19%|█▉        | 19/99 [37:31<1:44:13, 78.17s/it]  Generating:  20%|██        | 20/99 [38:15<1:29:21, 67.87s/it]  Generating:  21%|██        | 21/99 [39:00<1:19:31, 61.17s/it]  Generating:  22%|██▏       | 22/99 [41:57<2:03:13, 96.02s/it]  Generating:  23%|██▎       | 23/99 [44:22<2:20:02, 110.57s/it]  Generating:  24%|██▍       | 24/99 [46:27<2:23:41, 114.95s/it]  Generating:  25%|██▌       | 25/99 [48:59<2:35:23, 125.99s/it]  Generating:  26%|██▋       | 26/99 [50:39<2:23:51, 118.24s/it]  Generating:  27%|██▋       | 27/99 [52:27<2:18:19, 115.27s/it]  Generating:  28%|██▊       | 28/99 [54:55<2:27:58, 125.05s/it]  Generating:  29%|██▉       | 29/99 [55:37<1:56:53, 100.20s/it]  Generating:  30%|███       | 30/99 [57:44<2:04:24, 108.18s/it]  Generating:  31%|███▏      | 31/99 [58:34<1:42:53, 90.78s/it]   Generating:  32%|███▏      | 32/99 [59:17<1:25:24, 76.48s/it]  Generating:  33%|███▎      | 33/99 [1:00:06<1:14:47, 67.99s/it]  Generating:  34%|███▍      | 34/99 [1:02:54<1:46:15, 98.08s/it]  Generating:  35%|███▌      | 35/99 [1:05:24<2:01:11, 113.62s/it]  Generating:  36%|███▋      | 36/99 [1:05:50<1:31:43, 87.36s/it]   Generating:  37%|███▋      | 37/99 [1:06:34<1:16:51, 74.38s/it]  Generating:  38%|███▊      | 38/99 [1:09:13<1:41:18, 99.65s/it]  Generating:  39%|███▉      | 39/99 [1:12:14<2:04:15, 124.25s/it]  Generating:  40%|████      | 40/99 [1:14:32<2:06:16, 128.42s/it]  Generating:  41%|████▏     | 41/99 [1:15:21<1:40:57, 104.43s/it]  Generating:  42%|████▏     | 42/99 [1:17:47<1:50:58, 116.81s/it]  Generating:  43%|████▎     | 43/99 [1:19:49<1:50:35, 118.49s/it]  Generating:  44%|████▍     | 44/99 [1:22:04<1:53:11, 123.49s/it]  Generating:  45%|████▌     | 45/99 [1:23:08<1:34:55, 105.47s/it]  Generating:  46%|████▋     | 46/99 [1:23:42<1:14:17, 84.10s/it]   Generating:  47%|████▋     | 47/99 [1:25:51<1:24:40, 97.70s/it]  Generating:  48%|████▊     | 48/99 [1:27:50<1:28:29, 104.11s/it]  Generating:  49%|████▉     | 49/99 [1:28:27<1:09:58, 83.96s/it]   Generating:  51%|█████     | 50/99 [1:29:07<57:45, 70.73s/it]    Generating:  52%|█████▏    | 51/99 [1:30:46<1:03:21, 79.20s/it]  Generating:  53%|█████▎    | 52/99 [1:31:37<55:24, 70.74s/it]    Generating:  54%|█████▎    | 53/99 [1:33:53<1:09:13, 90.29s/it]  Generating:  55%|█████▍    | 54/99 [1:37:00<1:29:21, 119.15s/it]  Generating:  56%|█████▌    | 55/99 [1:37:40<1:10:00, 95.47s/it]   Generating:  57%|█████▋    | 56/99 [1:39:31<1:11:43, 100.07s/it]  Generating:  58%|█████▊    | 57/99 [1:40:20<59:25, 84.89s/it]     Generating:  59%|█████▊    | 58/99 [1:42:49<1:11:13, 104.24s/it]  Generating:  60%|█████▉    | 59/99 [1:45:20<1:18:51, 118.29s/it]  Generating:  61%|██████    | 60/99 [1:47:25<1:18:06, 120.17s/it]  Generating:  62%|██████▏   | 61/99 [1:50:37<1:29:43, 141.68s/it]  Generating:  63%|██████▎   | 62/99 [1:52:35<1:23:05, 134.74s/it]  Generating:  64%|██████▎   | 63/99 [1:54:41<1:19:11, 131.98s/it]  Generating:  65%|██████▍   | 64/99 [1:55:22<1:01:08, 104.82s/it]  Generating:  66%|██████▌   | 65/99 [1:57:44<1:05:42, 115.94s/it]  Generating:  67%|██████▋   | 66/99 [1:59:28<1:01:40, 112.14s/it]  Generating:  68%|██████▊   | 67/99 [2:01:17<59:22, 111.33s/it]    Generating:  69%|██████▊   | 68/99 [2:02:09<48:19, 93.52s/it]   Generating:  70%|██████▉   | 69/99 [2:04:21<52:28, 104.95s/it]  Generating:  71%|███████   | 70/99 [2:05:01<41:24, 85.67s/it]   Generating:  72%|███████▏  | 71/99 [2:07:31<49:00, 105.00s/it]  Generating:  73%|███████▎  | 72/99 [2:09:11<46:33, 103.46s/it]  Generating:  74%|███████▎  | 73/99 [2:09:58<37:30, 86.54s/it]   Generating:  75%|███████▍  | 74/99 [2:12:00<40:27, 97.11s/it]  Generating:  76%|███████▌  | 75/99 [2:13:37<38:50, 97.10s/it]  Generating:  77%|███████▋  | 76/99 [2:15:19<37:43, 98.39s/it]  Generating:  78%|███████▊  | 77/99 [2:17:19<38:27, 104.90s/it]  Generating:  79%|███████▉  | 78/99 [2:17:48<28:49, 82.36s/it]   Generating:  80%|███████▉  | 79/99 [2:19:04<26:49, 80.46s/it]  Generating:  81%|████████  | 80/99 [2:19:45<21:42, 68.55s/it]  Generating:  82%|████████▏ | 81/99 [2:21:03<21:22, 71.27s/it]  Generating:  83%|████████▎ | 82/99 [2:21:40<17:18, 61.09s/it]  Generating:  84%|████████▍ | 83/99 [2:25:02<27:30, 103.17s/it]  Generating:  85%|████████▍ | 84/99 [2:27:53<30:54, 123.65s/it]  Generating:  86%|████████▌ | 85/99 [2:30:56<32:59, 141.42s/it]  Generating:  87%|████████▋ | 86/99 [2:31:53<25:11, 116.25s/it]  Generating:  88%|████████▊ | 87/99 [2:35:00<27:27, 137.26s/it]  Generating:  89%|████████▉ | 88/99 [2:38:10<28:03, 153.07s/it]  Generating:  90%|████████▉ | 89/99 [2:41:11<26:57, 161.70s/it]  Generating:  91%|█████████ | 90/99 [2:42:50<21:24, 142.72s/it]  Generating:  92%|█████████▏| 91/99 [2:45:27<19:35, 146.96s/it]  Generating:  93%|█████████▎| 92/99 [2:48:35<18:35, 159.42s/it]  Generating:  94%|█████████▍| 93/99 [2:51:22<16:09, 161.63s/it]  Generating:  95%|█████████▍| 94/99 [2:52:25<11:00, 132.00s/it]  Generating:  96%|█████████▌| 95/99 [2:54:52<09:06, 136.53s/it]  Generating:  97%|█████████▋| 96/99 [2:57:08<06:49, 136.37s/it]  Generating:  98%|█████████▊| 97/99 [2:59:37<04:40, 140.19s/it]  Generating:  99%|█████████▉| 98/99 [3:00:49<01:59, 119.60s/it]  Generating: 100%|██████████| 99/99 [3:03:15<00:00, 127.70s/it]  Generating: 100%|██████████| 99/99 [3:03:15<00:00, 111.07s/it]
+
+  Saved generation eval to results/generation_eval.csv
+
+  Plotting grounding distribution ...
+  ✅ Saved /home/medilink/RAG/results/plots/4_grounding_distribution.png
+
+  Plotting reliability curve ...
+  ✅ Saved /home/medilink/RAG/results/plots/5_reliability_curve.png
+
+  Plotting generation quality ...
+  ✅ Saved /home/medilink/RAG/results/plots/7_generation_quality.png
+
+============================================================
+GENERATION SUMMARY
+============================================================
+               grounding_score  confidence
+mode                                      
+dense                 0.606061    0.510101
+hybrid                0.612121    0.528283
+hybrid_rerank         0.617172    0.526263
+
+============================================================
+ALL PLOTS:
+  📊 /home/medilink/RAG/results/plots/1_indexing_analysis.png
+  📊 /home/medilink/RAG/results/plots/2_retrieval_quality.png
+  📊 /home/medilink/RAG/results/plots/3_recall_distribution.png
+  📊 /home/medilink/RAG/results/plots/4_grounding_distribution.png
+  📊 /home/medilink/RAG/results/plots/5_reliability_curve.png
+  📊 /home/medilink/RAG/results/plots/6_mrr_by_mode.png
+  📊 /home/medilink/RAG/results/plots/7_generation_quality.png
+  📊 /home/medilink/RAG/results/plots/retrieval_by_language.png
+  📊 /home/medilink/RAG/results/plots/retrieval_category_heatmap.png
+  📊 /home/medilink/RAG/results/plots/retrieval_mrr_boxplot.png
+  📊 /home/medilink/RAG/results/plots/retrieval_quality.png
+============================================================
