@@ -237,6 +237,7 @@ def post_fusion_filter(
 
     Keeps chunks where at least `min_keyword_overlap` fraction of query
     keywords appear in the chunk text. Always keeps the top result.
+    For Arabic queries, also checks English translations of query terms.
     """
     if not results:
         return []
@@ -247,6 +248,16 @@ def post_fusion_filter(
     query_words = set(query_clean.split())
     # Also add unstemmed words for broader matching
     query_words.update(query.lower().split())
+
+    # For Arabic queries, add English medical term translations so
+    # keyword overlap works against the English-only corpus.
+    try:
+        from app.retrieval.query_expansion import _expand_arabic_medical_terms
+        english_terms = _expand_arabic_medical_terms(query)
+        for term in english_terms:
+            query_words.update(term.lower().split())
+    except ImportError:
+        pass
 
     if not query_words:
         return results[:top_k]
@@ -284,11 +295,21 @@ def hybrid_retrieval_fusion(
       3. Deduplication
       4. Post-fusion keyword filtering
       5. Return top-k
+
+    For Arabic queries against an English corpus, BM25 weight is reduced
+    since keyword matching rarely works cross-lingually.
     """
     intent = detect_intent(query)
     w_dense, w_bm25 = get_intent_weights(intent)
 
-    logger.info(f"Intent: {intent} -> weights(dense={w_dense}, bm25={w_bm25})")
+    # Detect Arabic and down-weight BM25 (keyword match is unreliable
+    # cross-lingually even after translation)
+    _has_arabic = any("\u0600" <= c <= "\u06FF" for c in query)
+    if _has_arabic:
+        w_dense = min(w_dense + 0.10, 0.95)
+        w_bm25 = 1.0 - w_dense
+
+    logger.info(f"Intent: {intent} -> weights(dense={w_dense:.2f}, bm25={w_bm25:.2f}, arabic={_has_arabic})")
 
     # Weighted fusion with normalized scores
     fused = weighted_fusion(dense_results, bm25_results, w_dense, w_bm25)

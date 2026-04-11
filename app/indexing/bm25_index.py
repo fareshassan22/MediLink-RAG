@@ -63,17 +63,19 @@ class BM25Index:
         """Add a single document to the index."""
         self.documents[doc_id] = {"text": text, "metadata": metadata}
         self.doc_id_list.append(doc_id)
-        if self.bm25 is None:
-            self.corpus = [text]
-            self.corpus_tokens = [self.tokenize(text)]
-            self.bm25 = BM25Okapi(self.corpus_tokens)
-        else:
-            self.corpus.append(text)
-            self.corpus_tokens.append(self.tokenize(text))
+        self.corpus.append(text)
+        self.corpus_tokens.append(self.tokenize(text))
+        # Invalidate the BM25 model; it will be rebuilt on next get_scores/search
+        self.bm25 = None
+
+    def _ensure_built(self) -> None:
+        """Rebuild BM25Okapi from corpus tokens if invalidated."""
+        if self.bm25 is None and self.corpus_tokens:
             self.bm25 = BM25Okapi(self.corpus_tokens)
 
     def get_scores(self, query: str) -> List[float]:
         """Get BM25 scores for a query."""
+        self._ensure_built()
         if self.bm25 is None:
             raise RuntimeError("BM25 index not built")
         preprocessed = preprocess_query(query) if self.use_preprocessing else query

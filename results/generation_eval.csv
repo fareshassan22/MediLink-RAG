@@ -1,298 +1,298 @@
 query,language,category,mode,grounding_score,grounded,confidence,retrieval_score,answer_len
-ما هي أعراض مرض السكري؟,arabic,symptoms,dense,0.9,True,0.9,0.608,228
-ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid,0.8,True,0.9,0.63,311
-ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.745,407
-ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,dense,0.9,True,0.9,0.591,315
-ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid,0.9,True,0.9,0.591,396
-ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid_rerank,0.9,True,0.9,0.572,407
-ما أسباب فشل القلب؟,arabic,causes,dense,0.8,True,0.9,0.596,696
-ما أسباب فشل القلب؟,arabic,causes,hybrid,0.8,True,0.9,0.596,701
-ما أسباب فشل القلب؟,arabic,causes,hybrid_rerank,0.8,True,0.9,0.661,503
-كيف يتم تشخيص السرطان؟,arabic,diagnosis,dense,0.8,True,0.9,0.624,814
-كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid,0.8,True,0.9,0.624,906
-كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid_rerank,0.8,True,0.9,0.766,757
-ما أعراض الربو؟,arabic,symptoms,dense,0.3,False,0.0,0.532,65
-ما أعراض الربو؟,arabic,symptoms,hybrid,0.3,False,0.0,0.559,141
-ما أعراض الربو؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.847,65
-كيف يمكن الوقاية من العدوى؟,arabic,prevention,dense,0.8,True,0.9,0.572,557
-كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid,0.8,True,0.9,0.572,533
-كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid_rerank,0.9,True,0.9,0.715,520
-ما هي أعراض فقر الدم؟,arabic,symptoms,dense,0.3,False,0.0,0.583,65
-ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid,0.3,False,0.0,0.583,65
-ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.807,65
-ما علاج الصداع؟,arabic,treatment,dense,0.3,False,0.0,0.581,157
-ما علاج الصداع؟,arabic,treatment,hybrid,0.8,True,0.9,0.591,556
-ما علاج الصداع؟,arabic,treatment,hybrid_rerank,0.8,True,0.9,0.663,717
-ما أسباب أمراض الكلى؟,arabic,causes,dense,0.9,True,0.9,0.562,521
-ما أسباب أمراض الكلى؟,arabic,causes,hybrid,0.8,True,0.9,0.562,494
-ما أسباب أمراض الكلى؟,arabic,causes,hybrid_rerank,0.3,False,0.0,0.614,183
-ما أنواع السرطان المختلفة؟,arabic,diagnosis,dense,0.9,True,0.9,0.56,467
-ما أنواع السرطان المختلفة؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.579,448
-ما أنواع السرطان المختلفة؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.758,498
-أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,dense,0.8,True,0.9,0.564,576
-أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,hybrid,0.7,True,0.8,0.582,469
-أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,hybrid_rerank,0.8,True,0.9,0.601,592
-ما هو دواء ضغط الدم؟,arabic,medications,dense,0.3,False,0.0,0.568,65
-ما هو دواء ضغط الدم؟,arabic,medications,hybrid,0.3,False,0.0,0.577,65
-ما هو دواء ضغط الدم؟,arabic,medications,hybrid_rerank,0.3,False,0.0,0.712,176
-كيف أتعامل مع مريض السكري؟,arabic,treatment,dense,0.9,True,0.9,0.575,482
-كيف أتعامل مع مريض السكري؟,arabic,treatment,hybrid,0.9,True,0.9,0.614,516
-كيف أتعامل مع مريض السكري؟,arabic,treatment,hybrid_rerank,0.9,True,0.9,0.961,532
-ما هي أعراض الجلطة القلبية؟,arabic,emergency,dense,0.3,False,0.0,0.561,139
-ما هي أعراض الجلطة القلبية؟,arabic,emergency,hybrid,0.3,False,0.0,0.561,135
-ما هي أعراض الجلطة القلبية؟,arabic,emergency,hybrid_rerank,0.9,True,0.9,0.926,421
-ما علاج التهاب المفاصل؟,arabic,treatment,dense,0.8,True,0.9,0.551,561
-ما علاج التهاب المفاصل؟,arabic,treatment,hybrid,0.3,False,0.0,0.59,143
-ما علاج التهاب المفاصل؟,arabic,treatment,hybrid_rerank,0.3,False,0.0,0.833,137
-فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,dense,0.9,True,0.9,0.654,591
-فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.654,625
-فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.909,607
-ما هي أسباب الصداع المزمن؟,arabic,causes,dense,0.3,False,0.0,0.577,167
-ما هي أسباب الصداع المزمن؟,arabic,causes,hybrid,0.3,True,0.8,0.586,714
-ما هي أسباب الصداع المزمن؟,arabic,causes,hybrid_rerank,0.3,False,0.0,0.786,167
-كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,dense,0.3,False,0.0,0.569,166
-كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,hybrid,0.3,False,0.0,0.569,143
-كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,hybrid_rerank,0.8,True,0.9,0.72,550
-ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,dense,0.3,False,0.0,0.622,152
-ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,hybrid,0.3,False,0.0,0.622,166
-ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.644,346
-ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,dense,0.3,False,0.0,0.421,154
-ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,hybrid,0.3,False,0.0,0.438,161
-ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,hybrid_rerank,0.3,False,0.0,0.5,156
-ما هي أعراض الغدة الدرقية؟,arabic,symptoms,dense,0.3,False,0.0,0.528,173
-ما هي أعراض الغدة الدرقية؟,arabic,symptoms,hybrid,0.3,False,0.0,0.528,146
-ما هي أعراض الغدة الدرقية؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.849,163
-كيف يتم علاج الاكتئاب؟,arabic,treatment,dense,0.9,True,0.9,0.611,770
-كيف يتم علاج الاكتئاب؟,arabic,treatment,hybrid,0.8,True,0.9,0.634,616
-كيف يتم علاج الاكتئاب؟,arabic,treatment,hybrid_rerank,0.8,True,0.9,0.672,695
-ما أسباب أمراض الكبد؟,arabic,causes,dense,0.3,False,0.0,0.583,570
-ما أسباب أمراض الكبد؟,arabic,causes,hybrid,0.8,True,0.9,0.583,355
-ما أسباب أمراض الكبد؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.908,630
-ما هو فحص الدم الشامل؟,arabic,diagnosis,dense,0.3,False,0.0,0.544,634
-ما هو فحص الدم الشامل؟,arabic,diagnosis,hybrid,0.3,False,0.0,0.544,782
-ما هو فحص الدم الشامل؟,arabic,diagnosis,hybrid_rerank,0.5,True,0.4,0.88,153
-كيف أقي نفسي من أمراض القلب؟,arabic,prevention,dense,0.5,True,0.4,0.575,679
-كيف أقي نفسي من أمراض القلب؟,arabic,prevention,hybrid,0.5,True,0.4,0.575,661
-كيف أقي نفسي من أمراض القلب؟,arabic,prevention,hybrid_rerank,0.5,True,0.4,0.694,408
-ما هي أعراض الأزمة القلبية؟,arabic,emergency,dense,0.5,True,0.4,0.592,430
-ما هي أعراض الأزمة القلبية؟,arabic,emergency,hybrid,0.5,True,0.4,0.592,362
-ما هي أعراض الأزمة القلبية؟,arabic,emergency,hybrid_rerank,0.9,True,0.9,0.699,390
-ما أنواع الإنسولين المتاحة؟,arabic,medications,dense,0.5,True,0.4,0.546,409
-ما أنواع الإنسولين المتاحة؟,arabic,medications,hybrid,0.5,True,0.4,0.546,413
-ما أنواع الإنسولين المتاحة؟,arabic,medications,hybrid_rerank,0.5,True,0.4,0.793,506
-كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,dense,0.5,True,0.4,0.634,540
-كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,hybrid,0.5,True,0.4,0.634,642
-كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,hybrid_rerank,0.5,True,0.4,0.664,464
-ما هي أعراض نقص Vitamin D؟,arabic,symptoms,dense,0.3,False,0.0,0.547,174
-ما هي أعراض نقص Vitamin D؟,arabic,symptoms,hybrid,0.5,True,0.4,0.549,131
-ما هي أعراض نقص Vitamin D؟,arabic,symptoms,hybrid_rerank,0.5,True,0.4,0.656,138
-ما العلاقة بين السمنة والأمراض؟,arabic,causes,dense,0.5,True,0.4,0.515,476
-ما العلاقة بين السمنة والأمراض؟,arabic,causes,hybrid,0.5,True,0.4,0.515,517
-ما العلاقة بين السمنة والأمراض؟,arabic,causes,hybrid_rerank,0.5,True,0.4,0.762,479
-كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,dense,0.5,True,0.4,0.518,156
-كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,hybrid,0.5,True,0.4,0.559,160
-كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,hybrid_rerank,0.5,True,0.4,0.82,160
-ما أعراض السكتة الدماغية؟,arabic,emergency,dense,0.3,False,0.0,0.549,134
-ما أعراض السكتة الدماغية؟,arabic,emergency,hybrid,0.5,True,0.4,0.549,137
-ما أعراض السكتة الدماغية؟,arabic,emergency,hybrid_rerank,0.5,True,0.4,0.67,135
-ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,dense,0.5,True,0.4,0.513,152
-ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,hybrid,0.5,True,0.4,0.513,152
-ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,hybrid_rerank,0.5,True,0.4,0.808,179
-كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,dense,0.5,True,0.4,0.638,684
-كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,hybrid,0.5,True,0.4,0.638,672
-كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,hybrid_rerank,0.5,True,0.4,0.602,601
-ما أضرار التدخين على الصحة؟,arabic,causes,dense,0.9,True,0.9,0.514,511
-ما أضرار التدخين على الصحة؟,arabic,causes,hybrid,0.5,True,0.4,0.514,506
-ما أضرار التدخين على الصحة؟,arabic,causes,hybrid_rerank,0.5,True,0.4,0.745,561
-ما هي أعراض مرض باركنسون؟,arabic,symptoms,dense,0.5,True,0.4,0.534,65
-ما هي أعراض مرض باركنسون؟,arabic,symptoms,hybrid,0.5,True,0.4,0.534,65
-ما هي أعراض مرض باركنسون؟,arabic,symptoms,hybrid_rerank,0.5,True,0.4,0.987,65
-كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,dense,0.5,True,0.4,0.525,146
-كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,hybrid,0.5,True,0.4,0.525,146
-كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,hybrid_rerank,0.5,True,0.4,1.0,151
-ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,dense,0.5,True,0.4,0.556,765
-ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.556,645
-ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,hybrid_rerank,0.5,True,0.4,0.657,788
-ما أسباب آلام البطن المتكررة؟,arabic,causes,dense,0.5,True,0.4,0.568,912
-ما أسباب آلام البطن المتكررة؟,arabic,causes,hybrid,0.5,True,0.4,0.568,791
-ما أسباب آلام البطن المتكررة؟,arabic,causes,hybrid_rerank,0.5,True,0.4,0.852,472
-كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,dense,0.3,False,0.0,0.566,569
-كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,hybrid,0.5,True,0.4,0.566,633
-كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,hybrid_rerank,0.5,True,0.4,0.698,511
-ما هي أعراض نقص الحديد؟,arabic,symptoms,dense,0.5,True,0.4,0.57,173
-ما هي أعراض نقص الحديد؟,arabic,symptoms,hybrid,0.5,True,0.4,0.572,146
-ما هي أعراض نقص الحديد؟,arabic,symptoms,hybrid_rerank,0.5,True,0.4,0.829,241
-ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,dense,0.5,True,0.4,0.569,562
-ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,hybrid,0.5,True,0.4,0.569,462
-ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,hybrid_rerank,0.8,True,0.9,0.905,827
-كيف أتعامل مع نوبة القلق؟,arabic,treatment,dense,0.5,True,0.4,0.56,519
-كيف أتعامل مع نوبة القلق؟,arabic,treatment,hybrid,0.5,True,0.4,0.56,677
-كيف أتعامل مع نوبة القلق؟,arabic,treatment,hybrid_rerank,0.5,True,0.4,0.658,641
-ما هي أعراض مرض الزهايمر؟,arabic,symptoms,dense,0.5,True,0.4,0.593,716
-ما هي أعراض مرض الزهايمر؟,arabic,symptoms,hybrid,0.5,True,0.4,0.593,576
-ما هي أعراض مرض الزهايمر؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.627,138
-ما هو فحص السكري العشوائي؟,arabic,diagnosis,dense,0.5,True,0.4,0.507,167
-ما هو فحص السكري العشوائي؟,arabic,diagnosis,hybrid,0.5,True,0.4,0.608,457
-ما هو فحص السكري العشوائي؟,arabic,diagnosis,hybrid_rerank,0.5,True,0.4,0.854,172
-ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,dense,0.5,True,0.4,0.554,65
-ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,hybrid,0.5,True,0.4,0.59,65
-ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,hybrid_rerank,0.5,True,0.4,0.649,208
-كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,dense,0.5,True,0.4,0.54,494
-كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,hybrid,0.5,True,0.4,0.54,516
-كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,hybrid_rerank,0.5,True,0.4,0.774,576
-ما أضرار كثرة السكريات على الصحة؟,arabic,causes,dense,0.9,True,0.9,0.581,440
-ما أضرار كثرة السكريات على الصحة؟,arabic,causes,hybrid,0.5,True,0.4,0.622,509
-ما أضرار كثرة السكريات على الصحة؟,arabic,causes,hybrid_rerank,0.5,True,0.4,0.915,431
-ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,dense,0.5,True,0.4,0.496,131
-ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,hybrid,0.5,True,0.4,0.501,163
-ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,hybrid_rerank,0.5,True,0.4,0.5,163
-كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,dense,0.5,True,0.4,0.521,148
-كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,hybrid,0.5,True,0.4,0.521,148
-كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,hybrid_rerank,0.5,True,0.4,0.834,174
-What are the symptoms of diabetes?,english,symptoms,dense,0.5,True,0.4,0.685,299
-What are the symptoms of diabetes?,english,symptoms,hybrid,0.5,True,0.4,0.685,498
-What are the symptoms of diabetes?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.75,396
-What is the treatment for hypertension?,english,treatment,dense,0.5,True,0.4,0.567,154
-What is the treatment for hypertension?,english,treatment,hybrid,0.5,True,0.4,0.567,154
-What is the treatment for hypertension?,english,treatment,hybrid_rerank,0.5,True,0.4,0.987,1211
-What causes heart failure?,english,causes,dense,0.5,True,0.4,0.629,609
-What causes heart failure?,english,causes,hybrid,0.9,True,0.9,0.629,521
-What causes heart failure?,english,causes,hybrid_rerank,0.5,True,0.4,0.876,475
-How is cancer diagnosed?,english,diagnosis,dense,0.5,True,0.4,0.633,451
-How is cancer diagnosed?,english,diagnosis,hybrid,0.5,True,0.4,0.633,651
-How is cancer diagnosed?,english,diagnosis,hybrid_rerank,0.5,True,0.4,0.659,640
-What are the symptoms of asthma?,english,symptoms,dense,0.3,False,0.0,0.591,145
-What are the symptoms of asthma?,english,symptoms,hybrid,0.5,True,0.4,0.591,133
-What are the symptoms of asthma?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.809,177
-How can infections be prevented?,english,prevention,dense,0.5,True,0.4,0.588,476
-How can infections be prevented?,english,prevention,hybrid,0.5,True,0.4,0.588,409
-How can infections be prevented?,english,prevention,hybrid_rerank,0.5,True,0.4,0.915,359
-What are the symptoms of anemia?,english,symptoms,dense,0.5,True,0.4,0.596,65
-What are the symptoms of anemia?,english,symptoms,hybrid,0.5,True,0.4,0.596,215
-What are the symptoms of anemia?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.802,291
-What is the treatment for headache?,english,treatment,dense,0.5,True,0.4,0.609,768
-What is the treatment for headache?,english,treatment,hybrid,0.5,True,0.4,0.609,590
-What is the treatment for headache?,english,treatment,hybrid_rerank,0.5,True,0.4,0.563,719
-What causes kidney disease?,english,causes,dense,0.5,True,0.4,0.621,719
-What causes kidney disease?,english,causes,hybrid,0.8,True,0.9,0.621,573
-What causes kidney disease?,english,causes,hybrid_rerank,0.5,True,0.4,0.74,594
-What are the different types of cancer?,english,diagnosis,dense,0.5,True,0.4,0.589,508
-What are the different types of cancer?,english,diagnosis,hybrid,0.5,True,0.4,0.589,477
-What are the different types of cancer?,english,diagnosis,hybrid_rerank,0.5,True,0.4,0.899,515
-"I have chest pain, what could it be?",english,symptoms,dense,0.5,True,0.4,0.608,838
-"I have chest pain, what could it be?",english,symptoms,hybrid,0.9,True,0.9,0.608,715
-"I have chest pain, what could it be?",english,symptoms,hybrid_rerank,0.5,True,0.4,0.708,566
-What are blood pressure medications?,english,medications,dense,0.5,True,0.4,0.569,172
-What are blood pressure medications?,english,medications,hybrid,0.5,True,0.4,0.569,132
-What are blood pressure medications?,english,medications,hybrid_rerank,0.5,True,0.4,0.819,802
-How do I manage diabetes?,english,treatment,dense,0.5,True,0.4,0.675,514
-How do I manage diabetes?,english,treatment,hybrid,0.9,True,0.9,0.675,622
-How do I manage diabetes?,english,treatment,hybrid_rerank,0.5,True,0.4,0.768,574
-What is the treatment for arthritis?,english,treatment,dense,0.5,True,0.4,0.57,134
-What is the treatment for arthritis?,english,treatment,hybrid,0.5,True,0.4,0.57,182
-What is the treatment for arthritis?,english,treatment,hybrid_rerank,0.5,True,0.4,0.824,139
-"My blood test shows high sugar, what does it mean?",english,diagnosis,dense,0.5,True,0.4,0.645,832
-"My blood test shows high sugar, what does it mean?",english,diagnosis,hybrid,0.9,True,0.9,0.645,860
-"My blood test shows high sugar, what does it mean?",english,diagnosis,hybrid_rerank,0.5,True,0.4,0.817,557
-What causes chronic headaches?,english,causes,dense,0.5,True,0.4,0.593,549
-What causes chronic headaches?,english,causes,hybrid,0.5,True,0.4,0.593,334
-What causes chronic headaches?,english,causes,hybrid_rerank,0.5,True,0.4,0.797,234
-How do I know if I have anemia?,english,diagnosis,dense,0.5,True,0.4,0.616,581
-How do I know if I have anemia?,english,diagnosis,hybrid,0.9,True,0.9,0.616,590
-How do I know if I have anemia?,english,diagnosis,hybrid_rerank,0.5,True,0.4,0.749,405
-What are the symptoms of high blood pressure?,english,symptoms,dense,0.5,True,0.4,0.595,175
-What are the symptoms of high blood pressure?,english,symptoms,hybrid,0.5,True,0.4,0.595,175
-What are the symptoms of high blood pressure?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.668,405
-What is the difference between benign and malignant tumors?,english,diagnosis,dense,0.5,True,0.4,0.526,530
-What is the difference between benign and malignant tumors?,english,diagnosis,hybrid,0.9,True,0.9,0.526,512
-What is the difference between benign and malignant tumors?,english,diagnosis,hybrid_rerank,0.5,True,0.4,0.639,516
-What are the symptoms of thyroid disease?,english,symptoms,dense,0.5,True,0.4,0.574,185
-What are the symptoms of thyroid disease?,english,symptoms,hybrid,0.5,True,0.4,0.574,173
-What are the symptoms of thyroid disease?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.559,201
-How is depression treated?,english,treatment,dense,0.5,True,0.4,0.644,551
-How is depression treated?,english,treatment,hybrid,0.5,True,0.4,0.644,755
-How is depression treated?,english,treatment,hybrid_rerank,0.9,True,0.9,0.867,658
-What causes liver disease?,english,causes,dense,0.5,True,0.4,0.61,644
-What causes liver disease?,english,causes,hybrid,0.5,True,0.4,0.61,420
-What causes liver disease?,english,causes,hybrid_rerank,0.5,True,0.4,0.792,471
-What is a complete blood count test?,english,diagnosis,dense,0.5,True,0.4,0.526,144
-What is a complete blood count test?,english,diagnosis,hybrid,0.5,True,0.4,0.526,145
-What is a complete blood count test?,english,diagnosis,hybrid_rerank,0.8,True,0.9,1.0,496
-How can I prevent heart disease?,english,prevention,dense,0.5,True,0.4,0.649,650
-How can I prevent heart disease?,english,prevention,hybrid,0.5,True,0.4,0.649,655
-How can I prevent heart disease?,english,prevention,hybrid_rerank,0.5,True,0.4,0.905,431
-What are the symptoms of a heart attack?,english,emergency,dense,0.5,True,0.4,0.631,583
-What are the symptoms of a heart attack?,english,emergency,hybrid,0.9,True,0.9,0.631,453
-What are the symptoms of a heart attack?,english,emergency,hybrid_rerank,0.5,True,0.4,0.622,368
-What types of insulin are available?,english,medications,dense,0.5,True,0.4,0.585,428
-What types of insulin are available?,english,medications,hybrid,0.5,True,0.4,0.585,564
-What types of insulin are available?,english,medications,hybrid_rerank,0.5,True,0.4,0.773,636
-How is cardiac catheterization performed?,english,procedures,dense,0.3,False,0.0,0.721,579
-How is cardiac catheterization performed?,english,procedures,hybrid,0.5,True,0.4,0.721,594
-How is cardiac catheterization performed?,english,procedures,hybrid_rerank,0.5,True,0.4,0.944,543
-What are symptoms of Vitamin D deficiency?,english,symptoms,dense,0.5,True,0.4,0.566,143
-What are symptoms of Vitamin D deficiency?,english,symptoms,hybrid,0.5,True,0.4,0.566,143
-What are symptoms of Vitamin D deficiency?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.665,133
-What is the relationship between obesity and disease?,english,causes,dense,0.5,True,0.4,0.531,343
-What is the relationship between obesity and disease?,english,causes,hybrid,0.3,False,0.5,0.531,328
-What is the relationship between obesity and disease?,english,causes,hybrid_rerank,0.5,True,0.4,0.632,529
-How do I handle an asthma attack?,english,treatment,dense,0.5,True,0.4,0.583,165
-How do I handle an asthma attack?,english,treatment,hybrid,0.5,True,0.4,0.583,167
-How do I handle an asthma attack?,english,treatment,hybrid_rerank,0.5,True,0.4,0.743,192
-What are the symptoms of a stroke?,english,emergency,dense,0.5,True,0.4,0.574,334
-What are the symptoms of a stroke?,english,emergency,hybrid,0.5,True,0.4,0.574,292
-What are the symptoms of a stroke?,english,emergency,hybrid_rerank,0.9,True,0.9,0.664,322
-What are the benefits of breastfeeding?,english,nutrition,dense,0.5,True,0.4,0.516,136
-What are the benefits of breastfeeding?,english,nutrition,hybrid,0.5,True,0.4,0.516,141
-What are the benefits of breastfeeding?,english,nutrition,hybrid_rerank,0.5,True,0.4,0.637,189
-How do I know if my child has a fever?,english,diagnosis,dense,0.5,True,0.4,0.655,704
-How do I know if my child has a fever?,english,diagnosis,hybrid,0.5,True,0.4,0.655,530
-How do I know if my child has a fever?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.686,678
-What are the health effects of smoking?,english,causes,dense,0.5,True,0.4,0.534,502
-What are the health effects of smoking?,english,causes,hybrid,0.5,True,0.4,0.534,513
-What are the health effects of smoking?,english,causes,hybrid_rerank,0.5,True,0.4,0.673,575
-What are the symptoms of Parkinson's disease?,english,symptoms,dense,0.5,True,0.4,0.569,65
-What are the symptoms of Parkinson's disease?,english,symptoms,hybrid,0.5,True,0.4,0.569,517
-What are the symptoms of Parkinson's disease?,english,symptoms,hybrid_rerank,0.8,True,0.9,0.578,609
-How is COVID-19 treated?,english,treatment,dense,0.5,True,0.4,0.518,65
-How is COVID-19 treated?,english,treatment,hybrid,0.5,True,0.4,0.518,65
-How is COVID-19 treated?,english,treatment,hybrid_rerank,0.5,True,0.4,0.654,143
-What is the difference between flu and cold?,english,diagnosis,dense,0.5,True,0.4,0.528,675
-What is the difference between flu and cold?,english,diagnosis,hybrid,0.5,True,0.4,0.528,622
-What is the difference between flu and cold?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.518,412
-What causes recurring abdominal pain?,english,causes,dense,0.5,True,0.4,0.564,490
-What causes recurring abdominal pain?,english,causes,hybrid,0.5,True,0.4,0.564,505
-What causes recurring abdominal pain?,english,causes,hybrid_rerank,0.5,True,0.4,0.9,456
-How do I care for a wound after surgery?,english,treatment,dense,0.5,True,0.4,0.585,458
-How do I care for a wound after surgery?,english,treatment,hybrid,0.5,True,0.4,0.585,613
-How do I care for a wound after surgery?,english,treatment,hybrid_rerank,0.9,True,0.9,0.797,657
-What are the symptoms of iron deficiency?,english,symptoms,dense,0.5,True,0.4,0.581,180
-What are the symptoms of iron deficiency?,english,symptoms,hybrid,0.5,True,0.4,0.581,326
-What are the symptoms of iron deficiency?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.921,198
-What is a heart-healthy diet?,english,nutrition,dense,0.5,True,0.4,0.584,510
-What is a heart-healthy diet?,english,nutrition,hybrid,0.5,True,0.4,0.584,590
-What is a heart-healthy diet?,english,nutrition,hybrid_rerank,0.9,True,0.9,0.716,551
-How do I handle an anxiety attack?,english,treatment,dense,0.5,True,0.4,0.56,627
-How do I handle an anxiety attack?,english,treatment,hybrid,0.5,True,0.4,0.56,583
-How do I handle an anxiety attack?,english,treatment,hybrid_rerank,0.5,True,0.4,0.741,622
-What are the symptoms of Alzheimer's disease?,english,symptoms,dense,0.5,True,0.4,0.642,322
-What are the symptoms of Alzheimer's disease?,english,symptoms,hybrid,0.9,True,0.9,0.642,391
-What are the symptoms of Alzheimer's disease?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.809,346
-What is a random blood sugar test?,english,diagnosis,dense,0.5,True,0.4,0.543,155
-What is a random blood sugar test?,english,diagnosis,hybrid,0.5,True,0.4,0.543,159
-What is a random blood sugar test?,english,diagnosis,hybrid_rerank,0.5,True,0.4,0.556,159
-What are the symptoms of urinary tract infection?,english,symptoms,dense,0.5,True,0.4,0.613,397
-What are the symptoms of urinary tract infection?,english,symptoms,hybrid,0.5,True,0.4,0.613,364
-What are the symptoms of urinary tract infection?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.978,378
-How can I prevent osteoporosis?,english,prevention,dense,0.5,True,0.4,0.568,559
-How can I prevent osteoporosis?,english,prevention,hybrid,0.5,True,0.4,0.568,554
-How can I prevent osteoporosis?,english,prevention,hybrid_rerank,0.5,True,0.4,0.546,567
-What are the health harms of excessive sugar?,english,causes,dense,0.5,True,0.4,0.542,428
-What are the health harms of excessive sugar?,english,causes,hybrid,0.9,True,0.9,0.542,649
-What are the health harms of excessive sugar?,english,causes,hybrid_rerank,0.5,True,0.4,0.731,615
-What are the symptoms of sickle cell anemia?,english,symptoms,dense,0.5,True,0.4,0.571,65
-What are the symptoms of sickle cell anemia?,english,symptoms,hybrid,0.5,True,0.4,0.571,65
-What are the symptoms of sickle cell anemia?,english,symptoms,hybrid_rerank,0.5,True,0.4,0.914,366
-How do I start breastfeeding?,english,procedures,dense,0.5,True,0.4,0.521,206
-How do I start breastfeeding?,english,procedures,hybrid,0.5,True,0.4,0.521,179
-How do I start breastfeeding?,english,procedures,hybrid_rerank,0.5,True,0.4,1.0,669
+ما هي أعراض مرض السكري؟,arabic,symptoms,dense,0.9,True,0.9,0.608,342
+ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid,0.9,True,0.9,0.63,315
+ما هي أعراض مرض السكري؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.745,398
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,dense,0.9,True,0.9,0.591,561
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid,0.9,True,0.9,0.591,403
+ما هو علاج ارتفاع ضغط الدم؟,arabic,treatment,hybrid_rerank,0.9,True,0.9,0.572,624
+ما أسباب فشل القلب؟,arabic,causes,dense,0.8,True,0.9,0.596,834
+ما أسباب فشل القلب؟,arabic,causes,hybrid,0.8,True,0.9,0.596,623
+ما أسباب فشل القلب؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.661,396
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,dense,0.9,True,0.9,0.624,625
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.624,808
+كيف يتم تشخيص السرطان؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.784,663
+ما أعراض الربو؟,arabic,symptoms,dense,0.3,False,0.0,0.532,123
+ما أعراض الربو؟,arabic,symptoms,hybrid,0.3,False,0.0,0.559,123
+ما أعراض الربو؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.847,123
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,dense,0.9,True,0.9,0.572,850
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid,0.9,True,0.9,0.572,512
+كيف يمكن الوقاية من العدوى؟,arabic,prevention,hybrid_rerank,0.3,False,0.5,0.715,442
+ما هي أعراض فقر الدم؟,arabic,symptoms,dense,0.3,False,0.0,0.583,123
+ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid,0.3,False,0.0,0.583,123
+ما هي أعراض فقر الدم؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.807,123
+ما علاج الصداع؟,arabic,treatment,dense,0.3,False,0.0,0.581,123
+ما علاج الصداع؟,arabic,treatment,hybrid,0.8,True,0.9,0.591,743
+ما علاج الصداع؟,arabic,treatment,hybrid_rerank,0.8,True,0.9,0.663,714
+ما أسباب أمراض الكلى؟,arabic,causes,dense,0.9,True,0.9,0.562,441
+ما أسباب أمراض الكلى؟,arabic,causes,hybrid,0.9,True,0.9,0.562,370
+ما أسباب أمراض الكلى؟,arabic,causes,hybrid_rerank,0.3,False,0.0,0.614,123
+ما أنواع السرطان المختلفة؟,arabic,diagnosis,dense,0.9,True,0.9,0.56,568
+ما أنواع السرطان المختلفة؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.579,524
+ما أنواع السرطان المختلفة؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.758,559
+أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,dense,0.8,True,0.9,0.564,634
+أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,hybrid,0.8,True,0.9,0.582,429
+أعاني من ألم في صدري، ما السبب؟,arabic,symptoms,hybrid_rerank,0.8,True,0.9,0.599,619
+ما هو دواء ضغط الدم؟,arabic,medications,dense,0.3,False,0.0,0.568,123
+ما هو دواء ضغط الدم؟,arabic,medications,hybrid,0.3,False,0.0,0.577,123
+ما هو دواء ضغط الدم؟,arabic,medications,hybrid_rerank,0.3,False,0.0,0.712,123
+كيف أتعامل مع مريض السكري؟,arabic,treatment,dense,0.9,True,0.9,0.575,685
+كيف أتعامل مع مريض السكري؟,arabic,treatment,hybrid,0.8,True,0.9,0.614,555
+كيف أتعامل مع مريض السكري؟,arabic,treatment,hybrid_rerank,0.9,True,0.9,0.961,576
+ما هي أعراض الجلطة القلبية؟,arabic,emergency,dense,0.3,False,0.0,0.561,123
+ما هي أعراض الجلطة القلبية؟,arabic,emergency,hybrid,0.3,False,0.0,0.561,123
+ما هي أعراض الجلطة القلبية؟,arabic,emergency,hybrid_rerank,0.9,True,0.9,0.926,596
+ما علاج التهاب المفاصل؟,arabic,treatment,dense,0.3,False,0.0,0.551,123
+ما علاج التهاب المفاصل؟,arabic,treatment,hybrid,0.3,False,0.0,0.59,123
+ما علاج التهاب المفاصل؟,arabic,treatment,hybrid_rerank,0.3,False,0.0,0.833,123
+فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,dense,0.9,True,0.9,0.654,393
+فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.654,688
+فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.909,646
+ما هي أسباب الصداع المزمن؟,arabic,causes,dense,0.3,False,0.0,0.577,123
+ما هي أسباب الصداع المزمن؟,arabic,causes,hybrid,0.8,True,0.9,0.595,428
+ما هي أسباب الصداع المزمن؟,arabic,causes,hybrid_rerank,0.3,False,0.0,0.837,123
+كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,dense,0.3,False,0.0,0.569,123
+كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,hybrid,0.3,False,0.0,0.569,123
+كيف أعرف إذا كان لدي فقر دم؟,arabic,diagnosis,hybrid_rerank,0.8,True,0.9,0.72,557
+ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,dense,0.3,False,0.0,0.622,123
+ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,hybrid,0.3,False,0.0,0.622,123
+ما أعراض ارتفاع ضغط الدم؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.644,386
+ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,dense,0.3,False,0.0,0.421,123
+ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,hybrid,0.3,False,0.0,0.438,123
+ما الفرق بين الأورام الحميدة والخبيثة؟,arabic,diagnosis,hybrid_rerank,0.3,False,0.0,0.5,123
+ما هي أعراض الغدة الدرقية؟,arabic,symptoms,dense,0.3,False,0.0,0.528,123
+ما هي أعراض الغدة الدرقية؟,arabic,symptoms,hybrid,0.3,False,0.0,0.528,123
+ما هي أعراض الغدة الدرقية؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.849,123
+كيف يتم علاج الاكتئاب؟,arabic,treatment,dense,0.9,True,0.9,0.611,723
+كيف يتم علاج الاكتئاب؟,arabic,treatment,hybrid,0.8,True,0.9,0.634,753
+كيف يتم علاج الاكتئاب؟,arabic,treatment,hybrid_rerank,0.8,True,0.9,0.672,780
+ما أسباب أمراض الكبد؟,arabic,causes,dense,0.7,True,0.9,0.583,509
+ما أسباب أمراض الكبد؟,arabic,causes,hybrid,0.8,True,0.9,0.583,449
+ما أسباب أمراض الكبد؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.908,705
+ما هو فحص الدم الشامل؟,arabic,diagnosis,dense,0.3,False,0.0,0.544,123
+ما هو فحص الدم الشامل؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.544,654
+ما هو فحص الدم الشامل؟,arabic,diagnosis,hybrid_rerank,0.3,False,0.0,0.88,123
+كيف أقي نفسي من أمراض القلب؟,arabic,prevention,dense,0.9,True,0.9,0.575,747
+كيف أقي نفسي من أمراض القلب؟,arabic,prevention,hybrid,0.9,True,0.9,0.575,751
+كيف أقي نفسي من أمراض القلب؟,arabic,prevention,hybrid_rerank,0.9,True,0.9,0.694,721
+ما هي أعراض الأزمة القلبية؟,arabic,emergency,dense,0.3,False,0.0,0.592,451
+ما هي أعراض الأزمة القلبية؟,arabic,emergency,hybrid,0.3,False,0.0,0.592,252
+ما هي أعراض الأزمة القلبية؟,arabic,emergency,hybrid_rerank,0.8,True,0.9,0.699,374
+ما أنواع الإنسولين المتاحة؟,arabic,medications,dense,0.9,True,0.9,0.546,488
+ما أنواع الإنسولين المتاحة؟,arabic,medications,hybrid,0.9,True,0.9,0.546,410
+ما أنواع الإنسولين المتاحة؟,arabic,medications,hybrid_rerank,0.8,True,0.9,0.793,413
+كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,dense,0.9,True,0.9,0.634,525
+كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,hybrid,0.9,True,0.9,0.634,608
+كيف يتم إجراء عملية القسطرة القلبية؟,arabic,procedures,hybrid_rerank,0.9,True,0.9,0.664,605
+ما هي أعراض نقص Vitamin D؟,arabic,symptoms,dense,0.3,False,0.0,0.547,123
+ما هي أعراض نقص Vitamin D؟,arabic,symptoms,hybrid,0.3,False,0.0,0.549,123
+ما هي أعراض نقص Vitamin D؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.656,123
+ما العلاقة بين السمنة والأمراض؟,arabic,causes,dense,0.5,True,0.4,0.515,575
+ما العلاقة بين السمنة والأمراض؟,arabic,causes,hybrid,0.3,False,0.0,0.515,644
+ما العلاقة بين السمنة والأمراض؟,arabic,causes,hybrid_rerank,0.3,False,0.8,0.762,321
+كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,dense,0.3,False,0.0,0.518,123
+كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,hybrid,0.3,False,0.0,0.559,123
+كيف أتعامل مع الربو أثناء النوبة؟,arabic,treatment,hybrid_rerank,0.3,False,0.0,0.82,123
+ما أعراض السكتة الدماغية؟,arabic,emergency,dense,0.3,False,0.0,0.549,123
+ما أعراض السكتة الدماغية؟,arabic,emergency,hybrid,0.3,False,0.0,0.549,123
+ما أعراض السكتة الدماغية؟,arabic,emergency,hybrid_rerank,0.3,False,0.0,0.67,123
+ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,dense,0.3,False,0.0,0.513,123
+ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,hybrid,0.3,False,0.0,0.513,123
+ما فوائد الرضاعة الطبيعية؟,arabic,nutrition,hybrid_rerank,0.3,False,0.0,0.808,123
+كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,dense,0.9,True,0.9,0.638,910
+كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.638,841
+كيف أعرف إذا كان طفلي مصاباً بالح fever؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.602,1059
+ما أضرار التدخين على الصحة؟,arabic,causes,dense,0.9,True,0.9,0.514,579
+ما أضرار التدخين على الصحة؟,arabic,causes,hybrid,0.9,True,0.9,0.514,614
+ما أضرار التدخين على الصحة؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.745,982
+ما هي أعراض مرض باركنسون؟,arabic,symptoms,dense,0.3,False,0.0,0.534,123
+ما هي أعراض مرض باركنسون؟,arabic,symptoms,hybrid,0.3,False,0.0,0.534,123
+ما هي أعراض مرض باركنسون؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.987,123
+كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,dense,0.3,False,0.0,0.525,123
+كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,hybrid,0.3,False,0.0,0.525,123
+كيف يتم علاج فيروس كوفيد-19؟,arabic,treatment,hybrid_rerank,0.3,False,0.0,1.0,123
+ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,dense,0.9,True,0.9,0.556,771
+ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,hybrid,0.8,True,0.9,0.556,887
+ما الفرق بين流感 و نزلة البرد؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.657,805
+ما أسباب آلام البطن المتكررة؟,arabic,causes,dense,0.9,True,0.9,0.568,642
+ما أسباب آلام البطن المتكررة؟,arabic,causes,hybrid,0.8,True,0.9,0.568,589
+ما أسباب آلام البطن المتكررة؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.852,715
+كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,dense,0.3,False,0.0,0.566,604
+كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,hybrid,0.3,False,0.0,0.566,624
+كيف أعتني بالجرح بعد العملية الجراحية؟,arabic,treatment,hybrid_rerank,0.9,True,0.9,0.698,638
+ما هي أعراض نقص الحديد؟,arabic,symptoms,dense,0.3,False,0.0,0.57,123
+ما هي أعراض نقص الحديد؟,arabic,symptoms,hybrid,0.3,False,0.0,0.572,123
+ما هي أعراض نقص الحديد؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.829,251
+ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,dense,0.9,True,0.9,0.569,369
+ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,hybrid,0.9,True,0.9,0.569,405
+ما هو النظام الغذائي الصحي للقلب؟,arabic,nutrition,hybrid_rerank,0.9,True,0.9,0.905,737
+كيف أتعامل مع نوبة القلق؟,arabic,treatment,dense,0.9,True,0.9,0.56,494
+كيف أتعامل مع نوبة القلق؟,arabic,treatment,hybrid,0.8,True,0.9,0.56,548
+كيف أتعامل مع نوبة القلق؟,arabic,treatment,hybrid_rerank,0.8,True,0.9,0.658,569
+ما هي أعراض مرض الزهايمر؟,arabic,symptoms,dense,0.9,True,0.9,0.593,794
+ما هي أعراض مرض الزهايمر؟,arabic,symptoms,hybrid,0.9,True,0.9,0.593,688
+ما هي أعراض مرض الزهايمر؟,arabic,symptoms,hybrid_rerank,0.9,True,0.9,0.627,404
+ما هو فحص السكري العشوائي؟,arabic,diagnosis,dense,0.9,True,0.9,0.507,460
+ما هو فحص السكري العشوائي؟,arabic,diagnosis,hybrid,0.9,True,0.9,0.608,463
+ما هو فحص السكري العشوائي؟,arabic,diagnosis,hybrid_rerank,0.9,True,0.9,0.854,413
+ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,dense,0.3,False,0.0,0.554,123
+ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,hybrid,0.3,False,0.0,0.59,123
+ما هي أعراض التهابات المسالك البولية؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.649,123
+كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,dense,0.9,True,0.9,0.54,668
+كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,hybrid,0.8,True,0.9,0.54,495
+كيف أقي نفسي من هشاشة العظام؟,arabic,prevention,hybrid_rerank,0.7,True,0.9,0.774,762
+ما أضرار كثرة السكريات على الصحة؟,arabic,causes,dense,0.9,True,0.9,0.581,644
+ما أضرار كثرة السكريات على الصحة؟,arabic,causes,hybrid,0.9,True,0.9,0.622,660
+ما أضرار كثرة السكريات على الصحة؟,arabic,causes,hybrid_rerank,0.9,True,0.9,0.915,687
+ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,dense,0.3,False,0.0,0.496,123
+ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,hybrid,0.3,False,0.0,0.501,123
+ما هي أعراض الأنيميا المنجلية؟,arabic,symptoms,hybrid_rerank,0.3,False,0.0,0.5,123
+كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,dense,0.3,False,0.0,0.521,123
+كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,hybrid,0.3,False,0.0,0.521,123
+كيف أبدأ الرضاعة الطبيعية؟,arabic,procedures,hybrid_rerank,0.3,False,0.0,0.834,123
+What are the symptoms of diabetes?,english,symptoms,dense,0.9,True,0.9,0.685,342
+What are the symptoms of diabetes?,english,symptoms,hybrid,0.9,True,0.9,0.685,345
+What are the symptoms of diabetes?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.75,322
+What is the treatment for hypertension?,english,treatment,dense,0.3,False,0.0,0.567,123
+What is the treatment for hypertension?,english,treatment,hybrid,0.3,False,0.0,0.567,123
+What is the treatment for hypertension?,english,treatment,hybrid_rerank,0.8,True,0.9,0.987,460
+What causes heart failure?,english,causes,dense,0.8,True,0.9,0.629,657
+What causes heart failure?,english,causes,hybrid,0.9,True,0.9,0.629,755
+What causes heart failure?,english,causes,hybrid_rerank,0.9,True,0.9,0.876,593
+How is cancer diagnosed?,english,diagnosis,dense,0.9,True,0.9,0.633,760
+How is cancer diagnosed?,english,diagnosis,hybrid,0.9,True,0.9,0.633,707
+How is cancer diagnosed?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.659,547
+What are the symptoms of asthma?,english,symptoms,dense,0.3,False,0.0,0.591,123
+What are the symptoms of asthma?,english,symptoms,hybrid,0.3,False,0.0,0.591,123
+What are the symptoms of asthma?,english,symptoms,hybrid_rerank,0.3,False,0.0,0.809,313
+How can infections be prevented?,english,prevention,dense,0.9,True,0.9,0.588,395
+How can infections be prevented?,english,prevention,hybrid,0.9,True,0.9,0.588,558
+How can infections be prevented?,english,prevention,hybrid_rerank,0.9,True,0.9,0.915,444
+What are the symptoms of anemia?,english,symptoms,dense,0.3,False,0.0,0.596,123
+What are the symptoms of anemia?,english,symptoms,hybrid,0.3,False,0.0,0.596,330
+What are the symptoms of anemia?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.802,234
+What is the treatment for headache?,english,treatment,dense,0.9,True,0.9,0.609,772
+What is the treatment for headache?,english,treatment,hybrid,0.8,True,0.9,0.609,796
+What is the treatment for headache?,english,treatment,hybrid_rerank,0.9,True,0.9,0.563,855
+What causes kidney disease?,english,causes,dense,0.9,True,0.9,0.621,637
+What causes kidney disease?,english,causes,hybrid,0.9,True,0.9,0.621,562
+What causes kidney disease?,english,causes,hybrid_rerank,0.9,True,0.9,0.74,636
+What are the different types of cancer?,english,diagnosis,dense,0.9,True,0.9,0.589,562
+What are the different types of cancer?,english,diagnosis,hybrid,0.9,True,0.9,0.589,489
+What are the different types of cancer?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.899,479
+"I have chest pain, what could it be?",english,symptoms,dense,0.9,True,0.9,0.608,669
+"I have chest pain, what could it be?",english,symptoms,hybrid,0.9,True,0.9,0.608,820
+"I have chest pain, what could it be?",english,symptoms,hybrid_rerank,0.9,True,0.9,0.708,605
+What are blood pressure medications?,english,medications,dense,0.3,False,0.0,0.569,584
+What are blood pressure medications?,english,medications,hybrid,0.8,True,0.9,0.569,702
+What are blood pressure medications?,english,medications,hybrid_rerank,0.9,True,0.9,0.819,749
+How do I manage diabetes?,english,treatment,dense,0.9,True,0.9,0.675,974
+How do I manage diabetes?,english,treatment,hybrid,0.9,True,0.9,0.675,895
+How do I manage diabetes?,english,treatment,hybrid_rerank,0.9,True,0.9,0.768,642
+What is the treatment for arthritis?,english,treatment,dense,0.3,False,0.0,0.57,123
+What is the treatment for arthritis?,english,treatment,hybrid,0.3,False,0.0,0.57,123
+What is the treatment for arthritis?,english,treatment,hybrid_rerank,0.3,False,0.0,0.824,123
+"My blood test shows high sugar, what does it mean?",english,diagnosis,dense,0.9,True,0.9,0.645,574
+"My blood test shows high sugar, what does it mean?",english,diagnosis,hybrid,0.9,True,0.9,0.645,515
+"My blood test shows high sugar, what does it mean?",english,diagnosis,hybrid_rerank,0.9,True,0.9,0.817,613
+What causes chronic headaches?,english,causes,dense,0.8,True,0.9,0.593,444
+What causes chronic headaches?,english,causes,hybrid,0.8,True,0.9,0.593,687
+What causes chronic headaches?,english,causes,hybrid_rerank,0.8,True,0.9,0.797,602
+How do I know if I have anemia?,english,diagnosis,dense,0.8,True,0.9,0.616,497
+How do I know if I have anemia?,english,diagnosis,hybrid,0.9,True,0.9,0.616,405
+How do I know if I have anemia?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.749,633
+What are the symptoms of high blood pressure?,english,symptoms,dense,0.3,False,0.0,0.595,123
+What are the symptoms of high blood pressure?,english,symptoms,hybrid,0.3,False,0.0,0.595,123
+What are the symptoms of high blood pressure?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.668,363
+What is the difference between benign and malignant tumors?,english,diagnosis,dense,0.9,True,0.9,0.526,782
+What is the difference between benign and malignant tumors?,english,diagnosis,hybrid,0.9,True,0.9,0.526,561
+What is the difference between benign and malignant tumors?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.639,740
+What are the symptoms of thyroid disease?,english,symptoms,dense,0.3,False,0.0,0.574,123
+What are the symptoms of thyroid disease?,english,symptoms,hybrid,0.3,False,0.0,0.574,123
+What are the symptoms of thyroid disease?,english,symptoms,hybrid_rerank,0.3,False,0.0,0.559,123
+How is depression treated?,english,treatment,dense,0.9,True,0.9,0.644,685
+How is depression treated?,english,treatment,hybrid,0.9,True,0.9,0.644,726
+How is depression treated?,english,treatment,hybrid_rerank,0.9,True,0.9,0.867,729
+What causes liver disease?,english,causes,dense,0.9,True,0.9,0.61,427
+What causes liver disease?,english,causes,hybrid,0.9,True,0.9,0.61,464
+What causes liver disease?,english,causes,hybrid_rerank,0.9,True,0.9,0.792,444
+What is a complete blood count test?,english,diagnosis,dense,0.3,False,0.0,0.526,123
+What is a complete blood count test?,english,diagnosis,hybrid,0.3,False,0.0,0.526,123
+What is a complete blood count test?,english,diagnosis,hybrid_rerank,0.9,True,0.9,1.0,476
+How can I prevent heart disease?,english,prevention,dense,0.9,True,0.9,0.649,710
+How can I prevent heart disease?,english,prevention,hybrid,0.9,True,0.9,0.649,853
+How can I prevent heart disease?,english,prevention,hybrid_rerank,0.9,True,0.9,0.905,713
+What are the symptoms of a heart attack?,english,emergency,dense,0.9,True,0.9,0.631,413
+What are the symptoms of a heart attack?,english,emergency,hybrid,0.9,True,0.9,0.631,433
+What are the symptoms of a heart attack?,english,emergency,hybrid_rerank,0.9,True,0.9,0.622,424
+What types of insulin are available?,english,medications,dense,0.9,True,0.9,0.585,425
+What types of insulin are available?,english,medications,hybrid,0.9,True,0.9,0.585,409
+What types of insulin are available?,english,medications,hybrid_rerank,0.9,True,0.9,0.773,428
+How is cardiac catheterization performed?,english,procedures,dense,0.9,True,0.9,0.721,515
+How is cardiac catheterization performed?,english,procedures,hybrid,0.9,True,0.9,0.721,549
+How is cardiac catheterization performed?,english,procedures,hybrid_rerank,0.9,True,0.9,0.944,520
+What are symptoms of Vitamin D deficiency?,english,symptoms,dense,0.3,False,0.0,0.566,123
+What are symptoms of Vitamin D deficiency?,english,symptoms,hybrid,0.3,False,0.0,0.566,123
+What are symptoms of Vitamin D deficiency?,english,symptoms,hybrid_rerank,0.3,False,0.0,0.665,123
+What is the relationship between obesity and disease?,english,causes,dense,0.3,False,0.8,0.531,326
+What is the relationship between obesity and disease?,english,causes,hybrid,0.3,False,0.5,0.531,327
+What is the relationship between obesity and disease?,english,causes,hybrid_rerank,0.8,True,0.9,0.632,523
+How do I handle an asthma attack?,english,treatment,dense,0.3,False,0.0,0.583,123
+How do I handle an asthma attack?,english,treatment,hybrid,0.3,False,0.0,0.583,123
+How do I handle an asthma attack?,english,treatment,hybrid_rerank,0.3,False,0.0,0.743,123
+What are the symptoms of a stroke?,english,emergency,dense,0.9,True,0.9,0.574,297
+What are the symptoms of a stroke?,english,emergency,hybrid,0.9,True,0.9,0.574,299
+What are the symptoms of a stroke?,english,emergency,hybrid_rerank,0.9,True,0.9,0.664,303
+What are the benefits of breastfeeding?,english,nutrition,dense,0.9,True,0.9,0.516,491
+What are the benefits of breastfeeding?,english,nutrition,hybrid,0.9,True,0.9,0.516,446
+What are the benefits of breastfeeding?,english,nutrition,hybrid_rerank,0.3,False,0.8,0.637,314
+How do I know if my child has a fever?,english,diagnosis,dense,0.9,True,0.9,0.655,834
+How do I know if my child has a fever?,english,diagnosis,hybrid,0.9,True,0.9,0.655,819
+How do I know if my child has a fever?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.686,790
+What are the health effects of smoking?,english,causes,dense,0.9,True,0.9,0.534,556
+What are the health effects of smoking?,english,causes,hybrid,0.9,True,0.9,0.534,623
+What are the health effects of smoking?,english,causes,hybrid_rerank,0.9,True,0.9,0.673,608
+What are the symptoms of Parkinson's disease?,english,symptoms,dense,0.3,False,0.0,0.569,123
+What are the symptoms of Parkinson's disease?,english,symptoms,hybrid,0.3,False,0.0,0.569,820
+What are the symptoms of Parkinson's disease?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.578,569
+How is COVID-19 treated?,english,treatment,dense,0.3,False,0.0,0.518,123
+How is COVID-19 treated?,english,treatment,hybrid,0.3,False,0.0,0.518,123
+How is COVID-19 treated?,english,treatment,hybrid_rerank,0.3,False,0.0,0.654,123
+What is the difference between flu and cold?,english,diagnosis,dense,0.9,True,0.9,0.528,604
+What is the difference between flu and cold?,english,diagnosis,hybrid,0.9,True,0.9,0.528,673
+What is the difference between flu and cold?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.518,688
+What causes recurring abdominal pain?,english,causes,dense,0.9,True,0.9,0.564,475
+What causes recurring abdominal pain?,english,causes,hybrid,0.8,True,0.9,0.564,591
+What causes recurring abdominal pain?,english,causes,hybrid_rerank,0.9,True,0.9,0.9,237
+How do I care for a wound after surgery?,english,treatment,dense,0.8,True,0.9,0.585,602
+How do I care for a wound after surgery?,english,treatment,hybrid,0.9,True,0.9,0.585,998
+How do I care for a wound after surgery?,english,treatment,hybrid_rerank,0.9,True,0.9,0.797,644
+What are the symptoms of iron deficiency?,english,symptoms,dense,0.9,True,0.9,0.581,331
+What are the symptoms of iron deficiency?,english,symptoms,hybrid,0.9,True,0.9,0.581,353
+What are the symptoms of iron deficiency?,english,symptoms,hybrid_rerank,0.3,False,0.8,0.921,358
+What is a heart-healthy diet?,english,nutrition,dense,0.9,True,0.9,0.584,517
+What is a heart-healthy diet?,english,nutrition,hybrid,0.9,True,0.9,0.584,579
+What is a heart-healthy diet?,english,nutrition,hybrid_rerank,0.9,True,0.9,0.716,834
+How do I handle an anxiety attack?,english,treatment,dense,0.9,True,0.9,0.56,565
+How do I handle an anxiety attack?,english,treatment,hybrid,0.9,True,0.9,0.56,468
+How do I handle an anxiety attack?,english,treatment,hybrid_rerank,0.9,True,0.9,0.741,621
+What are the symptoms of Alzheimer's disease?,english,symptoms,dense,0.9,True,0.9,0.642,742
+What are the symptoms of Alzheimer's disease?,english,symptoms,hybrid,0.9,True,0.9,0.642,681
+What are the symptoms of Alzheimer's disease?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.809,374
+What is a random blood sugar test?,english,diagnosis,dense,0.3,False,0.0,0.543,123
+What is a random blood sugar test?,english,diagnosis,hybrid,0.3,False,0.0,0.543,123
+What is a random blood sugar test?,english,diagnosis,hybrid_rerank,0.9,True,0.9,0.556,460
+What are the symptoms of urinary tract infection?,english,symptoms,dense,0.9,True,0.9,0.613,387
+What are the symptoms of urinary tract infection?,english,symptoms,hybrid,0.9,True,0.9,0.613,445
+What are the symptoms of urinary tract infection?,english,symptoms,hybrid_rerank,0.9,True,0.9,0.978,421
+How can I prevent osteoporosis?,english,prevention,dense,0.9,True,0.9,0.568,585
+How can I prevent osteoporosis?,english,prevention,hybrid,0.9,True,0.9,0.568,585
+How can I prevent osteoporosis?,english,prevention,hybrid_rerank,0.9,True,0.9,0.546,581
+What are the health harms of excessive sugar?,english,causes,dense,0.9,True,0.9,0.542,727
+What are the health harms of excessive sugar?,english,causes,hybrid,0.9,True,0.9,0.542,524
+What are the health harms of excessive sugar?,english,causes,hybrid_rerank,0.9,True,0.9,0.731,624
+What are the symptoms of sickle cell anemia?,english,symptoms,dense,0.3,False,0.0,0.571,123
+What are the symptoms of sickle cell anemia?,english,symptoms,hybrid,0.3,False,0.0,0.571,123
+What are the symptoms of sickle cell anemia?,english,symptoms,hybrid_rerank,0.3,False,0.0,0.914,648
+How do I start breastfeeding?,english,procedures,dense,0.3,False,0.0,0.521,123
+How do I start breastfeeding?,english,procedures,hybrid,0.3,False,0.0,0.521,123
+How do I start breastfeeding?,english,procedures,hybrid_rerank,0.9,True,0.9,1.0,686

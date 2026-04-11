@@ -1,13 +1,9 @@
 import re
 from typing import List
 
-import numpy as np
-
-from app.indexing.embedder import embed_texts
-
 
 def split_into_sentences(text: str) -> List[str]:
-    sentence_endings = re.compile(r"(?<=[.!?])\s+")
+    sentence_endings = re.compile(r"(?<=[.!?\u061F])\s+")
     sentences = sentence_endings.split(text)
     return [s.strip() for s in sentences if s.strip()]
 

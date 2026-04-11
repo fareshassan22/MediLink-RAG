@@ -54,11 +54,14 @@ def _get_local_llm():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
     model_name = "Qwen/Qwen2.5-32B-Instruct"
-    print(f"  Loading {model_name} across GPU 0+1 (bf16) ...")
+    # CUDA_VISIBLE_DEVICES remaps physical GPUs to logical 0,1
+    n_gpus = torch.cuda.device_count()
+    mem_map = {i: "47GiB" for i in range(n_gpus)}
+    print(f"  Loading {model_name} across {n_gpus} visible GPUs (bf16) ...")
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         device_map="auto",
-        max_memory={0: "47GiB", 1: "47GiB"},
+        max_memory=mem_map,
         torch_dtype=torch.bfloat16,
     )
     tokenizer = AutoTokenizer.from_pretrained(model_name)

@@ -1,22 +1,30 @@
 import os
 import logging
-from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-API_KEY = os.getenv("GROQ_API_KEY")
+_client = None
 
-if not API_KEY:
-    raise ValueError("❌ GROQ_API_KEY not found in .env file")
 
-client = Groq(api_key=API_KEY)
+def _get_client():
+    """Lazy-load Groq client. Raises at call time, not import time."""
+    global _client
+    if _client is not None:
+        return _client
+    from groq import Groq
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise RuntimeError("GROQ_API_KEY environment variable is not set")
+    _client = Groq(api_key=api_key)
+    return _client
 
 
 def generate_response(prompt: str, max_tokens: int = 1024):
     try:
+        client = _get_client()
         completion = client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=[
@@ -49,5 +57,5 @@ def generate_response(prompt: str, max_tokens: int = 1024):
         return answer if answer else "حدث خطأ أثناء توليد الإجابة."
 
     except Exception as e:
-        logger.error(f"🔥 Groq Error: {str(e)}")
+        logger.error("Groq generation error: %s", type(e).__name__)
         return "حدث خطأ أثناء توليد الإجابة."

@@ -58,14 +58,21 @@ def build_ground_truth_doc_ids(
 def build_ground_truths(examples: List[Dict]) -> List[Optional[List[str]]]:
     """Build ground truth doc_id lists from eval set.
 
-    Uses explicit ground_truth_ids (curated, verified doc_ids).
-    Falls back to ground_truth_doc_id for legacy eval files.
+    Checks fields in priority order:
+    1. ground_truth_ids  (curated, verified doc_ids)
+    2. relevant_docs     (LLM-annotated doc_ids)
+    3. ground_truth_doc_id (legacy single-doc format)
     """
     result: List[Optional[List[str]]] = []
     for ex in examples:
         gt_ids = ex.get("ground_truth_ids", [])
         if gt_ids:
             result.append(list(gt_ids))
+            continue
+
+        rel_docs = ex.get("relevant_docs", [])
+        if rel_docs:
+            result.append(list(rel_docs))
             continue
 
         gt_id = ex.get("ground_truth_doc_id")

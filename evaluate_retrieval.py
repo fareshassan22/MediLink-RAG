@@ -71,46 +71,76 @@ def hit_rate_at_k(ranked_ids: list, relevant: list, k: int) -> float:
 
 # ── retrieval pipeline (mirrors main.py) ─────────────────────
 
+# Cache per-query preprocessing to avoid repeated Groq API calls
+_query_cache: dict[str, dict] = {}
 
-def _retrieve(query: str, mode: str, vs: VectorStore, bm25: BM25Index | None) -> list[str]:
-    """Run retrieval in the given mode. Returns list of doc_id strings."""
+
+def _precompute_query(query: str, vs: VectorStore, bm25: BM25Index | None) -> dict:
+    """Precompute and cache all per-query data (expansion, dense/bm25 results)."""
+    if query in _query_cache:
+        return _query_cache[query]
+
     processed = preprocess_query(query)
     expanded = expand_query(processed)
     if not expanded:
         expanded = [processed]
 
+    # Dense search for all expanded variants
     dense_results: list[dict] = []
+    for eq in expanded:
+        emb = embed_texts([eq])[0]
+        hits = vs.search(emb, k=cfg.TOP_K_DENSE)
+        dense_results.extend(hits)
+
+    # Bilingual boost: also search with English translation for Arabic queries
+    if is_arabic(processed):
+        en = translate_query(processed)
+        if en and en != processed:
+            en_emb = embed_texts([en])[0]
+            dense_results.extend(vs.search(en_emb, k=cfg.TOP_K_DENSE))
+
+    # BM25 search
     bm25_results: list[dict] = []
+    if bm25 is not None:
+        bm25_q = processed
+        if is_arabic(processed):
+            bm25_q = translate_query(processed)
+        bm25_results = bm25.search(bm25_q, k=cfg.TOP_K_BM25)
 
-    if mode in ("dense", "hybrid", "hybrid_rerank"):
-        for eq in expanded:
-            emb = embed_texts([eq])[0]
-            hits = vs.search(emb, k=10)
-            dense_results.extend(hits)
+    cache_entry = {
+        "processed": processed,
+        "dense_results": dense_results,
+        "bm25_results": bm25_results,
+    }
+    _query_cache[query] = cache_entry
+    return cache_entry
 
-    if mode in ("bm25", "hybrid", "hybrid_rerank"):
-        if bm25 is not None:
-            bm25_q = processed
-            if is_arabic(processed):
-                bm25_q = translate_query(processed)
-            bm25_results = bm25.search(bm25_q, k=10)
+
+def _retrieve(query: str, mode: str, vs: VectorStore, bm25: BM25Index | None) -> list[str]:
+    """Run retrieval in the given mode. Returns list of doc_id strings."""
+    cached = _precompute_query(query, vs, bm25)
+    processed = cached["processed"]
+    dense_results = cached["dense_results"]
+    bm25_results = cached["bm25_results"]
 
     # fuse
     if mode in ("hybrid", "hybrid_rerank"):
         if dense_results and bm25_results:
-            fused = hybrid_retrieval_fusion(dense_results, bm25_results, processed, top_k=10)
+            fused = hybrid_retrieval_fusion(dense_results, bm25_results, processed, top_k=cfg.TOP_K_FINAL)
         elif dense_results:
-            fused = deduplicate_results(dense_results)[:10]
+            fused = deduplicate_results(dense_results)[:cfg.TOP_K_FINAL]
         else:
-            fused = deduplicate_results(bm25_results)[:10]
+            fused = deduplicate_results(bm25_results)[:cfg.TOP_K_FINAL]
     elif mode == "bm25":
-        fused = deduplicate_results(bm25_results)[:10]
+        fused = deduplicate_results(bm25_results)[:cfg.TOP_K_FINAL]
+    elif mode == "dense":
+        fused = deduplicate_results(dense_results)[:cfg.TOP_K_FINAL]
     else:
-        fused = deduplicate_results(dense_results)[:10]
+        fused = deduplicate_results(dense_results)[:cfg.TOP_K_FINAL]
 
     # rerank for hybrid_rerank
     if mode == "hybrid_rerank":
-        fused = rerank_documents(processed, fused, top_k=10)
+        fused = rerank_documents(processed, fused, top_k=cfg.TOP_K_FINAL)
 
     # extract doc IDs
     ids = []

@@ -9,29 +9,41 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 @pytest.fixture
 def mock_vector_store():
-    with patch("app.main.vector_store") as mock:
-        mock.search.return_value = [
-            {"text": "test doc", "score": 0.9, "metadata": {"page": 1}}
-        ]
-        mock.documents = []
-        yield mock
+    mock = Mock()
+    mock.search.return_value = [
+        {"text": "test doc", "score": 0.9, "metadata": {"page": 1}}
+    ]
+    mock.documents = []
+    return mock
 
 
 @pytest.fixture
 def mock_bm25():
-    with patch("app.main.bm25") as mock:
-        mock.search.return_value = [{"text": "test doc", "score": 0.8}]
-        yield mock
+    mock = Mock()
+    mock.search.return_value = [{"text": "test doc", "score": 0.8}]
+    return mock
 
 
 @pytest.fixture
 def client():
-    with patch("app.main.load_models"):
-        with patch("app.main.vector_store", create=True):
-            with patch("app.main.bm25", create=True):
-                from app.main import app
+    from app.core.state import _state
 
-                return TestClient(app)
+    # Mark state as ready with mock stores so ensure_ready() won't raise
+    _state.is_ready = True
+    _state.vector_store = Mock()
+    _state.vector_store.search.return_value = []
+    _state.vector_store.documents = []
+    _state.bm25 = Mock()
+    _state.bm25.search.return_value = []
+
+    from app.main import app
+
+    yield TestClient(app)
+
+    # Reset state after test
+    _state.is_ready = False
+    _state.vector_store = None
+    _state.bm25 = None
 
 
 class TestAPIEndpoints:
@@ -42,55 +54,68 @@ class TestAPIEndpoints:
         assert response.status_code in [200, 404]
 
     def test_ask_endpoint_valid_query(self, client):
-        with patch("app.main.detect_emergency", return_value=False):
-            with patch("app.main.expand_query", return_value=["test query"]):
-                with patch("app.main.embed_texts") as mock_embed:
-                    with patch("app.main.hybrid_fusion") as mock_fusion:
-                        with patch("app.main.rerank") as mock_rerank:
-                            with patch("app.main.compress_context") as mock_compress:
+        with patch("app.services.rag_pipeline.detect_emergency", return_value=False):
+            with patch("app.services.rag_pipeline.expand_query", return_value=["test query"]):
+                with patch("app.services.rag_pipeline.embed_texts") as mock_embed:
+                    with patch(
+                        "app.services.rag_pipeline.hybrid_retrieval_fusion"
+                    ) as mock_fusion:
+                        with patch(
+                            "app.services.rag_pipeline.rerank_documents"
+                        ) as mock_rerank:
+                            with patch(
+                                "app.services.rag_pipeline.build_prompt",
+                                return_value="prompt",
+                            ):
                                 with patch(
-                                    "app.main.build_prompt", return_value="prompt"
+                                    "app.services.rag_pipeline.generate_response",
+                                    return_value="test answer",
                                 ):
                                     with patch(
-                                        "app.main.generate_response",
-                                        return_value="test answer",
+                                        "app.services.rag_pipeline.judge_answer",
+                                        return_value=Mock(
+                                            grounding_score=0.9,
+                                            confidence_score=0.85,
+                                            confidence=0.85,
+                                            hallucination_risk=0.1,
+                                            grounded=True,
+                                            flagged_claims=[],
+                                            reasoning="test",
+                                        ),
                                     ):
-                                        with patch(
-                                            "app.main.filter_by_metadata"
-                                        ) as mock_filter:
-                                            mock_embed.return_value = []
-                                            mock_fusion.return_value = [
-                                                {
-                                                    "text": "doc1",
-                                                    "score": 0.9,
-                                                    "metadata": {"page": 1},
-                                                }
-                                            ]
-                                            mock_rerank.return_value = [
-                                                {
-                                                    "text": "doc1",
-                                                    "score": 0.9,
-                                                    "metadata": {"page": 1},
-                                                }
-                                            ]
-                                            mock_compress.return_value = ["compressed"]
-                                            mock_filter.return_value = [
-                                                {
-                                                    "text": "doc1",
-                                                    "score": 0.9,
-                                                    "metadata": {"page": 1},
-                                                }
-                                            ]
-
-                                            response = client.post(
-                                                "/ask",
-                                                json={
-                                                    "query": "أعراض السكري",
-                                                    "role": "patient",
+                                        mock_embed.return_value = []
+                                        mock_fusion.return_value = [
+                                            {
+                                                "text": "doc1",
+                                                "score": 0.9,
+                                                "metadata": {
+                                                    "page": 1
                                                 },
-                                            )
+                                            }
+                                        ]
+                                        mock_rerank.return_value = [
+                                            {
+                                                "text": "doc1",
+                                                "score": 0.9,
+                                                "metadata": {
+                                                    "page": 1
+                                                },
+                                                "rerank_score_normalized": 0.9,
+                                            }
+                                        ]
 
-                                            assert response.status_code in [200, 500]
+                                        response = client.post(
+                                            "/ask",
+                                            json={
+                                                "query": "أعراض السكري",
+                                                "role": "patient",
+                                            },
+                                        )
+
+                                        assert response.status_code in [
+                                            200,
+                                            500,
+                                        ]
 
     def test_ask_endpoint_empty_query(self, client):
         response = client.post("/ask", json={"query": ""})
@@ -101,7 +126,7 @@ class TestAPIEndpoints:
         assert response.status_code == 422
 
     def test_ask_endpoint_emergency(self, client):
-        with patch("app.main.detect_emergency", return_value=True):
+        with patch("app.services.rag_pipeline.detect_emergency", return_value=True):
             response = client.post(
                 "/ask", json={"query": "ألم في الصدر", "role": "patient"}
             )
@@ -111,13 +136,15 @@ class TestAPIEndpoints:
                 assert data.get("status") == "emergency_escalation"
 
     def test_ask_endpoint_missing_role(self, client):
-        with patch("app.main.detect_emergency", return_value=False):
-            with patch("app.main.expand_query", return_value=["test"]):
-                with patch("app.main.vector_store") as mock_vs:
-                    mock_vs.search.return_value = []
-
-                    with patch("app.main.hybrid_fusion", return_value=[]):
-                        response = client.post("/ask", json={"query": "أعراض السكري"})
+        with patch("app.services.rag_pipeline.detect_emergency", return_value=False):
+            with patch("app.services.rag_pipeline.expand_query", return_value=["test"]):
+                with patch("app.services.rag_pipeline.embed_texts", return_value=[]):
+                    with patch(
+                        "app.services.rag_pipeline.hybrid_retrieval_fusion", return_value=[]
+                    ):
+                        response = client.post(
+                            "/ask", json={"query": "أعراض السكري"}
+                        )
 
                         assert response.status_code in [200, 400, 500]
 
@@ -210,7 +237,13 @@ class TestAPIMiddleware:
     """Tests for API middleware."""
 
     def test_cors_headers_present(self, client):
-        response = client.options("/ask")
+        response = client.options(
+            "/ask",
+            headers={
+                "Origin": "http://localhost:3000",
+                "Access-Control-Request-Method": "POST",
+            },
+        )
         assert (
             "access-control-allow-origin" in response.headers
             or response.status_code == 200
@@ -226,7 +259,7 @@ class TestAPIErrorHandling:
     """Tests for API error handling."""
 
     def test_500_error_handling(self, client):
-        with patch("app.main.detect_emergency", side_effect=Exception("test")):
+        with patch("app.services.rag_pipeline.detect_emergency", side_effect=Exception("test")):
             response = client.post("/ask", json={"query": "test query"})
 
             assert response.status_code in [500, 422]

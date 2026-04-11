@@ -26,8 +26,8 @@ def _get_cross_encoder():
     import torch
     from sentence_transformers import CrossEncoder
 
-    # Use GPU 1 if available, to separate from LLM on GPU 0
-    device = "cuda:1" if torch.cuda.device_count() > 1 else None
+    # Use a secondary GPU if available, to separate from embedding model on GPU 0
+    device = f"cuda:{torch.cuda.device_count()-1}" if torch.cuda.is_available() else None
     _cross_encoder = CrossEncoder(model_name, device=device)
     return _cross_encoder
 

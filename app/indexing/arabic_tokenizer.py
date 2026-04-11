@@ -3,13 +3,9 @@ import re
 from typing import List, Optional, Set
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
+from app.utils.arabic import normalize_arabic, is_arabic  # noqa: F401
 
-ARABIC_ALEF_VARIATIONS = re.compile("[إأآا]")
-ARABIC_YA_VARIATIONS = re.compile("[ىي]")
-ARABIC_TA_MARBUTA = re.compile("[ة]")
-ARABIC_DIACRITICS = re.compile(r"[\u064B-\u0652]")
-ARABIC_TATWEEL = re.compile("ـ")
+logger = logging.getLogger(__name__)
 ARABIC_STOPWORDS: Set[str] = {
     "في",
     "من",
@@ -236,22 +232,6 @@ PREFIXES_2: List[str] = [
 ]
 
 
-def normalize_arabic(text: str) -> str:
-    """Normalize Arabic text by standardizing character variations."""
-    if not isinstance(text, str):
-        text = str(text)
-
-    text = ARABIC_ALEF_VARIATIONS.sub("ا", text)
-    text = ARABIC_YA_VARIATIONS.sub("ي", text)
-    text = ARABIC_TA_MARBUTA.sub("ه", text)
-    text = ARABIC_DIACRITICS.sub("", text)
-    text = ARABIC_TATWEEL.sub("", text)
-
-    text = re.sub(r"\s+", " ", text).strip()
-
-    return text
-
-
 def simple_arabic_stem(word: str) -> str:
     """Simple Arabic stemmer - removes common suffixes and prefixes."""
     if not word or len(word) < 3:
@@ -392,17 +372,6 @@ def tokenize_english(text: str, remove_stopwords: bool = True) -> List[str]:
         words = [w for w in words if w not in en_stopwords]
 
     return [w for w in words if len(w) >= 2]
-
-
-def is_arabic(text: str) -> bool:
-    """Detect if text is primarily Arabic."""
-    if not text:
-        return False
-    arabic_chars = len(re.findall(r"[\u0600-\u06FF]", text))
-    total_chars = len(re.findall(r"[\w]", text))
-    if total_chars == 0:
-        return False
-    return arabic_chars / total_chars > 0.3
 
 
 def tokenize_bilingual(text: str, remove_stopwords: bool = True) -> List[str]:

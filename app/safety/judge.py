@@ -8,29 +8,34 @@ import json
 import logging
 import os
 import time
+import threading
 from dataclasses import dataclass
 from typing import List, Optional
 
 logger = logging.getLogger(__name__)
 
 _judge_client = None
+_judge_lock = threading.Lock()
 
 
 def _get_client():
-    """Lazy-load the Groq client (reuses the same API key as generation)."""
+    """Lazy-load the Groq client (thread-safe)."""
     global _judge_client
     if _judge_client is not None:
         return _judge_client
 
-    from dotenv import load_dotenv
-    from groq import Groq
+    with _judge_lock:
+        if _judge_client is not None:
+            return _judge_client
+        from dotenv import load_dotenv
+        from groq import Groq
 
-    load_dotenv()
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        return None
-    _judge_client = Groq(api_key=api_key)
-    return _judge_client
+        load_dotenv()
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key:
+            return None
+        _judge_client = Groq(api_key=api_key)
+        return _judge_client
 
 
 @dataclass

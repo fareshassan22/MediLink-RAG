@@ -1,21 +1,4 @@
-import re
-
-# ---------- Arabic normalization (mirrors preprocessing.py) ----------
-_ALEF = re.compile("[إأآا]")
-_YA = re.compile("[ىي]")
-_TA = re.compile("[ة]")
-_DIACRITICS = re.compile(r"[\u064B-\u0652]")
-_TATWEEL = re.compile("ـ")
-
-
-def _normalize(text: str) -> str:
-    """Lightweight Arabic normalization for matching."""
-    text = _ALEF.sub("ا", text)
-    text = _YA.sub("ي", text)
-    text = _TA.sub("ه", text)
-    text = _DIACRITICS.sub("", text)
-    text = _TATWEEL.sub("", text)
-    return re.sub(r"\s+", " ", text).strip()
+from app.utils.arabic import normalize_arabic as _normalize
 
 
 # ---------- Emergency phrases (Arabic) ----------

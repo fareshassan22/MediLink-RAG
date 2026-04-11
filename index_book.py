@@ -1,5 +1,6 @@
 import sys
 import json
+import re
 from pathlib import Path
 import os
 
@@ -12,21 +13,79 @@ os.environ["HF_HUB_OFFLINE"] = "0"
 from app.indexing.vector_store import VectorStore
 from app.indexing.bm25_index import BM25Index
 from app.indexing.embedder import embed_texts
-from app.indexing.preprocessing import clean_text
+from app.indexing.preprocessing import preprocess_document
 from app.indexing.chunker import semantic_chunk
 
 
 # =====================================================
-# PDF TEXT EXTRACTION
+# ENCYCLOPEDIA SECTION HEADINGS
+# =====================================================
+
+SECTION_HEADINGS = {
+    "Definition",
+    "Description",
+    "Purpose",
+    "Treatment",
+    "Diagnosis",
+    "Causes and symptoms",
+    "Prognosis",
+    "Prevention",
+    "Precautions",
+    "Preparation",
+    "Risks",
+    "Normal results",
+    "Aftercare",
+    "Alternative treatment",
+    "Abnormal results",
+    "Side effects",
+    "Interactions",
+    "Recommended dosage",
+    "Causes",
+    "Symptoms",
+    "Special conditions",
+    "Surgery",
+}
+
+# Noise patterns to strip from extracted text
+NOISE_PATTERN = re.compile(
+    r"GALE ENCYCLOPEDIA OF MEDICINE 2\s+\d+|GEM\s*-?\s*\d+.*?Page\s+\d+",
+    re.IGNORECASE,
+)
+
+
+def _is_likely_title(line: str) -> bool:
+    """Check if a line looks like an encyclopedia article title."""
+    words = line.split()
+    if len(words) < 1 or len(words) > 6:
+        return False
+    if line in SECTION_HEADINGS:
+        return False
+    if "GALE" in line or "GEM" in line:
+        return False
+    if line.endswith(".") or line.endswith(","):
+        return False
+    if line.startswith("•") or line.startswith("–"):
+        return False
+    if not any(w[0].isupper() for w in words if w):
+        return False
+    if any(x in line for x in ["M.D.", "Ph.D.", "R.N.", "Writer", "Editor"]):
+        return False
+    return True
+
+
+# =====================================================
+# PDF TEXT EXTRACTION WITH ARTICLE DETECTION
 # =====================================================
 
 
-def extract_text_from_pdf(pdf_path: str):
+def extract_pages_with_articles(pdf_path: str):
     """
-    Extract text from PDF while preserving page numbers.
+    Extract text from PDF, detect encyclopedia article titles per page.
+    Returns list of {text, page, source, file_path, article_title}.
     """
     documents = []
     pdf_name = Path(pdf_path).stem
+    current_article = "Medical Encyclopedia"
 
     try:
         from pypdf import PdfReader
@@ -35,16 +94,29 @@ def extract_text_from_pdf(pdf_path: str):
 
         for page_num, page in enumerate(reader.pages, 1):
             text = page.extract_text()
+            if not text or not text.strip():
+                continue
 
-            if text and text.strip():
-                documents.append(
-                    {
-                        "text": text,
-                        "page": page_num,
-                        "source": pdf_name,
-                        "file_path": pdf_path,
-                    }
-                )
+            # Detect article title: line before "Definition"
+            lines = [l.strip() for l in text.split("\n") if l.strip()]
+            for i, l in enumerate(lines):
+                if (
+                    i + 1 < len(lines)
+                    and lines[i + 1] == "Definition"
+                    and _is_likely_title(l)
+                ):
+                    current_article = l
+                    break
+
+            documents.append(
+                {
+                    "text": text,
+                    "page": page_num,
+                    "source": pdf_name,
+                    "file_path": pdf_path,
+                    "article_title": current_article,
+                }
+            )
 
         print(f"✅ Extracted {len(documents)} pages from {pdf_name}")
         return documents
@@ -52,6 +124,27 @@ def extract_text_from_pdf(pdf_path: str):
     except Exception as e:
         print(f"❌ Failed to extract PDF text: {str(e)}")
         return []
+
+
+def _clean_page_text(text: str) -> str:
+    """Light cleaning that preserves sentence-ending punctuation."""
+    # Remove encyclopedia footer noise
+    text = NOISE_PATTERN.sub("", text)
+    # Normalize line breaks to spaces (PDF wraps mid-sentence)
+    text = re.sub(r"(?<!\n)\n(?!\n)", " ", text)
+    # Collapse multiple newlines to one
+    text = re.sub(r"\n{2,}", "\n\n", text)
+    # Collapse whitespace
+    text = re.sub(r"[ \t]+", " ", text)
+    return text.strip()
+
+
+def _detect_section(text: str) -> str:
+    """Detect which section heading this chunk starts in."""
+    for heading in SECTION_HEADINGS:
+        if text.lstrip().startswith(heading):
+            return heading
+    return ""
 
 
 # =====================================================
@@ -73,8 +166,6 @@ def index_pdfs(pdf_folder: str = "data/raw", output_folder: str = "data/processe
 
     print(f"\n📚 Found {len(pdf_files)} PDF file(s)\n")
 
-    from app.indexing.embedder import embed_texts
-
     embed_dim = 1024  # bge-m3 uses 1024 dimensions
 
     vector_store = VectorStore(dim=embed_dim)
@@ -85,33 +176,42 @@ def index_pdfs(pdf_folder: str = "data/raw", output_folder: str = "data/processe
     for pdf_path in pdf_files:
         print(f"📄 Processing: {pdf_path.name}")
 
-        pages = extract_text_from_pdf(str(pdf_path))
+        pages = extract_pages_with_articles(str(pdf_path))
 
         if not pages:
             print(f"⚠️ No text extracted from {pdf_path.name}")
             continue
 
         for page_data in pages:
-            text = clean_text(page_data["text"])
-            title = page_data.get("source", "")
+            # Light cleaning — preserves punctuation for sentence splitting
+            text = _clean_page_text(page_data["text"])
+            article_title = page_data["article_title"]
 
             if not text or len(text) < 10:
                 continue
 
+            # Chunk with intact punctuation so sentence splitter works
             chunks = semantic_chunk(
-                text, chunk_size=80, overlap=20, min_paragraph_length=30
+                text, chunk_size=150, overlap=30, min_paragraph_length=30
             )
 
             for chunk_idx, chunk in enumerate(chunks):
-                if len(chunk) < 15:
+                if len(chunk.split()) < 10:
                     continue
 
-                chunk_with_title = f"Title: {title}. {chunk}"
+                section = _detect_section(chunk)
+
+                # Prefix with article title (+ section if detected)
+                if section:
+                    chunk_with_title = f"{article_title} - {section}. {chunk}"
+                else:
+                    chunk_with_title = f"{article_title}. {chunk}"
 
                 metadata = {
                     "page": page_data["page"],
                     "source": page_data["source"],
-                    "title": page_data["source"],
+                    "title": article_title,
+                    "section": section,
                     "chunk_id": chunk_idx,
                     "file_path": page_data["file_path"],
                 }

@@ -92,7 +92,7 @@ def collect_features(
 def train_calibrator(
     features: np.ndarray, labels: np.ndarray, model_path: Path | None = None
 ) -> CalibrationResult:
-    """Train Logistic Regression calibrator using sklearn.
+    """Train Logistic Regression calibrator with cross-validation.
 
     Args:
         features: 2D array of shape (n_samples, n_features)
@@ -107,24 +107,41 @@ def train_calibrator(
             f"Not enough samples to train calibrator. Need at least {cfg.CALIBRATION_MIN_SAMPLES}, got {features.shape[0]}"
         )
 
-    # Standardize features
+    from sklearn.model_selection import StratifiedKFold
+
+    # --- Cross-validated metrics (honest evaluation) ---
+    skf = StratifiedKFold(n_splits=min(5, features.shape[0] // 10), shuffle=True,
+                          random_state=cfg.RANDOM_SEED)
+    cv_probs = np.zeros(len(labels))
+    cv_preds = np.zeros(len(labels))
+
+    for train_idx, val_idx in skf.split(features, labels):
+        cv_scaler = StandardScaler()
+        X_train = cv_scaler.fit_transform(features[train_idx])
+        X_val = cv_scaler.transform(features[val_idx])
+        cv_model = LogisticRegression(random_state=cfg.RANDOM_SEED, max_iter=1000, solver="lbfgs")
+        cv_model.fit(X_train, labels[train_idx])
+        cv_probs[val_idx] = cv_model.predict_proba(X_val)[:, 1]
+        cv_preds[val_idx] = cv_model.predict(X_val)
+
+    # Compute metrics on held-out predictions (no data leakage)
+    ece = _expected_calibration_error(cv_probs, labels, n_bins=10)
+    brier = float(np.mean((cv_probs - labels) ** 2))
+    accuracy = float(np.mean(cv_preds == labels))
+
+    # Quality gate — warn if calibration is poor
+    if ece > 0.15:
+        print(f"WARNING: ECE={ece:.3f} is high. Calibration may be unreliable.")
+    if accuracy < 0.6:
+        print(f"WARNING: Accuracy={accuracy:.3f} is low. More/better training data needed.")
+
+    # --- Final model trained on all data ---
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(features)
-
-    # Train Logistic Regression
     model = LogisticRegression(
         random_state=cfg.RANDOM_SEED, max_iter=1000, solver="lbfgs"
     )
     model.fit(features_scaled, labels)
-
-    # Get predictions
-    probs = model.predict_proba(features_scaled)[:, 1]
-    predictions = model.predict(features_scaled)
-
-    # Compute metrics
-    ece = _expected_calibration_error(probs, labels, n_bins=5)
-    brier = float(np.mean((probs - labels) ** 2))
-    accuracy = float(np.mean(predictions == labels))
 
     # Save model and scaler
     model_path = model_path or cfg.MODEL_DIR / "confidence_calibrator.pkl"
@@ -226,10 +243,12 @@ def _heuristic_confidence(
 def generate_synthetic_training_data(
     n_samples: int = 100,
 ) -> Tuple[np.ndarray, np.ndarray]:
-    """Generate synthetic training data for calibration.
+    """Generate synthetic training data for INITIAL TESTING ONLY.
 
-    This creates realistic feature combinations with known correctness labels
-    for initial model training.
+    WARNING: Models trained on synthetic data are NOT suitable for production.
+    Real calibration requires human-labeled inference logs collected via
+    data_collector.py. This function exists only for smoke-testing the
+    calibration pipeline.
 
     Returns:
         Tuple of (features, labels)
@@ -262,9 +281,11 @@ def generate_synthetic_training_data(
 
 
 def train_with_synthetic_data(model_path: Path | None = None) -> CalibrationResult:
-    """Train calibrator using synthetic data.
+    """Train calibrator using synthetic data (for pipeline testing only).
 
-    Useful for initial model setup before real data is available.
+    WARNING: Do not use this for production confidence scores.
+    Use train_calibrator() with real human-labeled data instead.
     """
+    print("WARNING: Training on synthetic data — for testing only, not production.")
     features, labels = generate_synthetic_training_data(200)
     return train_calibrator(features, labels, model_path)

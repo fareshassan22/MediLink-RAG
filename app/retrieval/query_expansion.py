@@ -181,14 +181,12 @@ def _expand_arabic_medical_terms(text: str) -> List[str]:
 
 
 def expand_query(query: str) -> List[str]:
-    """Return 2-3 query variations for dense retrieval.
+    """Return 2-4 query variations for dense retrieval.
 
     Variations include:
-    - Original preprocessed query (Arabic)
+    - Original preprocessed query (Arabic or English)
+    - Full translated query (Arabic→English) for cross-lingual matching
     - English medical term expansions (for dense multilingual embeddings)
-
-    NOTE: Does NOT use dictionary translation. BM25 receives the
-    preprocessed Arabic query directly — no translation mixing.
     """
     query = query.strip()
     if not query:
@@ -196,13 +194,25 @@ def expand_query(query: str) -> List[str]:
 
     variants: list = [query]
 
+    # For Arabic queries, add a full English translation as a variant
+    # so dense retrieval can match English corpus documents better.
+    _has_arabic = any("\u0600" <= c <= "\u06FF" for c in query)
+    if _has_arabic:
+        try:
+            from app.retrieval.query_translator import translate_query
+            translated = translate_query(query)
+            if translated and translated != query:
+                variants.append(translated)
+        except Exception:
+            pass
+
     # English medical expansions for dense retrieval only
     english_terms = _expand_arabic_medical_terms(query)
     disease_terms = [t for t in english_terms if t.lower() not in _GENERAL_WORDS]
 
     if disease_terms:
         # Add one focused English expansion
-        variants.append(" ".join(disease_terms[:3]))
+        variants.append(" ".join(disease_terms[:4]))
 
-    # Limit to 3 variations
-    return variants[:3]
+    # Limit to 4 variations
+    return variants[:4]

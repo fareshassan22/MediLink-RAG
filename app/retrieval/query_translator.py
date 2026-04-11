@@ -7,25 +7,11 @@ with a dictionary fallback if the API is unavailable.
 import logging
 import os
 import re
+from functools import lru_cache
+
+from app.utils.arabic import normalize_arabic as _norm, is_arabic  # noqa: F401
 
 logger = logging.getLogger(__name__)
-
-# ── Arabic normalizer (same rules as preprocessing.py) ───────
-
-_ALEF = re.compile("[إأآا]")
-_YA = re.compile("[ىي]")
-_TA = re.compile("[ة]")
-_DIACRITICS = re.compile(r"[\u064B-\u0652]")
-_TATWEEL = re.compile("ـ")
-
-
-def _norm(text: str) -> str:
-    text = _ALEF.sub("ا", text)
-    text = _YA.sub("ي", text)
-    text = _TA.sub("ه", text)
-    text = _DIACRITICS.sub("", text)
-    text = _TATWEEL.sub("", text)
-    return text
 
 
 # ── Groq API translation ─────────────────────────────────────
@@ -207,6 +193,7 @@ def _dictionary_translate(query: str) -> str:
 # ── Public API ────────────────────────────────────────────────
 
 
+@lru_cache(maxsize=512)
 def translate_query(query: str) -> str:
     """Translate Arabic query to English for cross-lingual retrieval.
 
@@ -232,14 +219,3 @@ def translate_query_bilingual(query: str) -> str:
     if translated != query:
         return f"{query} {translated}"
     return query
-
-
-def is_arabic(text: str) -> bool:
-    """Check if text contains Arabic characters."""
-    if not text:
-        return False
-    arabic_chars = len(re.findall(r"[\u0600-\u06FF]", text))
-    total_chars = len(re.findall(r"[\w]", text))
-    if total_chars == 0:
-        return False
-    return arabic_chars / total_chars > 0.3

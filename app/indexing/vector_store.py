@@ -28,11 +28,24 @@ class VectorStore:
         self.dim = dim
         self.documents: List[Document] = []
         self.embeddings = np.empty((0, dim), dtype="float32")
+        self._pending: List[np.ndarray] = []  # buffered embeddings not yet in self.embeddings
         self._faiss_index: Optional[object] = None
 
     # ---- internal ----
+    def _flush_pending(self):
+        """Merge buffered embeddings into the main array."""
+        if not self._pending:
+            return
+        stacked = np.vstack(self._pending)
+        if len(self.embeddings) == 0:
+            self.embeddings = stacked
+        else:
+            self.embeddings = np.vstack([self.embeddings, stacked])
+        self._pending.clear()
+
     def _rebuild_faiss(self):
         """Build/rebuild the FAISS IndexFlatIP from current embeddings."""
+        self._flush_pending()
         if not _HAS_FAISS or len(self.embeddings) == 0:
             self._faiss_index = None
             return
@@ -59,7 +72,7 @@ class VectorStore:
 
         doc = Document(text, embedding, metadata)
         self.documents.append(doc)
-        self.embeddings = np.vstack([self.embeddings, embedding.reshape(1, -1)])
+        self._pending.append(embedding.reshape(1, -1))
         # Invalidate FAISS — will be rebuilt lazily on next search
         self._faiss_index = None
 
@@ -77,6 +90,7 @@ class VectorStore:
         if len(self.documents) == 0:
             return []
 
+        self._flush_pending()
         query_embedding = query_embedding.flatten().astype("float32")
         query_norm = query_embedding / (np.linalg.norm(query_embedding) + 1e-8)
 
@@ -125,6 +139,7 @@ class VectorStore:
 
     # ---- persistence ----
     def save(self, path: str):
+        self._flush_pending()
         path = Path(path)
         path.mkdir(parents=True, exist_ok=True)
 

@@ -1,19 +1,26 @@
 import numpy as np
 from typing import List
-from sentence_transformers import SentenceTransformer
 
 import torch
 
 # BGE-M3: Multilingual model with excellent Arabic support
 # Use GPU 1 if available (GPU 0 reserved for LLM), else CPU
 _embed_device = "cuda:1" if torch.cuda.device_count() > 1 else ("cuda:0" if torch.cuda.is_available() else "cpu")
-_model = SentenceTransformer("BAAI/bge-m3", device=_embed_device)
+_model = None
+
+
+def _get_model():
+    global _model
+    if _model is None:
+        from sentence_transformers import SentenceTransformer
+        _model = SentenceTransformer("BAAI/bge-m3", device=_embed_device)
+    return _model
 
 
 class Embedder:
     @staticmethod
     def get():
-        return _model
+        return _get_model()
 
 
 def embed_texts(texts: List[str]) -> List[np.ndarray]:
@@ -26,7 +33,7 @@ def embed_texts(texts: List[str]) -> List[np.ndarray]:
     if not texts:
         return []
 
-    embeddings = _model.encode(
+    embeddings = _get_model().encode(
         texts,
         convert_to_numpy=True,
         normalize_embeddings=True,

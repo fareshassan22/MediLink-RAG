@@ -8,18 +8,29 @@ from collections import defaultdict
 from threading import Lock
 
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 API_KEY_HEADER = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 _api_key: Optional[str] = None
+_api_key_warned = False
 _request_counts: Dict[str, list] = defaultdict(list)
 _counts_lock = Lock()
 
 
 def get_api_key() -> Optional[str]:
     """Get the configured API key from environment."""
-    global _api_key
+    global _api_key, _api_key_warned
     if _api_key is None:
         _api_key = os.getenv("MEDILINK_API_KEY", "")
+        if not _api_key and not _api_key_warned:
+            _api_key_warned = True
+            logger.warning(
+                "MEDILINK_API_KEY not set — API authentication disabled. "
+                "Set this env var in production."
+            )
     return _api_key
 
 
