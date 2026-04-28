@@ -6,12 +6,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_2229",
+      "doc_2230",
+      "doc_2217",
       "doc_2222",
-      "doc_2232",
-      "doc_2224"
+      "doc_2233",
+      "doc_2277",
+      "doc_2267",
+      "doc_2276",
+      "doc_2251",
+      "doc_2216"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_002",
@@ -21,13 +28,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_1629",
+      "doc_877",
       "doc_397",
-      "doc_1462",
+      "doc_626",
       "doc_42",
-      "doc_2654"
+      "doc_878",
+      "doc_43",
+      "doc_876",
+      "doc_2438",
+      "doc_890"
     ],
-    "total_relevant_found": 5,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_003",
@@ -36,12 +48,19 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1456",
-      "doc_1465",
-      "doc_3234"
+      "doc_1450",
+      "doc_987",
+      "doc_1449",
+      "doc_1599",
+      "doc_1452",
+      "doc_1597",
+      "doc_1466",
+      "doc_1598",
+      "doc_1548",
+      "doc_1451"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_004",
@@ -59,10 +78,10 @@
       "doc_3274",
       "doc_1216",
       "doc_83",
-      "doc_940"
+      "doc_77"
     ],
-    "total_relevant_found": 17,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_005",
@@ -71,10 +90,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_1777"
+      "doc_3048",
+      "doc_3246",
+      "doc_2205",
+      "doc_2816",
+      "doc_1314",
+      "doc_2372",
+      "doc_2832",
+      "doc_1315",
+      "doc_2833",
+      "doc_1320"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_006",
@@ -84,13 +112,18 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_851",
+      "doc_3655",
+      "doc_1188",
       "doc_3792",
-      "doc_2996",
-      "doc_3166",
-      "doc_2081"
+      "doc_1521",
+      "doc_2379",
+      "doc_3004",
+      "doc_1324",
+      "doc_582",
+      "doc_1034"
     ],
-    "total_relevant_found": 5,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_007",
@@ -98,9 +131,20 @@
     "language": "arabic",
     "category": "symptoms",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_3637",
+      "doc_3755",
+      "doc_3636",
+      "doc_2744",
+      "doc_2745",
+      "doc_3756",
+      "doc_1543",
+      "doc_3119",
+      "doc_2816",
+      "doc_3562"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_008",
@@ -111,11 +155,17 @@
     "relevant_docs": [
       "doc_1069",
       "doc_1690",
-      "doc_121",
-      "doc_2464"
+      "doc_1689",
+      "doc_466",
+      "doc_2161",
+      "doc_2160",
+      "doc_2119",
+      "doc_1065",
+      "doc_2095",
+      "doc_973"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_009",
@@ -127,13 +177,16 @@
       "doc_987",
       "doc_989",
       "doc_988",
-      "doc_986",
       "doc_990",
-      "doc_1442",
-      "doc_991"
+      "doc_986",
+      "doc_1718",
+      "doc_3423",
+      "doc_992",
+      "doc_991",
+      "doc_994"
     ],
-    "total_relevant_found": 7,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_010",
@@ -142,18 +195,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_68",
-      "doc_3177",
-      "doc_3271",
-      "doc_937",
-      "doc_1207",
-      "doc_500",
-      "doc_97",
-      "doc_3176",
-      "doc_1211"
+      "doc_73",
+      "doc_88",
+      "doc_71",
+      "doc_72",
+      "doc_77",
+      "doc_69",
+      "doc_87",
+      "doc_74",
+      "doc_94",
+      "doc_1221"
     ],
-    "total_relevant_found": 9,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_011",
@@ -161,9 +215,20 @@
     "language": "arabic",
     "category": "symptoms",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1667",
+      "doc_1666",
+      "doc_3027",
+      "doc_682",
+      "doc_635",
+      "doc_680",
+      "doc_834",
+      "doc_678",
+      "doc_675",
+      "doc_670"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_012",
@@ -172,12 +237,19 @@
     "category": "medications",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_2438",
+      "doc_889",
+      "doc_877",
+      "doc_1629",
       "doc_43",
-      "doc_923",
-      "doc_42"
+      "doc_307",
+      "doc_2540",
+      "doc_42",
+      "doc_2355",
+      "doc_2426"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_013",
@@ -186,19 +258,19 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_2223",
-      "doc_2242",
-      "doc_2246",
-      "doc_2464",
-      "doc_2217",
-      "doc_2275",
-      "doc_2255",
-      "doc_2235",
-      "doc_347",
-      "doc_2251"
+      "doc_2247",
+      "doc_2239",
+      "doc_2238",
+      "doc_2248",
+      "doc_2250",
+      "doc_2220",
+      "doc_2262",
+      "doc_2241",
+      "doc_2260",
+      "doc_2279"
     ],
-    "total_relevant_found": 11,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_014",
@@ -206,9 +278,20 @@
     "language": "arabic",
     "category": "emergency",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1605",
+      "doc_1606",
+      "doc_2887",
+      "doc_2882",
+      "doc_1101",
+      "doc_2816",
+      "doc_3363",
+      "doc_1598",
+      "doc_2883",
+      "doc_1477"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_015",
@@ -216,9 +299,20 @@
     "language": "arabic",
     "category": "treatment",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2176",
+      "doc_2175",
+      "doc_3836",
+      "doc_1668",
+      "doc_1620",
+      "doc_3627",
+      "doc_3628",
+      "doc_3865",
+      "doc_250",
+      "doc_541"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_016",
@@ -227,18 +321,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_2221",
-      "doc_2229",
-      "doc_2266",
-      "doc_2225",
-      "doc_2265",
-      "doc_2226",
-      "doc_2268",
-      "doc_2273",
-      "doc_2250"
+      "doc_2236",
+      "doc_2237",
+      "doc_2270",
+      "doc_2235",
+      "doc_2224",
+      "doc_2217",
+      "doc_2238",
+      "doc_2271",
+      "doc_1652",
+      "doc_2231"
     ],
-    "total_relevant_found": 9,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_017",
@@ -246,9 +341,20 @@
     "language": "arabic",
     "category": "causes",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1067",
+      "doc_1066",
+      "doc_3456",
+      "doc_972",
+      "doc_1069",
+      "doc_3455",
+      "doc_964",
+      "doc_2161",
+      "doc_1065",
+      "doc_959"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_018",
@@ -257,15 +363,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_1543",
+      "doc_3561",
       "doc_3755",
-      "doc_3757",
+      "doc_3146",
+      "doc_3562",
       "doc_3145",
-      "doc_3744",
-      "doc_3637",
-      "doc_3864"
+      "doc_3756",
+      "doc_3118",
+      "doc_3761",
+      "doc_1545"
     ],
-    "total_relevant_found": 6,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_019",
@@ -274,11 +384,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_1456",
-      "doc_2434"
+      "doc_1605",
+      "doc_967",
+      "doc_2745",
+      "doc_2744",
+      "doc_1101",
+      "doc_2746",
+      "doc_873",
+      "doc_1025",
+      "doc_2816",
+      "doc_2072"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_020",
@@ -288,12 +406,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_71",
+      "doc_100",
+      "doc_1222",
+      "doc_73",
+      "doc_70",
+      "doc_117",
+      "doc_148",
       "doc_99",
-      "doc_74",
-      "doc_3605"
+      "doc_87",
+      "doc_1205"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_021",
@@ -301,9 +425,20 @@
     "language": "arabic",
     "category": "symptoms",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_991",
+      "doc_2745",
+      "doc_1655",
+      "doc_1024",
+      "doc_79",
+      "doc_990",
+      "doc_862",
+      "doc_3141",
+      "doc_2746",
+      "doc_2752"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_022",
@@ -312,19 +447,19 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_2160",
+      "doc_2121",
       "doc_2162",
-      "doc_2720",
-      "doc_2723",
-      "doc_1165",
-      "doc_2729",
-      "doc_2724",
-      "doc_1158",
-      "doc_1153",
-      "doc_1171",
-      "doc_1156"
+      "doc_2119",
+      "doc_2164",
+      "doc_296",
+      "doc_2161",
+      "doc_2102",
+      "doc_2421",
+      "doc_359"
     ],
-    "total_relevant_found": 13,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_023",
@@ -332,9 +467,20 @@
     "language": "arabic",
     "category": "causes",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1023",
+      "doc_3474",
+      "doc_3475",
+      "doc_987",
+      "doc_1761",
+      "doc_1718",
+      "doc_2215",
+      "doc_2265",
+      "doc_1020",
+      "doc_988"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_024",
@@ -342,9 +488,20 @@
     "language": "arabic",
     "category": "diagnosis",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_908",
+      "doc_917",
+      "doc_3595",
+      "doc_3561",
+      "doc_3571",
+      "doc_1334",
+      "doc_1175",
+      "doc_2199",
+      "doc_1545",
+      "doc_2198"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_025",
@@ -354,18 +511,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_1622",
-      "doc_1629",
-      "doc_1625",
-      "doc_1626",
+      "doc_1621",
+      "doc_1620",
+      "doc_1464",
       "doc_886",
+      "doc_1626",
+      "doc_1615",
       "doc_1627",
-      "doc_3234",
-      "doc_1623",
-      "doc_3225",
-      "doc_1628"
+      "doc_1619",
+      "doc_1625"
     ],
-    "total_relevant_found": 15,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_026",
@@ -373,9 +530,20 @@
     "language": "arabic",
     "category": "emergency",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1605",
+      "doc_1606",
+      "doc_2887",
+      "doc_2882",
+      "doc_2816",
+      "doc_1101",
+      "doc_3363",
+      "doc_1598",
+      "doc_2883",
+      "doc_1477"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_027",
@@ -383,9 +551,20 @@
     "language": "arabic",
     "category": "medications",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2244",
+      "doc_2242",
+      "doc_2243",
+      "doc_2246",
+      "doc_2234",
+      "doc_2226",
+      "doc_2241",
+      "doc_2245",
+      "doc_2249",
+      "doc_2225"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_028",
@@ -395,18 +574,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_194",
-      "doc_207",
       "doc_195",
-      "doc_196",
-      "doc_201",
-      "doc_200",
       "doc_203",
+      "doc_196",
+      "doc_207",
+      "doc_201",
       "doc_198",
+      "doc_199",
       "doc_197",
-      "doc_206"
+      "doc_200"
     ],
-    "total_relevant_found": 13,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_029",
@@ -415,11 +594,19 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1086",
-      "doc_2344"
+      "doc_3426",
+      "doc_3427",
+      "doc_325",
+      "doc_3755",
+      "doc_990",
+      "doc_2036",
+      "doc_3744",
+      "doc_1327",
+      "doc_2074",
+      "doc_2072"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_030",
@@ -428,16 +615,19 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_2333",
       "doc_76",
+      "doc_2313",
+      "doc_2272",
+      "doc_2332",
+      "doc_2265",
+      "doc_2233",
+      "doc_2222",
       "doc_1605",
-      "doc_1626",
-      "doc_3475",
-      "doc_988",
-      "doc_2905",
-      "doc_2234"
+      "doc_2752"
     ],
-    "total_relevant_found": 7,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_031",
@@ -445,9 +635,20 @@
     "language": "arabic",
     "category": "treatment",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2377",
+      "doc_3246",
+      "doc_2838",
+      "doc_2839",
+      "doc_806",
+      "doc_230",
+      "doc_2835",
+      "doc_3064",
+      "doc_2852",
+      "doc_3573"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_032",
@@ -456,10 +657,19 @@
     "category": "emergency",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_2864"
+      "doc_2871",
+      "doc_3363",
+      "doc_1358",
+      "doc_408",
+      "doc_390",
+      "doc_2110",
+      "doc_3368",
+      "doc_2111",
+      "doc_2812",
+      "doc_2816"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_033",
@@ -467,9 +677,20 @@
     "language": "arabic",
     "category": "nutrition",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1196",
+      "doc_1197",
+      "doc_3620",
+      "doc_37",
+      "doc_2311",
+      "doc_750",
+      "doc_899",
+      "doc_2047",
+      "doc_900",
+      "doc_378"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_034",
@@ -478,19 +699,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_3574",
       "doc_3570",
+      "doc_3574",
       "doc_3573",
+      "doc_699",
       "doc_3579",
-      "doc_3571",
       "doc_3581",
-      "doc_3582",
-      "doc_3572",
+      "doc_3571",
       "doc_3569",
-      "doc_3566"
+      "doc_700",
+      "doc_2133"
     ],
-    "total_relevant_found": 13,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_035",
@@ -501,14 +722,17 @@
     "relevant_docs": [
       "doc_1627",
       "doc_2832",
-      "doc_173",
       "doc_75",
-      "doc_3180",
-      "doc_3179",
-      "doc_1602"
+      "doc_1377",
+      "doc_173",
+      "doc_74",
+      "doc_1003",
+      "doc_2830",
+      "doc_2831",
+      "doc_112"
     ],
-    "total_relevant_found": 7,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_036",
@@ -517,10 +741,19 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_1359"
+      "doc_2036",
+      "doc_2110",
+      "doc_1359",
+      "doc_2277",
+      "doc_3026",
+      "doc_2457",
+      "doc_2113",
+      "doc_2882",
+      "doc_2157",
+      "doc_2111"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_037",
@@ -528,9 +761,20 @@
     "language": "arabic",
     "category": "treatment",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1128",
+      "doc_365",
+      "doc_1819",
+      "doc_1668",
+      "doc_580",
+      "doc_1008",
+      "doc_1131",
+      "doc_1541",
+      "doc_1818",
+      "doc_941"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_038",
@@ -540,18 +784,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_1316",
-      "doc_3025",
+      "doc_1308",
       "doc_1311",
       "doc_1309",
       "doc_1314",
+      "doc_1323",
       "doc_1317",
       "doc_1315",
-      "doc_1313",
-      "doc_1312",
-      "doc_1324"
+      "doc_1324",
+      "doc_1312"
     ],
-    "total_relevant_found": 13,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_039",
@@ -559,9 +803,20 @@
     "language": "arabic",
     "category": "causes",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_3027",
+      "doc_2555",
+      "doc_3493",
+      "doc_3484",
+      "doc_1500",
+      "doc_2318",
+      "doc_2556",
+      "doc_1667",
+      "doc_834",
+      "doc_1502"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_040",
@@ -570,12 +825,19 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_2397",
+      "doc_2026",
+      "doc_3017",
+      "doc_1016",
+      "doc_1278",
+      "doc_2027",
+      "doc_1798",
       "doc_1281",
-      "doc_2020",
-      "doc_347"
+      "doc_3340",
+      "doc_271"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_041",
@@ -584,11 +846,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_3749",
-      "doc_3455"
+      "doc_3755",
+      "doc_2747",
+      "doc_2745",
+      "doc_3426",
+      "doc_3637",
+      "doc_2744",
+      "doc_2074",
+      "doc_991",
+      "doc_990",
+      "doc_2072"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_042",
@@ -601,15 +871,15 @@
       "doc_1624",
       "doc_1623",
       "doc_1625",
-      "doc_2335",
-      "doc_1613",
-      "doc_1629",
-      "doc_1604",
-      "doc_1591",
-      "doc_1597"
+      "doc_881",
+      "doc_886",
+      "doc_880",
+      "doc_879",
+      "doc_1626",
+      "doc_2335"
     ],
-    "total_relevant_found": 11,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_043",
@@ -617,9 +887,20 @@
     "language": "arabic",
     "category": "treatment",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1161",
+      "doc_1629",
+      "doc_2117",
+      "doc_3367",
+      "doc_214",
+      "doc_2723",
+      "doc_2729",
+      "doc_296",
+      "doc_230",
+      "doc_1170"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_044",
@@ -627,9 +908,20 @@
     "language": "arabic",
     "category": "symptoms",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2110",
+      "doc_2124",
+      "doc_2482",
+      "doc_2111",
+      "doc_2105",
+      "doc_2123",
+      "doc_392",
+      "doc_2740",
+      "doc_2109",
+      "doc_2113"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_045",
@@ -638,10 +930,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_2238"
+      "doc_2236",
+      "doc_2235",
+      "doc_2218",
+      "doc_2232",
+      "doc_3561",
+      "doc_2231",
+      "doc_3128",
+      "doc_2217",
+      "doc_1545",
+      "doc_1175"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_046",
@@ -650,10 +951,19 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1956"
+      "doc_1444",
+      "doc_1956",
+      "doc_1962",
+      "doc_1952",
+      "doc_1954",
+      "doc_3062",
+      "doc_1959",
+      "doc_1957",
+      "doc_3141",
+      "doc_1893"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_047",
@@ -663,14 +973,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_3838",
-      "doc_3229",
-      "doc_3231",
-      "doc_3830",
-      "doc_3234",
-      "doc_3235"
+      "doc_3839",
+      "doc_3235",
+      "doc_3631",
+      "doc_934",
+      "doc_1034",
+      "doc_1433",
+      "doc_2935",
+      "doc_2468",
+      "doc_2996"
     ],
-    "total_relevant_found": 6,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_048",
@@ -679,10 +993,19 @@
     "category": "causes",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_155"
+      "doc_2222",
+      "doc_2233",
+      "doc_2265",
+      "doc_2250",
+      "doc_2270",
+      "doc_2266",
+      "doc_2224",
+      "doc_2247",
+      "doc_2264",
+      "doc_2272"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_049",
@@ -690,9 +1013,20 @@
     "language": "arabic",
     "category": "symptoms",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_862",
+      "doc_2745",
+      "doc_3560",
+      "doc_2744",
+      "doc_2749",
+      "doc_2747",
+      "doc_3323",
+      "doc_927",
+      "doc_3637",
+      "doc_2746"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "ar_050",
@@ -701,10 +1035,19 @@
     "category": "procedures",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_744"
+      "doc_750",
+      "doc_1196",
+      "doc_749",
+      "doc_1197",
+      "doc_1525",
+      "doc_738",
+      "doc_2538",
+      "doc_733",
+      "doc_730",
+      "doc_3620"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_001",
@@ -713,12 +1056,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_2229",
       "doc_2217",
+      "doc_2277",
+      "doc_2230",
       "doc_2222",
-      "doc_2224"
+      "doc_2233",
+      "doc_2248",
+      "doc_2276",
+      "doc_2238",
+      "doc_2231"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_002",
@@ -728,11 +1078,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_1629",
-      "doc_397",
-      "doc_1614"
+      "doc_626",
+      "doc_877",
+      "doc_1613",
+      "doc_1481",
+      "doc_974",
+      "doc_1102",
+      "doc_2438",
+      "doc_1690",
+      "doc_2115"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_003",
@@ -741,11 +1098,19 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1600",
-      "doc_1477"
+      "doc_1450",
+      "doc_1449",
+      "doc_1548",
+      "doc_1452",
+      "doc_1597",
+      "doc_1598",
+      "doc_2088",
+      "doc_1599",
+      "doc_987",
+      "doc_2649"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_004",
@@ -754,19 +1119,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_82",
       "doc_84",
+      "doc_82",
+      "doc_77",
       "doc_85",
-      "doc_1258",
+      "doc_152",
+      "doc_69",
+      "doc_3274",
+      "doc_3746",
       "doc_483",
-      "doc_83",
-      "doc_81",
-      "doc_79",
-      "doc_94",
-      "doc_499"
+      "doc_1258"
     ],
-    "total_relevant_found": 11,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_005",
@@ -775,11 +1140,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_3048",
+      "doc_3246",
+      "doc_2816",
+      "doc_2205",
       "doc_3049",
-      "doc_3047"
+      "doc_1314",
+      "doc_3047",
+      "doc_2372",
+      "doc_3050",
+      "doc_1687"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_006",
@@ -790,16 +1163,17 @@
     "relevant_docs": [
       "doc_3004",
       "doc_3655",
+      "doc_3033",
+      "doc_582",
       "doc_2996",
-      "doc_851",
       "doc_985",
-      "doc_1324",
-      "doc_3792",
-      "doc_2379",
-      "doc_2865"
+      "doc_851",
+      "doc_2262",
+      "doc_984",
+      "doc_1521"
     ],
-    "total_relevant_found": 9,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_007",
@@ -809,11 +1183,18 @@
     "difficulty": "easy",
     "relevant_docs": [
       "doc_3637",
-      "doc_3119",
-      "doc_3757"
+      "doc_3755",
+      "doc_3636",
+      "doc_3756",
+      "doc_2744",
+      "doc_3145",
+      "doc_1543",
+      "doc_989",
+      "doc_2816",
+      "doc_2745"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_008",
@@ -824,10 +1205,17 @@
     "relevant_docs": [
       "doc_1069",
       "doc_1690",
-      "doc_1071"
+      "doc_1689",
+      "doc_410",
+      "doc_1068",
+      "doc_1070",
+      "doc_466",
+      "doc_3653",
+      "doc_1071",
+      "doc_1065"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_009",
@@ -839,10 +1227,16 @@
       "doc_987",
       "doc_989",
       "doc_988",
-      "doc_993"
+      "doc_990",
+      "doc_986",
+      "doc_3423",
+      "doc_1718",
+      "doc_992",
+      "doc_991",
+      "doc_1442"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_010",
@@ -853,11 +1247,17 @@
     "relevant_docs": [
       "doc_73",
       "doc_88",
+      "doc_71",
+      "doc_644",
+      "doc_77",
+      "doc_72",
+      "doc_69",
+      "doc_94",
       "doc_74",
-      "doc_78"
+      "doc_601"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_011",
@@ -868,14 +1268,17 @@
     "relevant_docs": [
       "doc_1667",
       "doc_1666",
-      "doc_3206",
-      "doc_1605",
+      "doc_670",
+      "doc_682",
+      "doc_3378",
+      "doc_690",
       "doc_669",
-      "doc_1458",
-      "doc_3201"
+      "doc_635",
+      "doc_136",
+      "doc_668"
     ],
-    "total_relevant_found": 7,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_012",
@@ -883,9 +1286,20 @@
     "language": "english",
     "category": "medications",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2438",
+      "doc_2426",
+      "doc_2825",
+      "doc_43",
+      "doc_397",
+      "doc_1503",
+      "doc_889",
+      "doc_307",
+      "doc_1629",
+      "doc_2048"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_013",
@@ -895,18 +1309,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_2239",
+      "doc_2238",
       "doc_2248",
-      "doc_2222",
-      "doc_2252",
       "doc_2240",
-      "doc_2241",
+      "doc_2247",
+      "doc_2220",
+      "doc_2252",
       "doc_2249",
-      "doc_2243",
-      "doc_2245",
-      "doc_2242"
+      "doc_2228",
+      "doc_2545"
     ],
-    "total_relevant_found": 14,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_015",
@@ -914,9 +1328,20 @@
     "language": "english",
     "category": "treatment",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2176",
+      "doc_2175",
+      "doc_1668",
+      "doc_1620",
+      "doc_3836",
+      "doc_3865",
+      "doc_3631",
+      "doc_1690",
+      "doc_1965",
+      "doc_3627"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_016",
@@ -928,16 +1353,16 @@
       "doc_2236",
       "doc_2237",
       "doc_2224",
-      "doc_2231",
-      "doc_2238",
-      "doc_2222",
-      "doc_2232",
-      "doc_2223",
-      "doc_2281",
-      "doc_2246"
+      "doc_2270",
+      "doc_2235",
+      "doc_1652",
+      "doc_2265",
+      "doc_2217",
+      "doc_2233",
+      "doc_2271"
     ],
-    "total_relevant_found": 14,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_017",
@@ -947,12 +1372,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_1067",
-      "doc_1070",
-      "doc_2459",
-      "doc_2704"
+      "doc_1066",
+      "doc_1069",
+      "doc_972",
+      "doc_3456",
+      "doc_1065",
+      "doc_991",
+      "doc_969",
+      "doc_1690",
+      "doc_2188"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_018",
@@ -961,19 +1392,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_1543",
       "doc_3755",
+      "doc_3561",
+      "doc_3146",
       "doc_3562",
       "doc_3756",
-      "doc_3637",
-      "doc_3757",
-      "doc_1544",
-      "doc_3749",
-      "doc_3754",
-      "doc_3744",
-      "doc_3752"
+      "doc_3145",
+      "doc_130",
+      "doc_3118",
+      "doc_2046"
     ],
-    "total_relevant_found": 14,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_019",
@@ -982,11 +1413,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_3361",
-      "doc_3145"
+      "doc_967",
+      "doc_1605",
+      "doc_2745",
+      "doc_301",
+      "doc_1603",
+      "doc_1025",
+      "doc_1655",
+      "doc_2744",
+      "doc_2816",
+      "doc_2072"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_020",
@@ -995,12 +1434,19 @@
     "category": "diagnosis",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_99",
-      "doc_3605",
-      "doc_1201"
+      "doc_71",
+      "doc_100",
+      "doc_117",
+      "doc_1222",
+      "doc_73",
+      "doc_70",
+      "doc_3210",
+      "doc_148",
+      "doc_2557",
+      "doc_3404"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_021",
@@ -1009,10 +1455,19 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_2110"
+      "doc_2745",
+      "doc_991",
+      "doc_1024",
+      "doc_2360",
+      "doc_990",
+      "doc_2159",
+      "doc_3141",
+      "doc_3140",
+      "doc_1762",
+      "doc_3242"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_022",
@@ -1021,19 +1476,19 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
+      "doc_2160",
+      "doc_2119",
       "doc_2162",
-      "doc_2720",
-      "doc_2161",
-      "doc_2165",
+      "doc_2164",
+      "doc_2121",
+      "doc_2095",
+      "doc_296",
+      "doc_1799",
       "doc_2159",
-      "doc_2730",
-      "doc_370",
-      "doc_1158",
-      "doc_1157",
-      "doc_2158"
+      "doc_2720"
     ],
-    "total_relevant_found": 10,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_023",
@@ -1042,17 +1497,19 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_3475",
       "doc_3474",
+      "doc_3475",
       "doc_1023",
-      "doc_1033",
-      "doc_2514",
-      "doc_1024",
-      "doc_1027",
-      "doc_1030"
+      "doc_1020",
+      "doc_2650",
+      "doc_3473",
+      "doc_1021",
+      "doc_3649",
+      "doc_2622",
+      "doc_2623"
     ],
-    "total_relevant_found": 8,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_024",
@@ -1060,9 +1517,20 @@
     "language": "english",
     "category": "diagnosis",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_908",
+      "doc_1337",
+      "doc_3561",
+      "doc_1543",
+      "doc_177",
+      "doc_1753",
+      "doc_3127",
+      "doc_1335",
+      "doc_2320",
+      "doc_1961"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_025",
@@ -1071,19 +1539,19 @@
     "category": "prevention",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1622",
       "doc_886",
+      "doc_1622",
+      "doc_1464",
       "doc_1626",
-      "doc_1629",
+      "doc_1620",
+      "doc_1621",
+      "doc_1633",
       "doc_1625",
-      "doc_1627",
-      "doc_1624",
-      "doc_1604",
-      "doc_1628",
-      "doc_1601"
+      "doc_1613",
+      "doc_199"
     ],
-    "total_relevant_found": 20,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_026",
@@ -1091,9 +1559,20 @@
     "language": "english",
     "category": "emergency",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1606",
+      "doc_1605",
+      "doc_2887",
+      "doc_2882",
+      "doc_1597",
+      "doc_2816",
+      "doc_1101",
+      "doc_1602",
+      "doc_1598",
+      "doc_197"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_027",
@@ -1101,9 +1580,20 @@
     "language": "english",
     "category": "medications",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2244",
+      "doc_2243",
+      "doc_2242",
+      "doc_2246",
+      "doc_2226",
+      "doc_2234",
+      "doc_2245",
+      "doc_2241",
+      "doc_2249",
+      "doc_988"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_028",
@@ -1113,18 +1603,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_195",
-      "doc_203",
       "doc_196",
+      "doc_203",
+      "doc_194",
       "doc_201",
+      "doc_200",
+      "doc_197",
       "doc_204",
-      "doc_202",
-      "doc_1616",
-      "doc_208",
-      "doc_1612",
-      "doc_2791"
+      "doc_207",
+      "doc_202"
     ],
-    "total_relevant_found": 10,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_029",
@@ -1133,10 +1623,19 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_325"
+      "doc_3426",
+      "doc_2036",
+      "doc_325",
+      "doc_3427",
+      "doc_3755",
+      "doc_2074",
+      "doc_3752",
+      "doc_990",
+      "doc_1327",
+      "doc_1085"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_030",
@@ -1145,12 +1644,19 @@
     "category": "causes",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1626",
-      "doc_3474",
-      "doc_2227"
+      "doc_2333",
+      "doc_76",
+      "doc_2272",
+      "doc_2313",
+      "doc_2332",
+      "doc_2265",
+      "doc_1604",
+      "doc_2222",
+      "doc_790",
+      "doc_779"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_031",
@@ -1159,10 +1665,19 @@
     "category": "treatment",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_676"
+      "doc_3246",
+      "doc_2838",
+      "doc_2839",
+      "doc_2377",
+      "doc_3049",
+      "doc_671",
+      "doc_1510",
+      "doc_166",
+      "doc_806",
+      "doc_3050"
     ],
-    "total_relevant_found": 1,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_032",
@@ -1171,11 +1686,19 @@
     "category": "emergency",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_2516",
-      "doc_243"
+      "doc_2871",
+      "doc_3363",
+      "doc_1358",
+      "doc_2875",
+      "doc_408",
+      "doc_2816",
+      "doc_3368",
+      "doc_2870",
+      "doc_2887",
+      "doc_3197"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_033",
@@ -1183,9 +1706,20 @@
     "language": "english",
     "category": "nutrition",
     "difficulty": "easy",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1196",
+      "doc_1197",
+      "doc_3620",
+      "doc_37",
+      "doc_899",
+      "doc_900",
+      "doc_2047",
+      "doc_378",
+      "doc_2311",
+      "doc_2538"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_034",
@@ -1195,11 +1729,18 @@
     "difficulty": "medium",
     "relevant_docs": [
       "doc_3570",
+      "doc_3573",
       "doc_3574",
-      "doc_3563"
+      "doc_699",
+      "doc_3579",
+      "doc_3581",
+      "doc_2046",
+      "doc_3571",
+      "doc_2079",
+      "doc_3572"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_035",
@@ -1210,16 +1751,17 @@
     "relevant_docs": [
       "doc_1627",
       "doc_2832",
+      "doc_1377",
       "doc_75",
+      "doc_2840",
+      "doc_214",
       "doc_173",
-      "doc_3180",
-      "doc_3179",
-      "doc_2830",
-      "doc_1675",
-      "doc_1602"
+      "doc_1626",
+      "doc_74",
+      "doc_112"
     ],
-    "total_relevant_found": 9,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_036",
@@ -1228,11 +1770,19 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
-      "doc_1501",
-      "doc_2706"
+      "doc_2110",
+      "doc_2036",
+      "doc_2457",
+      "doc_1359",
+      "doc_2277",
+      "doc_2706",
+      "doc_3026",
+      "doc_2109",
+      "doc_2157",
+      "doc_2051"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_037",
@@ -1240,9 +1790,20 @@
     "language": "english",
     "category": "treatment",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1128",
+      "doc_2723",
+      "doc_365",
+      "doc_1008",
+      "doc_178",
+      "doc_3281",
+      "doc_649",
+      "doc_2266",
+      "doc_3529",
+      "doc_1819"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_038",
@@ -1251,12 +1812,19 @@
     "category": "diagnosis",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1319",
-      "doc_1321",
-      "doc_3025"
+      "doc_1316",
+      "doc_1324",
+      "doc_1311",
+      "doc_1314",
+      "doc_1325",
+      "doc_1778",
+      "doc_1317",
+      "doc_1101",
+      "doc_2838",
+      "doc_1312"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_039",
@@ -1264,9 +1832,20 @@
     "language": "english",
     "category": "causes",
     "difficulty": "hard",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_3027",
+      "doc_3484",
+      "doc_1584",
+      "doc_2555",
+      "doc_1886",
+      "doc_3493",
+      "doc_2550",
+      "doc_834",
+      "doc_969",
+      "doc_2318"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_040",
@@ -1275,14 +1854,19 @@
     "category": "treatment",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_2023",
-      "doc_562",
-      "doc_2019",
-      "doc_2022",
-      "doc_832"
+      "doc_2026",
+      "doc_2027",
+      "doc_2397",
+      "doc_2020",
+      "doc_3017",
+      "doc_1280",
+      "doc_1798",
+      "doc_832",
+      "doc_2029",
+      "doc_3665"
     ],
-    "total_relevant_found": 5,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_041",
@@ -1291,13 +1875,19 @@
     "category": "symptoms",
     "difficulty": "easy",
     "relevant_docs": [
+      "doc_3755",
+      "doc_2745",
       "doc_3637",
-      "doc_3461",
-      "doc_3458",
-      "doc_3454"
+      "doc_2747",
+      "doc_3426",
+      "doc_2074",
+      "doc_3756",
+      "doc_2072",
+      "doc_991",
+      "doc_2294"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_042",
@@ -1310,12 +1900,15 @@
       "doc_1624",
       "doc_1623",
       "doc_1625",
-      "doc_2335",
-      "doc_1616",
-      "doc_1613"
+      "doc_878",
+      "doc_881",
+      "doc_886",
+      "doc_1464",
+      "doc_3627",
+      "doc_2388"
     ],
-    "total_relevant_found": 7,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_043",
@@ -1325,12 +1918,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_1161",
-      "doc_296",
-      "doc_1171",
-      "doc_2465"
+      "doc_1629",
+      "doc_230",
+      "doc_3038",
+      "doc_38",
+      "doc_215",
+      "doc_166",
+      "doc_214",
+      "doc_1170",
+      "doc_397"
     ],
-    "total_relevant_found": 4,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_044",
@@ -1339,14 +1938,19 @@
     "category": "symptoms",
     "difficulty": "hard",
     "relevant_docs": [
+      "doc_2124",
+      "doc_2482",
+      "doc_2110",
+      "doc_2105",
+      "doc_392",
+      "doc_2123",
       "doc_2111",
-      "doc_2113",
-      "doc_2112",
-      "doc_2114",
+      "doc_2109",
+      "doc_2740",
       "doc_384"
     ],
-    "total_relevant_found": 5,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_045",
@@ -1354,9 +1958,20 @@
     "language": "english",
     "category": "diagnosis",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_2236",
+      "doc_2235",
+      "doc_3561",
+      "doc_2232",
+      "doc_2231",
+      "doc_3453",
+      "doc_3128",
+      "doc_2226",
+      "doc_2218",
+      "doc_2233"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_046",
@@ -1365,11 +1980,19 @@
     "category": "symptoms",
     "difficulty": "medium",
     "relevant_docs": [
-      "doc_1953",
-      "doc_1817"
+      "doc_1444",
+      "doc_1956",
+      "doc_1962",
+      "doc_1952",
+      "doc_3062",
+      "doc_1959",
+      "doc_1976",
+      "doc_1967",
+      "doc_1443",
+      "doc_1945"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_047",
@@ -1377,9 +2000,20 @@
     "language": "english",
     "category": "prevention",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_3839",
+      "doc_3838",
+      "doc_3235",
+      "doc_2935",
+      "doc_1034",
+      "doc_1433",
+      "doc_934",
+      "doc_2468",
+      "doc_2996",
+      "doc_787"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_048",
@@ -1388,12 +2022,19 @@
     "category": "causes",
     "difficulty": "easy",
     "relevant_docs": [
-      "doc_2234",
-      "doc_2225",
-      "doc_2267"
+      "doc_2222",
+      "doc_2233",
+      "doc_2250",
+      "doc_2271",
+      "doc_2224",
+      "doc_2339",
+      "doc_2270",
+      "doc_2265",
+      "doc_3453",
+      "doc_848"
     ],
-    "total_relevant_found": 3,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_049",
@@ -1403,10 +2044,18 @@
     "difficulty": "hard",
     "relevant_docs": [
       "doc_3637",
-      "doc_3119"
+      "doc_133",
+      "doc_3636",
+      "doc_3755",
+      "doc_3560",
+      "doc_3642",
+      "doc_989",
+      "doc_990",
+      "doc_991",
+      "doc_3639"
     ],
-    "total_relevant_found": 2,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   },
   {
     "id": "en_050",
@@ -1414,8 +2063,19 @@
     "language": "english",
     "category": "procedures",
     "difficulty": "medium",
-    "relevant_docs": [],
-    "total_relevant_found": 0,
-    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+    "relevant_docs": [
+      "doc_1196",
+      "doc_1197",
+      "doc_2538",
+      "doc_750",
+      "doc_3620",
+      "doc_2539",
+      "doc_3753",
+      "doc_378",
+      "doc_900",
+      "doc_749"
+    ],
+    "total_retrieved": 10,
+    "retrieval_method": "hybrid_retrieval"
   }
 ]

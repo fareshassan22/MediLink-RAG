@@ -1,0 +1,1310 @@
+[
+  {
+    "id": "ar_001",
+    "query": "ما هي أعراض مرض السكري؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_435",
+      "doc_437",
+      "doc_439",
+      "doc_445"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_002",
+    "query": "ما هو علاج ارتفاع ضغط الدم؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_318"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_003",
+    "query": "ما أسباب فشل القلب؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_285",
+      "doc_287",
+      "doc_318",
+      "doc_49"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_004",
+    "query": "كيف يتم تشخيص السرطان؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_239",
+      "doc_240"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_005",
+    "query": "ما أعراض الربو؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_330",
+      "doc_198"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_006",
+    "query": "كيف يمكن الوقاية من العدوى؟",
+    "language": "arabic",
+    "category": "prevention",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_269",
+      "doc_160",
+      "doc_194"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_007",
+    "query": "ما هي أعراض فقر الدم؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_681"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_008",
+    "query": "ما علاج الصداع؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_110"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_009",
+    "query": "ما أسباب أمراض الكلى؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_195"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_010",
+    "query": "ما أنواع السرطان المختلفة؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_011",
+    "query": "أعاني من ألم في صدري، ما السبب؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_116",
+      "doc_631",
+      "doc_668",
+      "doc_285",
+      "doc_514",
+      "doc_110",
+      "doc_30"
+    ],
+    "total_relevant_found": 7,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_012",
+    "query": "ما هو دواء ضغط الدم؟",
+    "language": "arabic",
+    "category": "medications",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_321",
+      "doc_15"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_013",
+    "query": "كيف أتعامل مع مريض السكري؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_435",
+      "doc_439",
+      "doc_437",
+      "doc_436",
+      "doc_444"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_014",
+    "query": "ما هي أعراض الجلطة القلبية؟",
+    "language": "arabic",
+    "category": "emergency",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_45"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_015",
+    "query": "ما علاج التهاب المفاصل؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_184",
+      "doc_110",
+      "doc_298",
+      "doc_107"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_016",
+    "query": "فحص الدم يظهر ارتفاع السكر، ماذا يعني ذلك؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_437",
+      "doc_435",
+      "doc_438",
+      "doc_439",
+      "doc_440"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_017",
+    "query": "ما هي أسباب الصداع المزمن؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_30"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_018",
+    "query": "كيف أعرف إذا كان لدي فقر دم؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_681",
+      "doc_130"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_019",
+    "query": "ما أعراض ارتفاع ضغط الدم؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_020",
+    "query": "ما الفرق بين الأورام الحميدة والخبيثة؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_021",
+    "query": "ما هي أعراض الغدة الدرقية؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_338"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_022",
+    "query": "كيف يتم علاج الاكتئاب؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_422",
+      "doc_423",
+      "doc_153"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_023",
+    "query": "ما أسباب أمراض الكبد؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_514",
+      "doc_173",
+      "doc_346"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_024",
+    "query": "ما هو فحص الدم الشامل؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_542"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_025",
+    "query": "كيف أقي نفسي من أمراض القلب؟",
+    "language": "arabic",
+    "category": "prevention",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_321",
+      "doc_318",
+      "doc_242"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_026",
+    "query": "ما هي أعراض الأزمة القلبية؟",
+    "language": "arabic",
+    "category": "emergency",
+    "difficulty": "easy",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_027",
+    "query": "ما أنواع الإنسولين المتاحة؟",
+    "language": "arabic",
+    "category": "medications",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_439"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_028",
+    "query": "كيف يتم إجراء عملية القسطرة القلبية؟",
+    "language": "arabic",
+    "category": "procedures",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_44",
+      "doc_45",
+      "doc_323",
+      "doc_551",
+      "doc_550",
+      "doc_47"
+    ],
+    "total_relevant_found": 6,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_029",
+    "query": "ما هي أعراض نقص Vitamin D؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_030",
+    "query": "ما العلاقة بين السمنة والأمراض؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_318",
+      "doc_392"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_031",
+    "query": "كيف أتعامل مع الربو أثناء النوبة؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_032",
+    "query": "ما أعراض السكتة الدماغية؟",
+    "language": "arabic",
+    "category": "emergency",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_568"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_033",
+    "query": "ما فوائد الرضاعة الطبيعية؟",
+    "language": "arabic",
+    "category": "nutrition",
+    "difficulty": "easy",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_034",
+    "query": "كيف أعرف إذا كان طفلي مصاباً بالح fever؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_701",
+      "doc_702",
+      "doc_699",
+      "doc_405"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_035",
+    "query": "ما أضرار التدخين على الصحة؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_626",
+      "doc_200"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_036",
+    "query": "ما هي أعراض مرض باركنسون؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_037",
+    "query": "كيف يتم علاج فيروس كوفيد-19؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_038",
+    "query": "ما الفرق بين流感 و نزلة البرد؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_331",
+      "doc_398"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_039",
+    "query": "ما أسباب آلام البطن المتكررة؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_294",
+      "doc_505",
+      "doc_668",
+      "doc_478"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_040",
+    "query": "كيف أعتني بالجرح بعد العملية الجراحية؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_88"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_041",
+    "query": "ما هي أعراض نقص الحديد؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_477"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_042",
+    "query": "ما هو النظام الغذائي الصحي للقلب؟",
+    "language": "arabic",
+    "category": "nutrition",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_321",
+      "doc_176",
+      "doc_318",
+      "doc_316",
+      "doc_177",
+      "doc_322",
+      "doc_402"
+    ],
+    "total_relevant_found": 7,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_043",
+    "query": "كيف أتعامل مع نوبة القلق؟",
+    "language": "arabic",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_228",
+      "doc_77",
+      "doc_230",
+      "doc_192",
+      "doc_399"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_044",
+    "query": "ما هي أعراض مرض الزهايمر؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_413"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_045",
+    "query": "ما هو فحص السكري العشوائي؟",
+    "language": "arabic",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_704"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_046",
+    "query": "ما هي أعراض التهابات المسالك البولية؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_588",
+      "doc_381"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_047",
+    "query": "كيف أقي نفسي من هشاشة العظام؟",
+    "language": "arabic",
+    "category": "prevention",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_751",
+      "doc_542"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_048",
+    "query": "ما أضرار كثرة السكريات على الصحة؟",
+    "language": "arabic",
+    "category": "causes",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_318"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_049",
+    "query": "ما هي أعراض الأنيميا المنجلية؟",
+    "language": "arabic",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_259"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "ar_050",
+    "query": "كيف أبدأ الرضاعة الطبيعية؟",
+    "language": "arabic",
+    "category": "procedures",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_236"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_001",
+    "query": "What are the symptoms of diabetes?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_435",
+      "doc_437"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_002",
+    "query": "What is the treatment for hypertension?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_589",
+      "doc_195"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_003",
+    "query": "What causes heart failure?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_317",
+      "doc_285",
+      "doc_318",
+      "doc_286",
+      "doc_49",
+      "doc_305"
+    ],
+    "total_relevant_found": 6,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_004",
+    "query": "How is cancer diagnosed?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_22",
+      "doc_239",
+      "doc_240",
+      "doc_627"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_005",
+    "query": "What are the symptoms of asthma?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_561",
+      "doc_560"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_006",
+    "query": "How can infections be prevented?",
+    "language": "english",
+    "category": "prevention",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_194",
+      "doc_269",
+      "doc_593",
+      "doc_293"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_007",
+    "query": "What are the symptoms of anemia?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_698",
+      "doc_130",
+      "doc_620"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_008",
+    "query": "What is the treatment for headache?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_30",
+      "doc_110",
+      "doc_295",
+      "doc_399",
+      "doc_195"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_009",
+    "query": "What causes kidney disease?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_437"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_010",
+    "query": "What are the different types of cancer?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_574",
+      "doc_185",
+      "doc_575",
+      "doc_186",
+      "doc_28",
+      "doc_239",
+      "doc_709"
+    ],
+    "total_relevant_found": 7,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_011",
+    "query": "I have chest pain, what could it be?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_631",
+      "doc_116",
+      "doc_556",
+      "doc_514",
+      "doc_110",
+      "doc_49",
+      "doc_318",
+      "doc_132"
+    ],
+    "total_relevant_found": 8,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_012",
+    "query": "What are blood pressure medications?",
+    "language": "english",
+    "category": "medications",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_15",
+      "doc_330",
+      "doc_17"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_013",
+    "query": "How do I manage diabetes?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_438",
+      "doc_435",
+      "doc_436",
+      "doc_439",
+      "doc_437",
+      "doc_476",
+      "doc_318",
+      "doc_481"
+    ],
+    "total_relevant_found": 8,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_015",
+    "query": "What is the treatment for arthritis?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_110"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_016",
+    "query": "My blood test shows high sugar, what does it mean?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_437",
+      "doc_435",
+      "doc_438",
+      "doc_318",
+      "doc_444",
+      "doc_440"
+    ],
+    "total_relevant_found": 6,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_017",
+    "query": "What causes chronic headaches?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_33",
+      "doc_40"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_018",
+    "query": "How do I know if I have anemia?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_698",
+      "doc_620",
+      "doc_130",
+      "doc_614"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_019",
+    "query": "What are the symptoms of high blood pressure?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_399"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_020",
+    "query": "What is the difference between benign and malignant tumors?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_021",
+    "query": "What are the symptoms of thyroid disease?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_338",
+      "doc_360",
+      "doc_698"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_022",
+    "query": "How is depression treated?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_422",
+      "doc_423",
+      "doc_228",
+      "doc_153"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_023",
+    "query": "What causes liver disease?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_204",
+      "doc_172",
+      "doc_206",
+      "doc_514"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_024",
+    "query": "What is a complete blood count test?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "easy",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_025",
+    "query": "How can I prevent heart disease?",
+    "language": "english",
+    "category": "prevention",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_321",
+      "doc_318",
+      "doc_174",
+      "doc_242"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_026",
+    "query": "What are the symptoms of a heart attack?",
+    "language": "english",
+    "category": "emergency",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_666"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_027",
+    "query": "What types of insulin are available?",
+    "language": "english",
+    "category": "medications",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_439"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_028",
+    "query": "How is cardiac catheterization performed?",
+    "language": "english",
+    "category": "procedures",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_44",
+      "doc_45",
+      "doc_68",
+      "doc_550",
+      "doc_551",
+      "doc_557"
+    ],
+    "total_relevant_found": 6,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_029",
+    "query": "What are symptoms of Vitamin D deficiency?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_030",
+    "query": "What is the relationship between obesity and disease?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_678",
+      "doc_318",
+      "doc_321"
+    ],
+    "total_relevant_found": 3,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_031",
+    "query": "How do I handle an asthma attack?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_560",
+      "doc_561",
+      "doc_199",
+      "doc_258"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_032",
+    "query": "What are the symptoms of a stroke?",
+    "language": "english",
+    "category": "emergency",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_318"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_033",
+    "query": "What are the benefits of breastfeeding?",
+    "language": "english",
+    "category": "nutrition",
+    "difficulty": "easy",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_034",
+    "query": "How do I know if my child has a fever?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_701",
+      "doc_702"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_035",
+    "query": "What are the health effects of smoking?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_626",
+      "doc_200",
+      "doc_559",
+      "doc_392",
+      "doc_198"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_036",
+    "query": "What are the symptoms of Parkinson's disease?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_532",
+      "doc_533"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_037",
+    "query": "How is COVID-19 treated?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_038",
+    "query": "What is the difference between flu and cold?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_512",
+      "doc_331"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_039",
+    "query": "What causes recurring abdominal pain?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_668",
+      "doc_478",
+      "doc_684",
+      "doc_30",
+      "doc_506"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_040",
+    "query": "How do I care for a wound after surgery?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_609"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_041",
+    "query": "What are the symptoms of iron deficiency?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_33"
+    ],
+    "total_relevant_found": 1,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_042",
+    "query": "What is a heart-healthy diet?",
+    "language": "english",
+    "category": "nutrition",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_321",
+      "doc_318",
+      "doc_176",
+      "doc_180"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_043",
+    "query": "How do I handle an anxiety attack?",
+    "language": "english",
+    "category": "treatment",
+    "difficulty": "hard",
+    "relevant_docs": [
+      "doc_483",
+      "doc_725",
+      "doc_228",
+      "doc_192"
+    ],
+    "total_relevant_found": 4,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_044",
+    "query": "What are the symptoms of Alzheimer's disease?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_045",
+    "query": "What is a random blood sugar test?",
+    "language": "english",
+    "category": "diagnosis",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_046",
+    "query": "What are the symptoms of urinary tract infection?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_381",
+      "doc_588",
+      "doc_383",
+      "doc_382",
+      "doc_384"
+    ],
+    "total_relevant_found": 5,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_047",
+    "query": "How can I prevent osteoporosis?",
+    "language": "english",
+    "category": "prevention",
+    "difficulty": "medium",
+    "relevant_docs": [
+      "doc_751",
+      "doc_242"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_048",
+    "query": "What are the health harms of excessive sugar?",
+    "language": "english",
+    "category": "causes",
+    "difficulty": "easy",
+    "relevant_docs": [
+      "doc_318",
+      "doc_174"
+    ],
+    "total_relevant_found": 2,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_049",
+    "query": "What are the symptoms of sickle cell anemia?",
+    "language": "english",
+    "category": "symptoms",
+    "difficulty": "hard",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  },
+  {
+    "id": "en_050",
+    "query": "How do I start breastfeeding?",
+    "language": "english",
+    "category": "procedures",
+    "difficulty": "medium",
+    "relevant_docs": [],
+    "total_relevant_found": 0,
+    "annotation_method": "embedding_prefilter+qwen2.5-32b-judge"
+  }
+]

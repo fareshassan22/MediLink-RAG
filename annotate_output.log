@@ -1,0 +1,13 @@
+Vector store loaded: 759 documents (FAISS)
+Loaded vector store: 759 documents
+Loaded BM25 index
+Loaded 99 queries from /home/medilink/RAG/data/eval_ground_truth.json
+
+--- DRY RUN: showing first 2 queries ---
+
+[1/2] ar_001: ما هي أعراض مرض السكري؟...
+  Candidates: 10
+  Retry 1 after RateLimitError, waiting 30s
+  Retry 1 after RateLimitError, waiting 30s
+  Retry 1 after RateLimitError, waiting 30s
+  Retry 1 after RateLimitError, waiting 30s

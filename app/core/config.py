@@ -28,15 +28,15 @@ class Config:
     MODEL_DIR: Path = BASE_DIR / "models"
     RESULTS_DIR: Path = BASE_DIR / "results"
 
-    # Fusion weights — dense is primary, BM25 is secondary
-    WEIGHT_DENSE: float = 0.8
-    WEIGHT_BM25: float = 0.2
+    # Fusion weights — optimized for hybrid
+    WEIGHT_DENSE: float = 0.75
+    WEIGHT_BM25: float = 0.25
 
-    # Retrieval settings
-    TOP_K_DENSE: int = 20
-    TOP_K_BM25: int = 20
-    TOP_K_FINAL: int = 10
-    SIMILARITY_THRESHOLD: float = 0.25
+    # Retrieval settings — increased for better recall
+    TOP_K_DENSE: int = 30
+    TOP_K_BM25: int = 30
+    TOP_K_FINAL: int = 15
+    SIMILARITY_THRESHOLD: float = 0.15
     MIN_KEYWORD_OVERLAP: float = 0.1
     MAX_ANSWER_LENGTH: int = 400
 
