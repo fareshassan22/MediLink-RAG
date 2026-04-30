@@ -4,8 +4,8 @@ from typing import List
 import torch
 
 # BGE-M3: Multilingual model with excellent Arabic support
-# Use GPU 1 if available (GPU 0 reserved for LLM), else CPU
-_embed_device = "cuda:1" if torch.cuda.device_count() > 1 else ("cuda:0" if torch.cuda.is_available() else "cpu")
+# Use GPU from CUDA_VISIBLE_DEVICES (set before running)
+_embed_device = "cuda:0" if torch.cuda.is_available() else "cpu"
 _model = None
 
 
@@ -13,6 +13,7 @@ def _get_model():
     global _model
     if _model is None:
         from sentence_transformers import SentenceTransformer
+
         _model = SentenceTransformer("BAAI/bge-m3", device=_embed_device)
     return _model
 

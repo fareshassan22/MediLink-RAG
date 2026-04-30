@@ -97,22 +97,32 @@ class RAGPipeline:
         if not expanded:
             return PipelineResult(
                 answer="Query expansion failed.",
-                confidence=0.0, sources=[], grounding_score=0.0,
-                status="expansion_failed", stage_latencies=stages,
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                status="expansion_failed",
+                stage_latencies=stages,
             )
 
         # 4-5. Retrieval
         t0 = time.time()
         dense_results, bm25_results = self._retrieve(
-            expanded, processed, vector_store, bm25, mode,
+            expanded,
+            processed,
+            vector_store,
+            bm25,
+            mode,
         )
         stages["retrieval"] = round(time.time() - t0, 3)
 
         if not dense_results and not bm25_results:
             return PipelineResult(
                 answer=MESSAGES.NO_RETRIEVAL,
-                confidence=0.0, sources=[], grounding_score=0.0,
-                status="no_retrieval", stage_latencies=stages,
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                status="no_retrieval",
+                stage_latencies=stages,
             )
 
         # 6. Fusion
@@ -120,8 +130,8 @@ class RAGPipeline:
         fused = self._fuse(dense_results, bm25_results, processed, mode)
         stages["fusion"] = round(time.time() - t0, 3)
 
-        # 6b. Score filter
-        fused = [d for d in fused if d.get("score", d.get("dense_score", 0.0)) >= 0.15]
+        # 6b. Score filter — lowered to capture more candidates
+        fused = [d for d in fused if d.get("score", d.get("dense_score", 0.0)) >= 0.10]
 
         # 7. Metadata filtering
         t0 = time.time()
@@ -130,13 +140,14 @@ class RAGPipeline:
 
         # 7b. Reranking
         t0 = time.time()
-        candidates = filtered[:cfg.TOP_K_FINAL]
+        candidates = filtered[: cfg.TOP_K_FINAL]
         reranked = rerank_documents(processed, candidates, top_k=cfg.TOP_K_FINAL)
         stages["reranking"] = round(time.time() - t0, 3)
 
         # 8. Dynamic chunk selection
         top_chunks = [
-            c for c in reranked
+            c
+            for c in reranked
             if c.get("rerank_score_normalized", c.get("dense_score", 0)) > 0.25
         ][:10]
         if not top_chunks:
@@ -145,14 +156,19 @@ class RAGPipeline:
         if not top_chunks:
             return PipelineResult(
                 answer=MESSAGES.NO_RETRIEVAL,
-                confidence=0.0, sources=[], grounding_score=0.0,
-                status="no_retrieval", stage_latencies=stages,
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                status="no_retrieval",
+                stage_latencies=stages,
             )
 
         # Enrich metadata
         for doc in top_chunks:
             doc.setdefault("page", doc.get("metadata", {}).get("page"))
-            doc.setdefault("source", doc.get("metadata", {}).get("source", "Medical Textbook"))
+            doc.setdefault(
+                "source", doc.get("metadata", {}).get("source", "Medical Textbook")
+            )
 
         # 8b. Context building (token-budgeted)
         t0 = time.time()
@@ -170,16 +186,22 @@ class RAGPipeline:
             logger.error("LLM generation failed: %s", type(e).__name__)
             return PipelineResult(
                 answer="حدث خطأ أثناء توليد الإجابة. الرجاء المحاولة لاحقاً.",
-                confidence=0.0, sources=[], grounding_score=0.0,
-                status="llm_failure", stage_latencies=stages,
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                status="llm_failure",
+                stage_latencies=stages,
             )
 
         # 10. Safety check
         if contains_sensitive_content(answer):
             return PipelineResult(
                 answer="لا يمكن عرض هذه المعلومات.",
-                confidence=0.0, sources=[], grounding_score=0.0,
-                status="blocked_sensitive_content", stage_latencies=stages,
+                confidence=0.0,
+                sources=[],
+                grounding_score=0.0,
+                status="blocked_sensitive_content",
+                stage_latencies=stages,
             )
 
         # 11. Judge (grounding + hallucination)
@@ -194,9 +216,11 @@ class RAGPipeline:
         if not jr.grounded and grounding_score < 0.3:
             return PipelineResult(
                 answer="لا يمكنني تقديم إجابة دقيقة بناءً على المصادر المتاحة.",
-                confidence=0.0, sources=[],
+                confidence=0.0,
+                sources=[],
                 grounding_score=round(grounding_score, 3),
-                status="refused_low_grounding", stage_latencies=stages,
+                status="refused_low_grounding",
+                stage_latencies=stages,
             )
 
         # 12. Citations
@@ -270,10 +294,14 @@ class RAGPipeline:
         bm25_range = bm25_max - bm25_min if bm25_max > bm25_min else 1.0
         for doc in fused:
             doc.setdefault("page", doc.get("metadata", {}).get("page"))
-            doc.setdefault("source", doc.get("metadata", {}).get("source", "Medical Textbook"))
+            doc.setdefault(
+                "source", doc.get("metadata", {}).get("source", "Medical Textbook")
+            )
             if "dense_score" not in doc:
                 raw_bm25 = doc.get("bm25_score", 0.0)
-                doc["dense_score"] = (raw_bm25 - bm25_min) / bm25_range if raw_bm25 > 0 else 0.0
+                doc["dense_score"] = (
+                    (raw_bm25 - bm25_min) / bm25_range if raw_bm25 > 0 else 0.0
+                )
         return fused
 
     @staticmethod

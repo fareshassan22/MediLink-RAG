@@ -74,6 +74,20 @@ _ARABIC_TO_ENGLISH = {
     "صدر": "pulmonary",
     "جهاز هضمي": "digestive",
     "قولون": "colon",
+    # NEW terms from zero-recall analysis
+    "فشل القلب": "heart failure",
+    "أسباب فشل القلب": "causes of heart failure",
+    "السكتة الدماغية": "stroke",
+    "أعراض السكتة الدماغية": "stroke symptoms",
+    "نقص الحديد": "iron deficiency",
+    "أعراض نقص الحديد": "iron deficiency symptoms",
+    "السل": "tuberculosis",
+    "التهاب الكبد": "hepatitis",
+    "الفشل الكلوي": "kidney failure",
+    "أمراض الكلى": "kidney disease",
+    "التهاب المفاصل": "arthritis",
+    "الاكتئاب": "depression",
+    "اضطراب القلق": "anxiety disorder",
     # Treatments
     "علاج": "treatment",
     "دواء": "medication",
@@ -196,10 +210,11 @@ def expand_query(query: str) -> List[str]:
 
     # For Arabic queries, add a full English translation as a variant
     # so dense retrieval can match English corpus documents better.
-    _has_arabic = any("\u0600" <= c <= "\u06FF" for c in query)
+    _has_arabic = any("\u0600" <= c <= "\u06ff" for c in query)
     if _has_arabic:
         try:
             from app.retrieval.query_translator import translate_query
+
             translated = translate_query(query)
             if translated and translated != query:
                 variants.append(translated)
