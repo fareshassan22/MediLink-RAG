@@ -27,6 +27,7 @@ rank-bm25==0.2.2
 # LLM client & utilities
 # ===============================
 groq>=0.11.0
+google-generativeai>=0.8.0
 requests>=2.31.0
 python-dotenv>=1.0.0
 

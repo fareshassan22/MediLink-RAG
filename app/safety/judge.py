@@ -14,19 +14,35 @@ from typing import List, Optional
 
 logger = logging.getLogger(__name__)
 
-# Judge model — configurable so it can differ from the GENERATOR model.
-# Using a DIFFERENT model family removes same-family judge bias (our grounding
-# scores were an upper bound when generator==judge) AND draws on a separate
-# Groq per-model daily-token bucket, avoiding the 8b-instant TPD ceiling.
-# Override in the environment, e.g.  JUDGE_MODEL=llama-3.3-70b-versatile
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", "llama-3.3-70b-versatile")
+# Judge provider/model — configurable so the judge can be a DIFFERENT model
+# (and different provider) than the GENERATOR. Using an independent model
+# removes same-family judge bias (our grounding scores were an upper bound when
+# generator==judge) AND uses a separate provider rate limit, so the judge never
+# drains the generator's Groq daily-token budget.
+#
+#   JUDGE_PROVIDER=gemini   (default) -> Google Gemini, needs GEMINI_API_KEY
+#   JUDGE_PROVIDER=groq               -> Groq, needs GROQ_API_KEY
+#
+# Override the model with JUDGE_MODEL (e.g. gemini-2.0-flash, gemini-1.5-flash,
+# or for groq: llama-3.3-70b-versatile / gemma2-9b-it).
+JUDGE_PROVIDER = os.getenv("JUDGE_PROVIDER", "gemini").strip().lower()
+
+_DEFAULT_MODELS = {
+    "gemini": "gemini-2.0-flash",
+    "groq": "llama-3.3-70b-versatile",
+}
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", _DEFAULT_MODELS.get(JUDGE_PROVIDER, "gemini-2.0-flash"))
 
 _judge_client = None
 _judge_lock = threading.Lock()
 
 
 def _get_client():
-    """Lazy-load the Groq client (thread-safe)."""
+    """Lazy-load the judge client for the configured provider (thread-safe).
+
+    Returns the provider-specific client object, or None if its API key is
+    missing.
+    """
     global _judge_client
     if _judge_client is not None:
         return _judge_client
@@ -35,14 +51,56 @@ def _get_client():
         if _judge_client is not None:
             return _judge_client
         from dotenv import load_dotenv
-        from groq import Groq
 
         load_dotenv()
+
+        if JUDGE_PROVIDER == "gemini":
+            api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+            if not api_key:
+                return None
+            import google.generativeai as genai
+
+            genai.configure(api_key=api_key)
+            _judge_client = genai.GenerativeModel(
+                JUDGE_MODEL,
+                system_instruction=_JUDGE_SYSTEM_PROMPT,
+            )
+            return _judge_client
+
+        # Default / fallback: Groq
+        from groq import Groq
+
         api_key = os.getenv("GROQ_API_KEY")
         if not api_key:
             return None
         _judge_client = Groq(api_key=api_key)
         return _judge_client
+
+
+def _judge_complete(client, user_prompt: str) -> str:
+    """Run one judge completion and return the raw JSON text, provider-agnostic."""
+    if JUDGE_PROVIDER == "gemini":
+        resp = client.generate_content(
+            user_prompt,
+            generation_config={
+                "temperature": 0,
+                "max_output_tokens": 400,
+                "response_mime_type": "application/json",
+            },
+        )
+        return resp.text
+
+    completion = client.chat.completions.create(
+        model=JUDGE_MODEL,
+        messages=[
+            {"role": "system", "content": _JUDGE_SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0,
+        max_tokens=300,
+        response_format={"type": "json_object"},
+    )
+    return completion.choices[0].message.content
 
 
 @dataclass
@@ -193,7 +251,10 @@ def judge_answer(
     """
     client = _get_client()
     if client is None:
-        logger.error("Judge: No Groq API key — falling back to conservative defaults")
+        logger.error(
+            "Judge: no API key for provider '%s' — falling back to conservative defaults",
+            JUDGE_PROVIDER,
+        )
         return JudgeResult(
             grounded=False,
             grounding_score=0.0,
@@ -210,23 +271,14 @@ def judge_answer(
     max_retries = 4
     for attempt in range(max_retries):
         try:
-            completion = client.chat.completions.create(
-                model=JUDGE_MODEL,
-                messages=[
-                    {"role": "system", "content": _JUDGE_SYSTEM_PROMPT},
-                    {"role": "user", "content": user_prompt},
-                ],
-                temperature=0,
-                max_tokens=300,
-                response_format={"type": "json_object"},
-            )
-
-            raw = completion.choices[0].message.content
+            raw = _judge_complete(client, user_prompt)
             result = _parse_judge_response(raw)
 
             if result is not None:
                 logger.info(
-                    "Judge: grounded=%s, confidence=%.2f, halluc_risk=%.2f",
+                    "Judge[%s/%s]: grounded=%s, confidence=%.2f, halluc_risk=%.2f",
+                    JUDGE_PROVIDER,
+                    JUDGE_MODEL,
                     result.grounded,
                     result.confidence,
                     result.hallucination_risk,
@@ -246,7 +298,9 @@ def judge_answer(
 
         except Exception as e:
             logger.error("Judge API call failed (attempt %d/%d): %s", attempt + 1, max_retries, e)
-            if "rate_limit" in str(e).lower() and attempt < max_retries - 1:
+            msg = str(e).lower()
+            is_rate = any(t in msg for t in ("rate_limit", "rate limit", "quota", "429", "resource_exhausted"))
+            if is_rate and attempt < max_retries - 1:
                 wait = 2 ** attempt + 1  # 2s, 3s, 5s
                 logger.info("Judge: rate limited, retrying in %ds...", wait)
                 time.sleep(wait)
