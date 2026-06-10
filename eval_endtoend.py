@@ -75,9 +75,15 @@ def _load_done() -> set[str]:
         if not line:
             continue
         try:
-            done.add(json.loads(line)["query"])
+            rec = json.loads(line)
         except Exception:
             continue
+        # Only count successfully-scored queries as done. Error rows (e.g. a
+        # judge that was rate-limited) must be retried on a resumed run, so we
+        # do NOT add them to the done set.
+        if str(rec.get("status", "")).startswith("error"):
+            continue
+        done.add(rec["query"])
     return done
 
 
@@ -132,6 +138,12 @@ def run():
                 }
             else:
                 jr = judge_answer(query, res.answer, ctx_texts)
+                if getattr(jr, "failed", False):
+                    # The judge could not actually score this answer (rate limit
+                    # / parse failure). Its scores are placeholders, NOT a
+                    # measurement — record as an error so report() excludes it
+                    # and a resumed run re-does it after the limit resets.
+                    raise RuntimeError("judge_unavailable")
                 row = {
                     "query": query,
                     "patient_id": pid,

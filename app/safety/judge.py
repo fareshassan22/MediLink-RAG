@@ -14,6 +14,13 @@ from typing import List, Optional
 
 logger = logging.getLogger(__name__)
 
+# Judge model — configurable so it can differ from the GENERATOR model.
+# Using a DIFFERENT model family removes same-family judge bias (our grounding
+# scores were an upper bound when generator==judge) AND draws on a separate
+# Groq per-model daily-token bucket, avoiding the 8b-instant TPD ceiling.
+# Override in the environment, e.g.  JUDGE_MODEL=llama-3.3-70b-versatile
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "llama-3.3-70b-versatile")
+
 _judge_client = None
 _judge_lock = threading.Lock()
 
@@ -49,6 +56,10 @@ class JudgeResult:
     confidence: float
     flagged_claims: List[str]
     reasoning: str
+    failed: bool = False  # True when the judge call could not be completed
+                          # (e.g. rate limit / parse failure) and the scores
+                          # below are conservative placeholders, NOT a real
+                          # measurement. Consumers must exclude these rows.
 
 
 _JUDGE_SYSTEM_PROMPT = """\
@@ -191,6 +202,7 @@ def judge_answer(
             confidence=0.0,
             flagged_claims=[],
             reasoning="Judge unavailable — API key not configured.",
+            failed=True,
         )
 
     user_prompt = _build_judge_prompt(query, answer, context_texts)
@@ -199,7 +211,7 @@ def judge_answer(
     for attempt in range(max_retries):
         try:
             completion = client.chat.completions.create(
-                model="llama-3.1-8b-instant",
+                model=JUDGE_MODEL,
                 messages=[
                     {"role": "system", "content": _JUDGE_SYSTEM_PROMPT},
                     {"role": "user", "content": user_prompt},
@@ -252,4 +264,5 @@ def judge_answer(
         confidence=0.4,
         flagged_claims=[],
         reasoning="Judge call failed — using conservative fallback.",
+        failed=True,
     )
