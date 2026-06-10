@@ -31,7 +31,32 @@ _DEFAULT_MODELS = {
     "gemini": "gemini-2.0-flash",
     "groq": "llama-3.3-70b-versatile",
 }
-JUDGE_MODEL = os.getenv("JUDGE_MODEL", _DEFAULT_MODELS.get(JUDGE_PROVIDER, "gemini-2.0-flash"))
+
+
+def _resolve_model() -> str:
+    """Pick the judge model, guarding against a stale JUDGE_MODEL env var that
+    doesn't match the active provider (e.g. a leftover 'llama-...' value while
+    JUDGE_PROVIDER=gemini, which would 404 on Gemini)."""
+    default = _DEFAULT_MODELS.get(JUDGE_PROVIDER, "gemini-2.0-flash")
+    requested = os.getenv("JUDGE_MODEL", "").strip()
+    if not requested:
+        return default
+    if JUDGE_PROVIDER == "gemini" and not requested.lower().startswith(("gemini", "models/")):
+        logger.warning(
+            "JUDGE_MODEL=%r is not a Gemini model but JUDGE_PROVIDER=gemini; "
+            "using %s instead.", requested, default,
+        )
+        return default
+    if JUDGE_PROVIDER == "groq" and requested.lower().startswith("gemini"):
+        logger.warning(
+            "JUDGE_MODEL=%r is a Gemini model but JUDGE_PROVIDER=groq; "
+            "using %s instead.", requested, default,
+        )
+        return default
+    return requested
+
+
+JUDGE_MODEL = _resolve_model()
 
 _judge_client = None
 _judge_lock = threading.Lock()
