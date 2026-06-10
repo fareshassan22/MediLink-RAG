@@ -1,0 +1,8 @@
+query,patient_id,rule,mechanical_id,human_appt_ids,agree
+ما سبب زيارتي الأخيرة؟,152,last_appointment,appointments_363b153c93,appointments_363b153c93,True
+هل موعدي الأخير كان أول زيارة؟,155,last_appointment,appointments_28d6fb4362,appointments_28d6fb4362,True
+متى كان آخر موعد لي؟,157,last_appointment,appointments_967155e93a,appointments_967155e93a,True
+ما ملاحظات الطبيب في آخر زيارة؟,151,last_appointment,appointments_c5610861e6,,False
+ما تاريخ آخر زيارة طبية؟,155,last_appointment,appointments_28d6fb4362,appointments_28d6fb4362;appointments_9d14c818ed,True
+ما تكلفة آخر موعد؟,152,last_appointment,appointments_363b153c93,appointments_a58c6d2be1,False
+كم دفعت في آخر زيارة؟,154,last_appointment,appointments_b4034208d3,,False

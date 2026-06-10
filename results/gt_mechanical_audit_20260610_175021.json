@@ -1,0 +1,106 @@
+{
+  "generated_at": "20260610_175021",
+  "gt_file": "data/toon_rowlevel_ground_truth_multipatient_v2.json",
+  "queries_total": 100,
+  "queries_with_objective_rule": 7,
+  "agree": 4,
+  "disagree": 3,
+  "agreement_rate": 0.571,
+  "disagreements": [
+    {
+      "query": "ما ملاحظات الطبيب في آخر زيارة؟",
+      "patient_id": 151,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_c5610861e6",
+      "human_appt_ids": [],
+      "agree": false
+    },
+    {
+      "query": "ما تكلفة آخر موعد؟",
+      "patient_id": 152,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_363b153c93",
+      "human_appt_ids": [
+        "appointments_a58c6d2be1"
+      ],
+      "agree": false
+    },
+    {
+      "query": "كم دفعت في آخر زيارة؟",
+      "patient_id": 154,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_b4034208d3",
+      "human_appt_ids": [],
+      "agree": false
+    }
+  ],
+  "audited": [
+    {
+      "query": "ما سبب زيارتي الأخيرة؟",
+      "patient_id": 152,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_363b153c93",
+      "human_appt_ids": [
+        "appointments_363b153c93"
+      ],
+      "agree": true
+    },
+    {
+      "query": "هل موعدي الأخير كان أول زيارة؟",
+      "patient_id": 155,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_28d6fb4362",
+      "human_appt_ids": [
+        "appointments_28d6fb4362"
+      ],
+      "agree": true
+    },
+    {
+      "query": "متى كان آخر موعد لي؟",
+      "patient_id": 157,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_967155e93a",
+      "human_appt_ids": [
+        "appointments_967155e93a"
+      ],
+      "agree": true
+    },
+    {
+      "query": "ما ملاحظات الطبيب في آخر زيارة؟",
+      "patient_id": 151,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_c5610861e6",
+      "human_appt_ids": [],
+      "agree": false
+    },
+    {
+      "query": "ما تاريخ آخر زيارة طبية؟",
+      "patient_id": 155,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_28d6fb4362",
+      "human_appt_ids": [
+        "appointments_28d6fb4362",
+        "appointments_9d14c818ed"
+      ],
+      "agree": true
+    },
+    {
+      "query": "ما تكلفة آخر موعد؟",
+      "patient_id": 152,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_363b153c93",
+      "human_appt_ids": [
+        "appointments_a58c6d2be1"
+      ],
+      "agree": false
+    },
+    {
+      "query": "كم دفعت في آخر زيارة؟",
+      "patient_id": 154,
+      "rule": "last_appointment",
+      "mechanical_id": "appointments_b4034208d3",
+      "human_appt_ids": [],
+      "agree": false
+    }
+  ]
+}

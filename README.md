@@ -2,6 +2,10 @@
 
 **Bilingual Medical Retrieval-Augmented Generation (RAG) System**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fareshassan22/MediLink-RAG/blob/main/colab_eval.ipynb)
+
+> Run the end-to-end TOON evaluation on a free Colab GPU using the badge above.
+
 ---
 
 ## Overview
