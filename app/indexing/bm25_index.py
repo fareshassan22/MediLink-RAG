@@ -32,22 +32,23 @@ class BM25Index:
 
     @staticmethod
     def tokenize(text: str, preprocess: bool = True) -> List[str]:
-        """Tokenize text with proper Arabic/English tokenization."""
+        """Tokenize text with proper Arabic/English tokenization.
+
+        Patient records mix Arabic clinical prose with English field names
+        (scheduled_at, status, blood_type) and ISO dates/numbers in the SAME
+        document. Routing the whole string through a single-language tokenizer
+        (based on which script dominates) loses the minority-script tokens.
+        Bilingual tokenization segments Arabic vs Latin/numeric runs and applies
+        the right tokenizer to each, so both scripts are always indexed.
+        """
         if preprocess:
             text = preprocess_document(text)
-
-        if is_arabic(text):
-            return tokenize_arabic(text, remove_stopwords=True)
-        else:
-            return tokenize_english(text, remove_stopwords=True)
+        return tokenize_bilingual(text, remove_stopwords=True)
 
     @staticmethod
     def tokenize_query(query: str) -> List[str]:
-        """Tokenize query with bilingual support."""
-        if is_arabic(query):
-            return tokenize_arabic(query, remove_stopwords=True)
-        else:
-            return tokenize_english(query, remove_stopwords=True)
+        """Tokenize query with bilingual support (matches document tokenization)."""
+        return tokenize_bilingual(query, remove_stopwords=True)
 
     def build(self, docs: List[str], force_preprocessing: bool = True) -> None:
         """Build index from documents."""
