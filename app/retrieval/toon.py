@@ -222,6 +222,9 @@ _NEXT_INTENT = re.compile(
 _LAST_INTENT = re.compile(
     r"(last|previous|recent|latest|most recent|past|prior|السابق|السابقة|"
     r"الأخير|الأخيرة|الاخير|الاخيرة|آخر|اخر|الماضي|الماضية|الفائت)", re.IGNORECASE)
+_FIRST_INTENT = re.compile(
+    r"(first|earliest|initial|very first|أول|اول|الأول|الأولى|الاول|الاولى)",
+    re.IGNORECASE)
 _APPT_HINT = re.compile(
     r"(appointment|appt|visit|booking|موعد|مواعيد|زيار|الحجز|حجز)",
     re.IGNORECASE)
@@ -253,17 +256,20 @@ def _apply_date_intent(query: str, candidates: List[Dict]) -> List[Dict]:
     query asks for the next/last appointment. No-op for any other query.
 
     Definitions (objective, label-independent):
-      next = the earliest appointment still in the future.
-      last = the most recent *completed* visit (a visit that actually happened);
-             falls back to the most recent past slot if none are marked completed.
+      next  = the earliest appointment still in the future.
+      last  = the most recent *completed* visit (a visit that actually happened);
+              falls back to the most recent past slot if none are marked completed.
+      first = the earliest appointment on record (the patient's first visit).
     Using status=completed for "last" matches the natural meaning of "last visit"
     (آخر زيارة) — a future-but-unattended slot is not a past visit."""
     if not candidates:
         return candidates
     want_next = bool(_NEXT_INTENT.search(query))
     want_last = bool(_LAST_INTENT.search(query))
+    want_first = bool(_FIRST_INTENT.search(query))
     # Need exactly one clear temporal intent, and an appointment context.
-    if want_next == want_last:           # neither, or ambiguous both
+    n_intents = want_next + want_last + want_first
+    if n_intents != 1:                   # neither, or ambiguous combination
         return candidates
     if not _APPT_HINT.search(query):
         return candidates
@@ -281,6 +287,8 @@ def _apply_date_intent(query: str, candidates: List[Dict]) -> List[Dict]:
         future = [(i, dt) for i, dt, _ in dated if dt >= now]
         target = (min(future, key=lambda x: x[1])[0] if future
                   else max(dated, key=lambda x: x[1])[0])
+    elif want_first:                     # earliest appointment on record
+        target = min(dated, key=lambda x: x[1])[0]
     else:  # want_last — most recent visit that actually happened
         completed = [(i, dt) for i, dt, st in dated if st == "completed" and dt <= now]
         past = [(i, dt) for i, dt, _ in dated if dt <= now]

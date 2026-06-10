@@ -66,6 +66,23 @@ def _detect_lang(text: str) -> str:
     return "ar" if ratio > 0.4 else "en"
 
 
+def _deterministic_grounding(answer: str, context: str) -> float:
+    """Cheap, judge-independent grounding signal for the fast tiers (T1/T2).
+
+    Replaces the old hardcoded 0.9/0.85 constants. Uses the same value-level
+    grounding gate as T3: if every concrete value in the answer is supported by
+    the retrieved context the score is high; each ungrounded value lowers it.
+    No LLM call, so the fast path stays fast.
+    """
+    if not answer or not context:
+        return 0.3
+    missing = ungrounded_values(answer, context)
+    if not missing:
+        return 0.95
+    # One unsupported value is a soft signal; several is a strong one.
+    return round(max(0.3, 0.95 - 0.2 * len(missing)), 3)
+
+
 # ─── Result dataclass ────────────────────────────────────────────────────────
 
 @dataclass
@@ -151,11 +168,12 @@ class PatientRAGService:
             answer = generate_response(prompt)
             stages["formatting"] = round(time.time() - t0, 3)
 
+            grounding = _deterministic_grounding(answer, context)
             return PipelineResult(
                 answer          = answer,
-                confidence      = 0.9,
+                confidence      = round(min(0.9, 0.55 + 0.4 * grounding), 3),
                 sources         = ["Patient Database (BM25)"],
-                grounding_score = 0.9,
+                grounding_score = grounding,
                 status          = "t1_success",
                 stage_latencies = stages,
                 tier_used       = 1,
@@ -183,11 +201,12 @@ class PatientRAGService:
             answer = generate_response(prompt)
             stages["formatting"] = round(time.time() - t0, 3)
 
+            grounding = _deterministic_grounding(answer, context)
             return PipelineResult(
                 answer          = answer,
-                confidence      = 0.85,
+                confidence      = round(min(0.85, 0.5 + 0.4 * grounding), 3),
                 sources         = ["Patient Database (Hybrid)"],
-                grounding_score = 0.85,
+                grounding_score = grounding,
                 status          = "t2_success",
                 stage_latencies = stages,
                 tier_used       = 2,

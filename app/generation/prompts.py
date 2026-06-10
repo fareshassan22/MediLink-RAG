@@ -208,23 +208,54 @@ def _normalize_digits(text: str) -> str:
     return text.translate(trans)
 
 
+def _num_set(text: str) -> set:
+    """All numeric values in `text` as floats, so 12 == 12.0 == 12,0."""
+    out = set()
+    for m in _re.findall(r"\d+(?:[.,]\d+)?", text):
+        try:
+            out.add(float(m.replace(",", ".")))
+        except ValueError:
+            pass
+    return out
+
+
+def _is_grounded_value(val: str, ctx: str, ctx_nums: set) -> bool:
+    """A value is grounded if it appears in context, allowing for harmless
+    formatting differences (separators, trailing zeros, comma/dot decimals)."""
+    if val in ctx:                                   # fast exact path
+        return True
+    if "-" in val or ":" in val:                     # date / time
+        # Match if all components appear in context (order-independent),
+        # e.g. answer "2025-03-10" vs context "10/03/2025" or "2025-03-10T09:00".
+        parts = [p for p in _re.split(r"[-:]", val) if p]
+        return all(p in ctx for p in parts)
+    try:                                             # plain number: compare numerically
+        return float(val.replace(",", ".")) in ctx_nums
+    except ValueError:
+        return val in ctx
+
+
 def ungrounded_values(answer: str, context: str) -> list[str]:
     """Return concrete values present in `answer` but absent from `context`.
 
     Only numeric/date tokens are checked — these are the values a model
     fabricates (wrong dates, made-up dosages, invented lab numbers). Prose is
-    ignored. An empty list means every value the answer states is supported.
+    ignored. Values are compared numerically / component-wise so harmless
+    formatting differences (12 vs 12.0, 120/80 vs "120 over 80", ISO vs slashed
+    dates) do NOT trigger a false hallucination flag. An empty list means every
+    value the answer states is supported.
     """
     if not answer or not context:
         return []
     ctx = _normalize_digits(context)
     ans = _normalize_digits(answer)
+    ctx_nums = _num_set(ctx)
     missing = []
     for val in _VALUE_RE.findall(ans):
         # Ignore trivially short numbers (e.g. "1", "2") that are list markers
         if len(val.replace(".", "").replace(",", "").replace(":", "").replace("-", "")) < 2:
             continue
-        if val not in ctx:
+        if not _is_grounded_value(val, ctx, ctx_nums):
             missing.append(val)
     return missing
 

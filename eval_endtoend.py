@@ -47,6 +47,12 @@ PLOTS = RESULTS / "plots"
 PLOTS.mkdir(parents=True, exist_ok=True)
 CKPT = RESULTS / "endtoend_checkpoint.jsonl"
 
+# Statuses that are SAFETY INTERVENTIONS, not content answers. The pipeline
+# substitutes a canned escalation/refusal string, so judging it for grounding
+# against the patient context is meaningless (it always scores as hallucinated).
+# These rows are recorded but excluded from grounding / hallucination metrics.
+SAFETY_OVERRIDE_STATUSES = {"emergency_in_answer", "blocked"}
+
 
 def _retrieve_context_texts(patient_id: int, query: str, tier: int) -> list[str]:
     """Reconstruct the context the pipeline used, as a list for the judge."""
@@ -106,29 +112,50 @@ def run():
             res = svc.run(query, pid, role="patient")
             tier = res.tier_used or TIER_INT.get(q["tier"], 0)
             ctx_texts = _retrieve_context_texts(pid, query, tier)
-            jr = judge_answer(query, res.answer, ctx_texts)
-            row = {
-                "query": query,
-                "patient_id": pid,
-                "expected_tier": TIER_INT.get(q["tier"], 0),
-                "tier_used": tier,
-                "category": q.get("category") or "uncategorized",
-                "status": res.status,
-                "answer": res.answer,
-                "judge_grounded": bool(jr.grounded),
-                "judge_grounding_score": float(jr.grounding_score),
-                "judge_has_hallucination": bool(jr.has_hallucination),
-                "judge_hallucination_risk": float(jr.hallucination_risk),
-                "judge_confidence": float(jr.confidence),
-                "judge_reasoning": jr.reasoning[:500],
-                "n_context": len(ctx_texts),
-            }
+            safety_override = res.status in SAFETY_OVERRIDE_STATUSES
+            if safety_override:
+                # Don't judge canned safety strings — record but exclude later.
+                row = {
+                    "query": query,
+                    "patient_id": pid,
+                    "expected_tier": TIER_INT.get(q["tier"], 0),
+                    "tier_used": tier,
+                    "category": q.get("category") or "uncategorized",
+                    "status": res.status,
+                    "answer": res.answer,
+                    "safety_override": True,
+                    "judge_grounded": False, "judge_grounding_score": 0.0,
+                    "judge_has_hallucination": False, "judge_hallucination_risk": 0.0,
+                    "judge_confidence": 0.0,
+                    "judge_reasoning": "safety override — excluded from grounding metrics",
+                    "n_context": len(ctx_texts),
+                }
+            else:
+                jr = judge_answer(query, res.answer, ctx_texts)
+                row = {
+                    "query": query,
+                    "patient_id": pid,
+                    "expected_tier": TIER_INT.get(q["tier"], 0),
+                    "tier_used": tier,
+                    "category": q.get("category") or "uncategorized",
+                    "status": res.status,
+                    "answer": res.answer,
+                    "safety_override": False,
+                    "judge_grounded": bool(jr.grounded),
+                    "judge_grounding_score": float(jr.grounding_score),
+                    "judge_has_hallucination": bool(jr.has_hallucination),
+                    "judge_hallucination_risk": float(jr.hallucination_risk),
+                    "judge_confidence": float(jr.confidence),
+                    "judge_reasoning": jr.reasoning[:500],
+                    "n_context": len(ctx_texts),
+                }
         except Exception as e:
             row = {
                 "query": query, "patient_id": pid,
                 "expected_tier": TIER_INT.get(q["tier"], 0), "tier_used": 0,
                 "category": q.get("category") or "uncategorized",
                 "status": f"error:{type(e).__name__}", "answer": "",
+                "safety_override": False,
                 "judge_grounded": False, "judge_grounding_score": 0.0,
                 "judge_has_hallucination": False, "judge_hallucination_risk": 0.0,
                 "judge_confidence": 0.0, "judge_reasoning": str(e)[:500],
@@ -158,8 +185,19 @@ def report():
         return
     rows = [json.loads(l) for l in CKPT.read_text(encoding="utf-8").splitlines() if l.strip()]
     df = pd.DataFrame(rows)
-    ok = df[~df["status"].str.startswith("error")]
-    print(f"\nscored rows: {len(ok)}/{len(df)} (errors: {len(df)-len(ok)})", flush=True)
+    if "safety_override" not in df.columns:
+        df["safety_override"] = False
+    df["safety_override"] = df["safety_override"].fillna(False).astype(bool)
+    non_err = df[~df["status"].str.startswith("error")]
+    n_override = int(non_err["safety_override"].sum())
+    # Grounding/hallucination metrics are computed only over content answers;
+    # safety interventions (emergency/blocked) are interventions, not answers.
+    ok = non_err[~non_err["safety_override"]]
+    print(
+        f"\nscored rows: {len(ok)}/{len(df)} "
+        f"(errors: {len(df)-len(non_err)}, safety-overrides excluded: {n_override})",
+        flush=True,
+    )
 
     def block(sub):
         return {
@@ -187,6 +225,9 @@ def report():
     print("=" * 80)
     print(sdf.to_string(index=False))
     print(f"\nsaved: {sout}")
+    if n_override:
+        print(f"\nnote: {n_override} safety-override row(s) "
+              f"(emergency/blocked) excluded from the metrics above.")
 
     tier_rows = [r for r in summary if r["slice"].startswith("T")]
     if tier_rows:

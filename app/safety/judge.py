@@ -206,6 +206,7 @@ def judge_answer(
                 ],
                 temperature=0,
                 max_tokens=300,
+                response_format={"type": "json_object"},
             )
 
             raw = completion.choices[0].message.content
@@ -220,8 +221,16 @@ def judge_answer(
                 )
                 return result
 
-            logger.warning("Judge: failed to parse response, using conservative defaults")
-            break  # parse failure — don't retry
+            # Parse failure despite forced JSON mode — retry once more before
+            # falling back, rather than giving up immediately.
+            logger.warning(
+                "Judge: failed to parse response (attempt %d/%d)",
+                attempt + 1, max_retries,
+            )
+            if attempt < max_retries - 1:
+                time.sleep(1)
+                continue
+            break
 
         except Exception as e:
             logger.error("Judge API call failed (attempt %d/%d): %s", attempt + 1, max_retries, e)
