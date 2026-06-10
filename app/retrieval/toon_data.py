@@ -35,6 +35,11 @@ logger = logging.getLogger(__name__)
 # Module-level constants are initialised once at import time.
 load_dotenv()
 _SB_URL: str = os.getenv("NEXT_PUBLIC_SUPABASE_URL", "")
+# Accept a bare project ref (e.g. Colab secrets) or a full URL.
+if _SB_URL:
+    _SB_URL = _SB_URL.strip().rstrip("/")
+    if not _SB_URL.startswith("http"):
+        _SB_URL = f"https://{_SB_URL}" if "." in _SB_URL else f"https://{_SB_URL}.supabase.co"
 # Use service role key for backend — anon key is blocked by RLS on joins.
 _SB_KEY: str = os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv(
     "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", ""

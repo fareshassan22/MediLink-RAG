@@ -26,7 +26,23 @@ def _get_supabase() -> Tuple[str, str]:
     load_dotenv()
     url = os.getenv("NEXT_PUBLIC_SUPABASE_URL", "https://icntpbdznkfajnieyrjq.supabase.co")
     key = os.getenv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "")
-    return url, key
+    return _normalize_sb_url(url), key
+
+
+def _normalize_sb_url(url: str) -> str:
+    """Accept a full URL or a bare project ref and return a usable base URL.
+
+    Some environments (e.g. Colab secrets) store only the project ref
+    ('icntpbdznkfajnieyrjq') instead of the full 'https://<ref>.supabase.co'.
+    """
+    url = (url or "").strip().rstrip("/")
+    if not url:
+        return url
+    if url.startswith("http://") or url.startswith("https://"):
+        return url
+    if "." in url:                       # has a domain but no scheme
+        return f"https://{url}"
+    return f"https://{url}.supabase.co"  # bare project ref
 
 
 _SB_URL, _SB_KEY = _get_supabase()
