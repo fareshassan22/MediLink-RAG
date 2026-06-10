@@ -246,7 +246,18 @@ def _retrieve(
 
     # rerank for hybrid_rerank
     if mode == "hybrid_rerank":
-        fused = rerank_documents(processed, fused, top_k=top_k)
+        # The corpus is ENGLISH but queries are often ARABIC. Feeding the raw
+        # Arabic query to the cross-encoder scores Arabic-query vs English-doc
+        # pairs, which the reranker handles poorly and which scrambles the good
+        # cross-lingual dense ranking (measured: recall@10 0.79 -> 0.50).
+        # Translating to English first matches the corpus language so the
+        # cross-encoder compares same-language pairs.
+        rr_query = processed
+        if is_arabic(processed):
+            en = translate_query(processed)
+            if en:
+                rr_query = en
+        fused = rerank_documents(rr_query, fused, top_k=top_k)
 
     # extract doc IDs
     ids = []
@@ -438,6 +449,42 @@ def plot_category_heatmap(df: pd.DataFrame):
 # ── main ─────────────────────────────────────────────────────
 
 
+def _bootstrap_cis(
+    per_query: pd.DataFrame,
+    metrics: list[str],
+    n_boot: int = 2000,
+    seed: int = 42,
+) -> pd.DataFrame:
+    """Bootstrap 95% CIs for per-mode mean metrics by resampling queries.
+
+    Resamples the per-query rows (with replacement) within each mode n_boot
+    times and reports the mean plus the 2.5th/97.5th percentile bounds.
+    """
+    rng = np.random.default_rng(seed)
+    rows: list[dict] = []
+    for mode in sorted(per_query["mode"].unique()):
+        sub = per_query[per_query["mode"] == mode]
+        n = len(sub)
+        for metric in metrics:
+            vals = sub[metric].to_numpy(dtype=float)
+            if n == 0:
+                rows.append({"mode": mode, "metric": metric, "n": 0,
+                             "mean": float("nan"), "ci_low": float("nan"),
+                             "ci_high": float("nan")})
+                continue
+            idx = rng.integers(0, n, size=(n_boot, n))
+            boot_means = vals[idx].mean(axis=1)
+            rows.append({
+                "mode": mode,
+                "metric": metric,
+                "n": n,
+                "mean": float(vals.mean()),
+                "ci_low": float(np.percentile(boot_means, 2.5)),
+                "ci_high": float(np.percentile(boot_means, 97.5)),
+            })
+    return pd.DataFrame(rows)
+
+
 def main():
     print("=" * 60)
     print("MediLink RAG — Retrieval Evaluation")
@@ -472,6 +519,17 @@ def main():
     summary.to_csv(cfg.RESULTS_DIR / "retrieval_metrics.csv")
     print(f"\nSaved to results/retrieval_metrics.csv")
     print(f"Saved to results/retrieval_per_query.csv")
+
+    # Bootstrap 95% confidence intervals for the headline metrics. With small
+    # query sets a single point estimate is fragile, so we resample queries
+    # (with replacement) to report a CI alongside the mean. No LLM calls.
+    ci_df = _bootstrap_cis(per_query, metrics=["mrr", "recall@10", "ndcg@10"])
+    ci_df.to_csv(cfg.RESULTS_DIR / "retrieval_metrics_ci.csv", index=False)
+    print("\n" + "=" * 60)
+    print("BOOTSTRAP 95% CONFIDENCE INTERVALS (2000 resamples)")
+    print("=" * 60)
+    print(ci_df.round(4).to_string(index=False))
+    print(f"\nSaved to results/retrieval_metrics_ci.csv")
 
     # By language
     print("\n" + "=" * 60)

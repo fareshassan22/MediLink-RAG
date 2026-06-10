@@ -141,7 +141,15 @@ class RAGPipeline:
         # 7b. Reranking
         t0 = time.time()
         candidates = filtered[: cfg.TOP_K_FINAL]
-        reranked = rerank_documents(processed, candidates, top_k=cfg.TOP_K_FINAL)
+        # The corpus is ENGLISH; for Arabic queries, translate before the
+        # cross-encoder so it scores same-language pairs. Feeding the raw Arabic
+        # query degrades cross-lingual ranking (measured: recall@10 0.79 -> 0.50).
+        rr_query = processed
+        if is_arabic(processed):
+            en = translate_query(processed)
+            if en:
+                rr_query = en
+        reranked = rerank_documents(rr_query, candidates, top_k=cfg.TOP_K_FINAL)
         stages["reranking"] = round(time.time() - t0, 3)
 
         # 8. Dynamic chunk selection
