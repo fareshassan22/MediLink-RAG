@@ -19,6 +19,9 @@ build/
 # Logs
 logs/
 
+# Eval checkpoints (resumable state — must not be committed, or runs get skipped)
+results/endtoend_checkpoint*.jsonl
+
 # Data (large files)
 data/raw/
 data/processed/
