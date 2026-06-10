@@ -259,22 +259,46 @@ def _retrieve(
                 rr_query = en
         fused = rerank_documents(rr_query, fused, top_k=top_k)
 
-    # extract doc IDs
-    ids = []
-    for i, r in enumerate(fused):
-        did = r.get("doc_id")
-        if did:
-            ids.append(did)
-        else:
-            ids.append(f"doc_{r.get('doc_idx', i)}")
-    return ids
+    # extract doc IDs as STABLE content ids so they match the judged ground
+    # truth and survive a re-index (positional doc_N ids drift on rebuild).
+    return [_stable_id(r) for r in fused]
+
+
+def _stable_id(r: dict) -> str:
+    """Content-stable id matching the BM25 index + judged GT scheme.
+
+    Falls back to the positional doc_id only if metadata is unavailable so the
+    evaluator never crashes, but production paths always carry metadata.
+    """
+    meta = r.get("metadata") or {}
+    src = meta.get("source", r.get("source"))
+    page = meta.get("page", r.get("page"))
+    chunk_id = meta.get("chunk_id")
+    if src is not None and page is not None and chunk_id is not None:
+        return f"{src}_p{page}_c{chunk_id}"
+    return r.get("doc_id") or f"doc_{r.get('doc_idx', 0)}"
 
 
 # ── evaluation ───────────────────────────────────────────────
 
 
 def load_ground_truth() -> list[dict]:
-    with open(cfg.EVAL_SET_PATH, "r", encoding="utf-8") as f:
+    """Load the ground truth.
+
+    Prefers the HONEST judged GT (independent LLM relevance judgments, stable
+    content ids) when present. Falls back to the legacy circular GT only if the
+    judged file is missing. Override with EVAL_GT_PATH.
+    """
+    override = os.getenv("EVAL_GT_PATH")
+    judged = Path("data/eval_ground_truth_judged.json")
+    if override:
+        path = Path(override)
+    elif judged.exists():
+        path = judged
+    else:
+        path = Path(cfg.EVAL_SET_PATH)
+    print(f"[ground truth] using {path}")
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
