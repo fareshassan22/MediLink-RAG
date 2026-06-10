@@ -6,6 +6,11 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
+# Sentinel returned when generation fails (e.g. Groq rate limit). The live
+# service shows this to the user gracefully, but evaluation must recognise it
+# as a FAILED generation and exclude the row instead of scoring it as real.
+GENERATION_ERROR = "حدث خطأ أثناء توليد الإجابة."
+
 _client = None
 
 
@@ -54,8 +59,8 @@ def generate_response(prompt: str, max_tokens: int = 1024):
                 if last_period > len(answer) * 0.5:
                     answer = answer[: last_period + 1]
 
-        return answer if answer else "حدث خطأ أثناء توليد الإجابة."
+        return answer if answer else GENERATION_ERROR
 
     except Exception as e:
         logger.error("Groq generation error: %s", type(e).__name__)
-        return "حدث خطأ أثناء توليد الإجابة."
+        return GENERATION_ERROR

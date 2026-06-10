@@ -103,6 +103,7 @@ def run():
     from app.retrieval.toon import load_patient_index, index_patient
     from app.retrieval.toon_service import PatientRAGService
     from app.safety.judge import judge_answer
+    from app.generation.groq_client import GENERATION_ERROR
 
     print("warming patient indexes …", flush=True)
     for pid in sorted({q["patient_id"] for q in queries}):
@@ -116,6 +117,12 @@ def run():
         query, pid = q["query"], q["patient_id"]
         try:
             res = svc.run(query, pid, role="patient")
+            if res.answer and res.answer.strip() == GENERATION_ERROR:
+                # Generation itself failed (e.g. Groq rate limit). The answer is
+                # a placeholder sentinel, not a real model output — record as an
+                # error so report() excludes it and a resumed run re-does it
+                # after the daily token limit resets.
+                raise RuntimeError("generation_unavailable")
             tier = res.tier_used or TIER_INT.get(q["tier"], 0)
             ctx_texts = _retrieve_context_texts(pid, query, tier)
             safety_override = res.status in SAFETY_OVERRIDE_STATUSES
