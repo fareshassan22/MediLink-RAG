@@ -1,0 +1,5 @@
+comparison,mrr_diff,ci95_lo,ci95_hi,p_value,significant_0.05
+full_system - bm25_only,0.3335,0.2208,0.4417,0.0,yes
+full_system - dense_only,0.0781,0.0153,0.1413,0.012,yes
+full_system - hybrid_no_rerank,0.3022,0.2068,0.3932,0.0,yes
+full_system - hybrid_no_router,0.0,0.0,0.0,1.0,no

@@ -1,0 +1,101 @@
+query,expected_tier,predicted_tier,correct,reason,language
+متى موعدي القادم؟,1,1,1,exact_field_lookup,ar
+ما سبب زيارتي الأخيرة؟,1,3,0,complex_reasoning,ar
+ما حالة موعدي الحالي؟,1,2,0,default_tier2,ar
+ما الأعراض المسجلة في موعدي؟,1,2,0,default_tier2,ar
+هل موعدي الأخير كان أول زيارة؟,1,2,0,default_tier2,ar
+ما ملاحظات الموعد؟,1,2,0,default_tier2,ar
+متى كان آخر موعد لي؟,1,1,1,exact_field_lookup,ar
+كم عدد مواعيدي المكتملة؟,2,2,1,semantic_request,ar
+هل لدي مواعيد معلقة؟,2,2,1,default_tier2,ar
+هل لدي مواعيد ملغاة؟,2,2,1,default_tier2,ar
+ما أكثر سبب متكرر لزياراتي؟,2,2,1,default_tier2,ar
+بناءً على مواعيدي السابقة، متى يجب أن أحجز المتابعة القادمة؟,3,3,1,ml_classifier(conf=0.57),ar
+بناءً على أعراضي في المواعيد، هل حالتي تتطور؟,3,3,1,complex_reasoning,ar
+ما النمط الزمني لزياراتي للعيادة؟,3,2,0,default_tier2,ar
+ما الأدوية الموصوفة لي؟,1,2,0,default_tier2,ar
+ما جرعة دوائي؟,1,2,0,default_tier2,ar
+كم مرة آخذ الدواء في اليوم؟,1,2,0,default_tier2,ar
+ما مدة تناول الدواء؟,1,3,0,ml_classifier(conf=0.56),ar
+ما تعليمات تناول الدواء؟,1,3,0,ml_classifier(conf=0.69),ar
+ما اسم الدواء الموصوف؟,1,2,0,default_tier2,ar
+متى صُرفت وصفتي الأخيرة؟,1,2,0,default_tier2,ar
+هل تغيرت أدويتي مؤخراً؟,2,2,1,semantic_request,ar
+ما الأدوية التي أتناولها بانتظام؟,2,2,1,default_tier2,ar
+هل هناك دواء يؤخذ قبل النوم؟,2,3,0,ml_classifier(conf=0.59),ar
+كم عدد الأدوية في وصفتي؟,2,2,1,default_tier2,ar
+بناءً على أدويتي الحالية، هل هناك تعارض محتمل؟,3,3,1,complex_reasoning,ar
+هل يجب تعديل جرعة دوائي بناءً على حالتي؟,3,3,1,ml_classifier(conf=0.64),ar
+ما الغرض العلاجي من الأدوية الموصوفة؟,3,2,0,default_tier2,ar
+ما تشخيص حالتي؟,1,3,0,complex_reasoning,ar
+ما المرض المسجل في ملفي؟,1,2,0,default_tier2,ar
+ما الشكوى الرئيسية لدي؟,1,2,0,default_tier2,ar
+ما ملخص التشخيص؟,1,3,0,complex_reasoning,ar
+هل لدي تشخيص مزمن؟,1,3,0,complex_reasoning,ar
+ما الحالة المرضية الأساسية؟,1,2,0,default_tier2,ar
+هل تغير تشخيصي مع الوقت؟,2,2,1,ml_classifier(conf=0.55),ar
+ما التشخيصات المتكررة في سجلي؟,2,3,0,complex_reasoning,ar
+هل هناك أكثر من تشخيص؟,2,3,0,complex_reasoning,ar
+بناءً على تشخيصي، ما الخطة العلاجية المناسبة؟,3,3,1,ml_classifier(conf=0.70),ar
+ما المضاعفات المحتملة لتشخيصي؟,3,3,1,complex_reasoning,ar
+ما ملاحظات الطبيب في آخر زيارة؟,1,2,0,default_tier2,ar
+ما خطة العلاج الموصوفة؟,1,3,0,complex_reasoning,ar
+متى موعد المتابعة؟,1,2,0,semantic_request,ar
+ما نوع السجل الطبي؟,1,2,0,default_tier2,ar
+ما تاريخ آخر زيارة طبية؟,1,2,0,default_tier2,ar
+ما توصيات الطبيب؟,1,3,0,ml_classifier(conf=0.68),ar
+ما ملخص زياراتي الطبية؟,2,3,0,complex_reasoning,ar
+كيف تطورت حالتي عبر الزيارات؟,2,2,1,default_tier2,ar
+ما خطط العلاج عبر سجلي؟,2,2,1,default_tier2,ar
+بناءً على سجلي الطبي الكامل، ما التوصيات؟,3,3,1,ml_classifier(conf=0.63),ar
+ما المسار العلاجي بناءً على سجلاتي؟,3,3,1,complex_reasoning,ar
+ما مستوى السكر في دمي؟,1,1,1,ml_classifier(conf=0.56),ar
+ما قراءة ضغط الدم لدي؟,1,1,1,exact_field_lookup,ar
+كم وزني في آخر فحص؟,1,1,1,exact_field_lookup,ar
+ما درجة حرارتي؟,1,1,1,ml_classifier(conf=0.59),ar
+ما معدل ضربات القلب؟,1,2,0,default_tier2,ar
+ما معدل التنفس؟,1,2,0,default_tier2,ar
+ما نسبة الأكسجين في الدم؟,1,1,1,ml_classifier(conf=0.59),ar
+هل تحسنت قراءات الضغط؟,2,2,1,ml_classifier(conf=0.66),ar
+هل هناك تغير في وزني؟,2,2,1,semantic_request,ar
+هل مستوى السكر مستقر؟,2,2,1,semantic_request,ar
+ما اتجاه مؤشراتي الحيوية؟,2,2,1,semantic_request,ar
+بناءً على مؤشراتي الحيوية، هل حالتي مستقرة؟,3,3,1,complex_reasoning,ar
+ما دلالة قراءاتي الحيوية على صحتي؟,3,1,0,exact_field_lookup,ar
+ما الفحوصات المخبرية المطلوبة لي؟,1,3,0,ml_classifier(conf=0.58),ar
+ما حالة فحص فيتامين د؟,1,1,1,ml_classifier(conf=0.57),ar
+ما تعليمات الفحص المخبري؟,1,2,0,default_tier2,ar
+متى تم طلب الفحص؟,1,2,0,default_tier2,ar
+ما اسم الفحص المطلوب؟,1,2,0,default_tier2,ar
+ما رمز الفحص؟,1,1,1,ml_classifier(conf=0.64),ar
+هل الفحص مكتمل أم ملغى؟,1,2,0,default_tier2,ar
+هل اكتملت جميع فحوصاتي؟,2,2,1,semantic_request,ar
+كم عدد الفحوصات المطلوبة؟,2,3,0,complex_reasoning,ar
+ما الفحوصات الملغاة؟,2,1,0,ml_classifier(conf=0.58),ar
+هل هناك فحوصات معلقة؟,2,2,1,semantic_request,ar
+بناءً على الفحوصات المطلوبة، ماذا يجب أن أتابع؟,3,3,1,ml_classifier(conf=0.65),ar
+ما أهمية الفحوصات المطلوبة لحالتي؟,3,3,1,ml_classifier(conf=0.61),ar
+كم رسوم زيارتي؟,1,2,0,default_tier2,ar
+ما تكلفة آخر موعد؟,1,1,1,exact_field_lookup,ar
+ما رسوم الكشف؟,1,2,0,default_tier2,ar
+كم دفعت في آخر زيارة؟,1,2,0,default_tier2,ar
+ما قيمة الفاتورة؟,1,1,1,ml_classifier(conf=0.58),ar
+كم إجمالي رسوم زياراتي؟,2,2,1,default_tier2,ar
+ما متوسط تكلفة زياراتي؟,2,2,1,default_tier2,ar
+هل تختلف رسوم زياراتي؟,2,2,1,default_tier2,ar
+بناءً على حالتي العامة، ما النصائح الصحية المناسبة؟,3,3,1,ml_classifier(conf=0.72),ar
+ما العلاقة بين تشخيصي وأدويتي؟,3,3,1,complex_reasoning,ar
+بناءً على سجلي، ما نمط الحياة الموصى به؟,3,3,1,ml_classifier(conf=0.63),ar
+هل أعراضي تتوافق مع تشخيصي؟,3,3,1,complex_reasoning,ar
+ما أفضل نظام غذائي بناءً على حالتي؟,3,3,1,ml_classifier(conf=0.68),ar
+بناءً على مواعيدي وأدويتي، هل ألتزم بالعلاج؟,3,3,1,ml_classifier(conf=0.66),ar
+ما التمارين المناسبة لحالتي؟,3,3,1,ml_classifier(conf=0.72),ar
+كيف أحسّن حالتي الصحية العامة؟,3,3,1,complex_reasoning,ar
+بناءً على بياناتي، ما عوامل الخطر لدي؟,3,3,1,complex_reasoning,ar
+هل يجب تغيير خطة علاجي؟,3,3,1,ml_classifier(conf=0.70),ar
+ما الإجراءات الوقائية المناسبة لحالتي؟,3,3,1,ml_classifier(conf=0.70),ar
+بناءً على تاريخي الطبي، ما المتابعة المطلوبة؟,3,3,1,ml_classifier(conf=0.63),ar
+ما تأثير حالتي على نمط حياتي اليومي؟,3,2,0,default_tier2,ar
+هل هناك ترابط بين أعراضي المختلفة؟,3,2,0,default_tier2,ar
+ما الأولويات العلاجية بناءً على حالتي؟,3,3,1,ml_classifier(conf=0.57),ar
+بناءً على كل بياناتي، ما ملخص حالتي الصحية؟,3,3,1,complex_reasoning,ar

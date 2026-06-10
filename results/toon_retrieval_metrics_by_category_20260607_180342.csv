@@ -1,0 +1,2 @@
+category,n_scored,recall@1,capped_recall@1,hit@1,precision@1,ndcg@1,recall@3,capped_recall@3,hit@3,precision@3,ndcg@3,recall@5,capped_recall@5,hit@5,precision@5,ndcg@5,recall@10,capped_recall@10,hit@10,precision@10,ndcg@10,mrr
+uncategorized,100,0.1252,0.56,0.56,0.56,0.56,0.3156,0.5717,0.72,0.5333,0.5645,0.4032,0.5658,0.75,0.46,0.5589,0.5289,0.6028,0.82,0.333,0.5675,0.6457

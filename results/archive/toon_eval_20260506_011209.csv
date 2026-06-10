@@ -1,0 +1,16 @@
+query,patient_id,tier,tier_label,num_retrieved,latency_seconds,error
+ما هو مستوى السكر في دمي؟,200,tier_1_simple,BM25,10,0.014799833297729492,
+ما هي نسبة الضغط في قراءاتي الأخيرة؟,200,tier_1_simple,BM25,10,0.003006458282470703,
+كم وزني في آخر فحص؟,200,tier_1_simple,BM25,10,0.002794027328491211,
+ما نتائج فحص LDL؟,200,tier_1_simple,BM25,10,0.002118825912475586,
+هل فحص HbA1c طبيعي؟,200,tier_1_simple,BM25,10,0.002029895782470703,
+هل نتائج فحوصات الضغط طبيعية؟,200,tier_2_moderate,tier_2_moderate,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+مقارنة النتائج الحالية بالسابقة؟,200,tier_2_moderate,tier_2_moderate,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+هل هناك تحسن في نسبة السكر؟,200,tier_2_moderate,tier_2_moderate,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+مستوى الكوليسترول ضمن المعدل الطبيعي؟,200,tier_2_moderate,tier_2_moderate,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+هل الفيتامينات تتحسن؟,200,tier_2_moderate,tier_2_moderate,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+بناءً على نتائج فحوصاتي، ما التغييرات المطلوبة في العلاج؟,200,tier_3_complex,tier_3_complex,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+بناءً على قراءات الضغط الأخيرة، هل لدي ارتفاع في ضغط الدم؟,200,tier_3_complex,tier_3_complex,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+"Based on my labs, what lifestyle changes do you recommend?",200,tier_3_complex,tier_3_complex,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+هل يوجد قلق من ارتفاع LDL في نتائج الفحص الأخيرة؟,200,tier_3_complex,tier_3_complex,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما المسار المتوقع للحالة بناءً على الاتجاهات؟,200,tier_3_complex,tier_3_complex,0,-1.0,Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?

@@ -54,6 +54,31 @@ EMERGENCY_KEYWORDS_EN = [
 _NORM_AR = [_normalize(kw) for kw in EMERGENCY_KEYWORDS_AR]
 _LOWER_EN = [kw.lower() for kw in EMERGENCY_KEYWORDS_EN]
 
+# ---------- Co-occurrence rules (tolerate intervening words) ----------
+# Plain substring matching misses phrases like "ألم حاد في الصدر" because the
+# severity word ("حاد") sits between the keyword tokens. Each rule is a list of
+# token-groups; the rule fires only when EVERY group has at least one token
+# present in the text — so "chest" + "pain" anywhere together escalates,
+# regardless of the words in between.
+_COOCCUR_AR = [
+    [("صدر",), ("الم", "وجع")],                                  # chest + pain
+    [("ضيق", "صعوب"), ("تنفس",)],                                # tightness/difficulty + breathing
+    [("مفاج",), ("تشويش", "رؤي", "بصر", "نطق", "كلام", "شلل", "خدر")],  # sudden + neuro sign (stroke)
+]
+_COOCCUR_EN = [
+    [("chest",), ("pain", "tightness")],
+    [("breath", "breathing"),
+     ("short", "shortness", "difficulty", "trouble", "hard", "can't", "cannot")],
+    [("sudden",), ("vision", "blurred", "slurred", "speech", "numbness", "weakness")],
+]
+
+
+def _matches_cooccurrence(text: str, rules) -> bool:
+    return any(
+        all(any(tok in text for tok in group) for group in rule)
+        for rule in rules
+    )
+
 
 def detect_emergency(query: str) -> bool:
     """Detect emergency phrases with Arabic normalization and English support."""
@@ -61,4 +86,6 @@ def detect_emergency(query: str) -> bool:
         return False
     norm = _normalize(query)
     lower = query.lower()
-    return any(kw in norm for kw in _NORM_AR) or any(kw in lower for kw in _LOWER_EN)
+    if any(kw in norm for kw in _NORM_AR) or any(kw in lower for kw in _LOWER_EN):
+        return True
+    return _matches_cooccurrence(norm, _COOCCUR_AR) or _matches_cooccurrence(lower, _COOCCUR_EN)

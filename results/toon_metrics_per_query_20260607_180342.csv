@@ -1,0 +1,101 @@
+query,tier,category,n_relevant
+متى موعدي القادم؟,1,uncategorized,14
+ما سبب زيارتي الأخيرة؟,1,uncategorized,4
+ما حالة موعدي الحالي؟,1,uncategorized,4
+ما الأعراض المسجلة في موعدي؟,1,uncategorized,17
+هل موعدي الأخير كان أول زيارة؟,1,uncategorized,2
+ما ملاحظات الموعد؟,1,uncategorized,2
+متى كان آخر موعد لي؟,1,uncategorized,3
+كم عدد مواعيدي المكتملة؟,2,uncategorized,5
+هل لدي مواعيد معلقة؟,2,uncategorized,10
+هل لدي مواعيد ملغاة؟,2,uncategorized,3
+ما أكثر سبب متكرر لزياراتي؟,2,uncategorized,6
+بناءً على مواعيدي السابقة، متى يجب أن أحجز المتابعة القادمة؟,3,uncategorized,2
+بناءً على أعراضي في المواعيد، هل حالتي تتطور؟,3,uncategorized,19
+ما النمط الزمني لزياراتي للعيادة؟,3,uncategorized,27
+ما الأدوية الموصوفة لي؟,1,uncategorized,5
+ما جرعة دوائي؟,1,uncategorized,2
+كم مرة آخذ الدواء في اليوم؟,1,uncategorized,4
+ما مدة تناول الدواء؟,1,uncategorized,6
+ما تعليمات تناول الدواء؟,1,uncategorized,4
+ما اسم الدواء الموصوف؟,1,uncategorized,3
+متى صُرفت وصفتي الأخيرة؟,1,uncategorized,5
+هل تغيرت أدويتي مؤخراً؟,2,uncategorized,2
+ما الأدوية التي أتناولها بانتظام؟,2,uncategorized,4
+هل هناك دواء يؤخذ قبل النوم؟,2,uncategorized,5
+كم عدد الأدوية في وصفتي؟,2,uncategorized,2
+بناءً على أدويتي الحالية، هل هناك تعارض محتمل؟,3,uncategorized,3
+هل يجب تعديل جرعة دوائي بناءً على حالتي؟,3,uncategorized,5
+ما الغرض العلاجي من الأدوية الموصوفة؟,3,uncategorized,4
+ما تشخيص حالتي؟,1,uncategorized,8
+ما المرض المسجل في ملفي؟,1,uncategorized,2
+ما الشكوى الرئيسية لدي؟,1,uncategorized,8
+ما ملخص التشخيص؟,1,uncategorized,14
+هل لدي تشخيص مزمن؟,1,uncategorized,6
+ما الحالة المرضية الأساسية؟,1,uncategorized,5
+هل تغير تشخيصي مع الوقت؟,2,uncategorized,7
+ما التشخيصات المتكررة في سجلي؟,2,uncategorized,3
+هل هناك أكثر من تشخيص؟,2,uncategorized,1
+بناءً على تشخيصي، ما الخطة العلاجية المناسبة؟,3,uncategorized,9
+ما المضاعفات المحتملة لتشخيصي؟,3,uncategorized,2
+ما ملاحظات الطبيب في آخر زيارة؟,1,uncategorized,2
+ما خطة العلاج الموصوفة؟,1,uncategorized,2
+متى موعد المتابعة؟,1,uncategorized,4
+ما نوع السجل الطبي؟,1,uncategorized,8
+ما تاريخ آخر زيارة طبية؟,1,uncategorized,4
+ما توصيات الطبيب؟,1,uncategorized,4
+ما ملخص زياراتي الطبية؟,2,uncategorized,25
+كيف تطورت حالتي عبر الزيارات؟,2,uncategorized,9
+ما خطط العلاج عبر سجلي؟,2,uncategorized,6
+بناءً على سجلي الطبي الكامل، ما التوصيات؟,3,uncategorized,31
+ما المسار العلاجي بناءً على سجلاتي؟,3,uncategorized,14
+ما مستوى السكر في دمي؟,1,uncategorized,7
+ما قراءة ضغط الدم لدي؟,1,uncategorized,1
+كم وزني في آخر فحص؟,1,uncategorized,1
+ما درجة حرارتي؟,1,uncategorized,9
+ما معدل ضربات القلب؟,1,uncategorized,4
+ما معدل التنفس؟,1,uncategorized,3
+ما نسبة الأكسجين في الدم؟,1,uncategorized,5
+هل تحسنت قراءات الضغط؟,2,uncategorized,2
+هل هناك تغير في وزني؟,2,uncategorized,3
+هل مستوى السكر مستقر؟,2,uncategorized,6
+ما اتجاه مؤشراتي الحيوية؟,2,uncategorized,5
+بناءً على مؤشراتي الحيوية، هل حالتي مستقرة؟,3,uncategorized,6
+ما دلالة قراءاتي الحيوية على صحتي؟,3,uncategorized,5
+ما الفحوصات المخبرية المطلوبة لي؟,1,uncategorized,5
+ما حالة فحص فيتامين د؟,1,uncategorized,3
+ما تعليمات الفحص المخبري؟,1,uncategorized,5
+متى تم طلب الفحص؟,1,uncategorized,2
+ما اسم الفحص المطلوب؟,1,uncategorized,2
+ما رمز الفحص؟,1,uncategorized,3
+هل الفحص مكتمل أم ملغى؟,1,uncategorized,8
+هل اكتملت جميع فحوصاتي؟,2,uncategorized,4
+كم عدد الفحوصات المطلوبة؟,2,uncategorized,3
+ما الفحوصات الملغاة؟,2,uncategorized,3
+هل هناك فحوصات معلقة؟,2,uncategorized,4
+بناءً على الفحوصات المطلوبة، ماذا يجب أن أتابع؟,3,uncategorized,16
+ما أهمية الفحوصات المطلوبة لحالتي؟,3,uncategorized,5
+كم رسوم زيارتي؟,1,uncategorized,15
+ما تكلفة آخر موعد؟,1,uncategorized,3
+ما رسوم الكشف؟,1,uncategorized,18
+كم دفعت في آخر زيارة؟,1,uncategorized,2
+ما قيمة الفاتورة؟,1,uncategorized,12
+كم إجمالي رسوم زياراتي؟,2,uncategorized,26
+ما متوسط تكلفة زياراتي؟,2,uncategorized,18
+هل تختلف رسوم زياراتي؟,2,uncategorized,21
+بناءً على حالتي العامة، ما النصائح الصحية المناسبة؟,3,uncategorized,46
+ما العلاقة بين تشخيصي وأدويتي؟,3,uncategorized,31
+بناءً على سجلي، ما نمط الحياة الموصى به؟,3,uncategorized,5
+هل أعراضي تتوافق مع تشخيصي؟,3,uncategorized,7
+ما أفضل نظام غذائي بناءً على حالتي؟,3,uncategorized,16
+بناءً على مواعيدي وأدويتي، هل ألتزم بالعلاج؟,3,uncategorized,12
+ما التمارين المناسبة لحالتي؟,3,uncategorized,2
+كيف أحسّن حالتي الصحية العامة؟,3,uncategorized,21
+بناءً على بياناتي، ما عوامل الخطر لدي؟,3,uncategorized,16
+هل يجب تغيير خطة علاجي؟,3,uncategorized,20
+ما الإجراءات الوقائية المناسبة لحالتي؟,3,uncategorized,7
+بناءً على تاريخي الطبي، ما المتابعة المطلوبة؟,3,uncategorized,21
+ما تأثير حالتي على نمط حياتي اليومي؟,3,uncategorized,14
+هل هناك ترابط بين أعراضي المختلفة؟,3,uncategorized,13
+ما الأولويات العلاجية بناءً على حالتي؟,3,uncategorized,27
+بناءً على كل بياناتي، ما ملخص حالتي الصحية؟,3,uncategorized,38

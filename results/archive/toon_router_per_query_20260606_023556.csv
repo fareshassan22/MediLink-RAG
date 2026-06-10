@@ -1,0 +1,101 @@
+query,expected_tier,predicted_tier,correct,reason,language
+ما هو مستوى السكر في دمي؟,1,2,0,default_tier2,ar
+ما هي نسبة الضغط في قراءاتي الأخيرة؟,1,2,0,semantic_request,ar
+كم وزني في آخر فحص؟,1,2,0,semantic_request,ar
+ما نتائج فحص LDL؟,1,2,0,default_tier2,ar
+هل فحص HbA1c طبيعي؟,1,2,0,default_tier2,ar
+ما آخر قراءة للضغط؟,1,2,0,semantic_request,ar
+كم مستوى الكوليسترول؟,1,2,0,default_tier2,ar
+ما نتائج فحص الغدة الدرقية؟,1,2,0,default_tier2,ar
+هل فحص CBC طبيعي؟,1,2,0,default_tier2,ar
+ما مستوى فيتامين د؟,1,2,0,default_tier2,ar
+ما نسبة الهيموغلوبين؟,1,2,0,default_tier2,ar
+كم عدد كريات الدم البيضاء؟,1,2,0,default_tier2,ar
+ما نتائج فحص وظائف الكلى؟,1,2,0,default_tier2,ar
+ما مستوى اليوريا؟,1,2,0,default_tier2,ar
+ما نسبة الكرياتينين؟,1,2,0,default_tier2,ar
+ما نتائج فحص الكبد؟,1,2,0,default_tier2,ar
+ما إنزيمات الكبد؟,1,2,0,default_tier2,ar
+ما مستوى الحديد؟,1,2,0,default_tier2,ar
+هل فحص FERITIN طبيعي؟,1,2,0,default_tier2,ar
+ما قيمة الفولات؟,1,2,0,default_tier2,ar
+كم سكر الدم العشوائي؟,1,2,0,default_tier2,ar
+ما سكر الدم الصيامي؟,1,2,0,default_tier2,ar
+هل فحص الأنسولين طبيعي؟,1,2,0,default_tier2,ar
+ما مستوى الثيروكسين؟,1,2,0,default_tier2,ar
+كم TSH؟,1,2,0,default_tier2,mixed
+ما free T4؟,1,2,0,default_tier2,mixed
+ما النتائج الأولية؟,1,2,0,default_tier2,ar
+ما آخر فحص كامل؟,1,2,0,semantic_request,ar
+هل يوجد فقر دم؟,1,2,0,default_tier2,ar
+ما نوع الدم؟,1,2,0,default_tier2,ar
+ما نتيجة تحليل البول؟,1,3,0,complex_reasoning,ar
+هل يوجد بيلة بروتينية؟,1,2,0,default_tier2,ar
+ما كثافة البول؟,1,2,0,default_tier2,ar
+كم حجم البول؟,1,2,0,default_tier2,ar
+ما الرقم الهيدروجيني؟,1,2,0,default_tier2,ar
+هل نتائج فحوصات الضغط طبيعية؟,2,2,1,default_tier2,ar
+مقارنة النتائج الحالية بالسابقة؟,2,2,1,default_tier2,ar
+هل هناك تحسن في نسبة السكر؟,2,2,1,default_tier2,ar
+مستوى الكوليسترول ضمن المعدل الطبيعي؟,2,2,1,default_tier2,ar
+هل الفيتامينات تتحسن؟,2,2,1,default_tier2,ar
+هل قراءات الضغط مرتفعة؟,2,2,1,default_tier2,ar
+هل نتائج السكر طبيعية؟,2,2,1,default_tier2,ar
+هل يوجد تغير في الوزن؟,2,2,1,default_tier2,ar
+كيف تغيرت النتائج منذ آخر فحص؟,2,2,1,semantic_request,ar
+هل نتائج الغدة الدرقية حسنت؟,2,2,1,default_tier2,ar
+هل HbA1c تحسن؟,2,2,1,default_tier2,ar
+هل LDL انخفض؟,2,2,1,default_tier2,ar
+هل HDL ارتفع؟,2,2,1,default_tier2,ar
+مقارنة HDL بالنتائج السابقة؟,2,2,1,default_tier2,ar
+هل هناك تغير في TSH؟,2,2,1,default_tier2,ar
+هل free T4 طبيعي؟,2,2,1,default_tier2,ar
+هل النتائج مستقرة؟,2,2,1,default_tier2,ar
+هل هناك ترا��ع؟,2,2,1,default_tier2,ar
+مقارنة نتائج CBC؟,2,2,1,default_tier2,ar
+هل الهيموغلوبين تحسن؟,2,2,1,default_tier2,ar
+هل الحديد زاد؟,2,2,1,default_tier2,ar
+هل Feritin تحسن؟,2,2,1,default_tier2,mixed
+مقارنة وظائف الكلى؟,2,2,1,default_tier2,ar
+هل اليوريا تحسنت؟,2,2,1,default_tier2,ar
+هل الكرياتينين مستقر؟,2,2,1,default_tier2,ar
+مقارنة إنزيمات الكبد؟,2,2,1,default_tier2,ar
+هل AST طبيعي؟,2,2,1,default_tier2,ar
+هل ALT تحسنت؟,2,2,1,default_tier2,ar
+هل هناك تحسن عام؟,2,2,1,default_tier2,ar
+هل النتائج ضمن النطاق؟,2,2,1,default_tier2,ar
+هل هناك قلق من النتائج؟,2,2,1,default_tier2,ar
+ما اتجاه النتائج؟,2,2,1,default_tier2,ar
+بناءً على نتائج فحوصاتي، ما التغييرات المطلوبة في العلاج؟,3,2,0,default_tier2,ar
+بناءً على قراءات الضغط الأخيرة، هل لدي ارتفاع في ضغط الدم؟,3,2,0,semantic_request,ar
+"Based on my labs, what lifestyle changes do you recommend?",3,2,0,default_tier2,en
+هل يوجد قلق من ارتفاع LDL في نتائج الفحص الأخيرة؟,3,2,0,semantic_request,ar
+ما المسار المتوقع للحالة بناءً على الاتجاهات؟,3,2,0,default_tier2,ar
+هل يجب تعديل الأدوية بناءً على النتائج؟,3,2,0,default_tier2,ar
+ما توصيات العلاج بناءً على التطورات؟,3,2,0,default_tier2,ar
+كيف يمكنني تحسين قراءات الغلوكوز؟,3,2,0,default_tier2,ar
+هل يجب زيادة الجرعة؟,3,2,0,default_tier2,ar
+ما الخطة العلاجية المناسبة؟,3,3,1,complex_reasoning,ar
+ما أفضل نظام غذائي بناءً على النتائج؟,3,2,0,default_tier2,ar
+هل الصيام مفيد بناءً على قراءات sugar؟,3,2,0,default_tier2,ar
+ما أنواع التمارين المناسبة؟,3,2,0,default_tier2,ar
+كم ساعة نوم مطلوبة؟,3,2,0,default_tier2,ar
+كيف أتحكم في القلق والتوتر؟,3,2,0,default_tier2,ar
+ما العلاقة بين الضغط والوزن؟,3,2,0,default_tier2,ar
+هل السمنة تؤثر على النتائج؟,3,2,0,default_tier2,ar
+ما العلاقة بين السكر وأمراض القلب؟,3,2,0,default_tier2,ar
+هل يوجد خطر على القلب؟,3,3,1,complex_reasoning,ar
+ما الفحوصات المطلوبة للكشف المبكر؟,3,2,0,default_tier2,ar
+هل يجب فحص القلب؟,3,2,0,default_tier2,ar
+ما ECG المطلوب؟,3,2,0,default_tier2,ar
+هل فحص الإيكوكارديوغرام ضروري؟,3,2,0,default_tier2,ar
+ما توصيات التغذية؟,3,2,0,default_tier2,ar
+ما الأطعة التي يجب تجنبها؟,3,2,0,default_tier2,ar
+ما الأطعة المفيدة؟,3,2,0,default_tier2,ar
+هل يجب تقليل الملح؟,3,2,0,default_tier2,ar
+هل يجب تقليل السكر؟,3,2,0,default_tier2,ar
+هل يجب تقليل الدهون؟,3,2,0,default_tier2,ar
+ما نسبة البروتين المطلوبة؟,3,2,0,default_tier2,ar
+هل يجب أخذ مكملات؟,3,2,0,default_tier2,ar
+ما أفضل وقت للتمارين؟,3,2,0,default_tier2,ar
+كم مدة التمارين؟,3,2,0,default_tier2,ar

@@ -14,7 +14,14 @@ def _get_model():
     if _model is None:
         from sentence_transformers import SentenceTransformer
 
-        _model = SentenceTransformer("BAAI/bge-m3", device=_embed_device)
+        # Force safetensors: torch < 2.6 blocks loading legacy pytorch_model.bin
+        # via torch.load (CVE-2025-32434). bge-m3 ships model.safetensors locally,
+        # so this avoids the block without upgrading torch.
+        _model = SentenceTransformer(
+            "BAAI/bge-m3",
+            device=_embed_device,
+            model_kwargs={"use_safetensors": True},
+        )
     return _model
 
 

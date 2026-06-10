@@ -1,0 +1,16 @@
+{
+  "rag": {
+    "total_queries": 27,
+    "total_documents_retrieved": 540,
+    "avg_latency_seconds": 0.0022,
+    "queries_per_second": 12169.31
+  },
+  "toon": {
+    "total_queries": 15,
+    "total_documents_retrieved": 175,
+    "avg_latency_seconds": 0.0025,
+    "queries_per_second": 6012.06
+  },
+  "mode": "quick",
+  "timestamp": "20260506_011736"
+}

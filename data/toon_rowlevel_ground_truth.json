@@ -1,0 +1,742 @@
+[
+  {
+    "query": "ما هو مستوى السكر في دمي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما هي نسبة الضغط في قراءاتي الأخيرة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "كم وزني في آخر فحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "ما نتائج فحص LDL؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل فحص HbA1c طبيعي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "ما آخر قراءة للضغط؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "كم مستوى الكوليسترول؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نتائج فحص الغدة الدرقية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل فحص CBC طبيعي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما مستوى فيتامين د؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نسبة الهيموغلوبين؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم عدد كريات الدم البيضاء؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نتائج فحص وظائف الكلى؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما مستوى اليوريا؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نسبة الكرياتينين؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نتائج فحص الكبد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما إنزيمات الكبد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما مستوى الحديد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل فحص FERITIN طبيعي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما قيمة الفولات؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم سكر الدم العشوائي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "ما سكر الدم الصيامي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل فحص الأنسولين طبيعي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "ما مستوى الثيروكسين؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم TSH؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما free T4؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما النتائج الأولية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "ما آخر فحص كامل؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "هل يوجد فقر دم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نوع الدم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما نتيجة تحليل البول؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل يوجد بيلة بروتينية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما كثافة البول؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم حجم البول؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما الرقم الهيدروجيني؟",
+    "tier": "tier_1_simple",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل نتائج فحوصات الضغط طبيعية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "مقارنة النتائج الحالية بالسابقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a",
+      "payments_740e8a07d6",
+      "payments_d390c8cfc4"
+    ]
+  },
+  {
+    "query": "هل هناك تحسن في نسبة السكر؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "مستوى الكوليسترول ضمن المعدل الطبيعي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل الفيتامينات تتحسن؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل قراءات الضغط مرتفعة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل نتائج السكر طبيعية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل يوجد تغير في الوزن؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "medical_records_420",
+      "vital_signs_9f32c94491",
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "كيف تغيرت النتائج منذ آخر فحص؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "هل نتائج الغدة الدرقية حسنت؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل HbA1c تحسن؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "هل LDL انخفض؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل HDL ارتفع؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "مقارنة HDL بالنتائج السابقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل هناك تغير في TSH؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل free T4 طبيعي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل النتائج مستقرة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل هناك ترا��ع؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "مقارنة نتائج CBC؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل الهيموغلوبين تحسن؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل الحديد زاد؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل Feritin تحسن؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "مقارنة وظائف الكلى؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل اليوريا تحسنت؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل الكرياتينين مستقر؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "مقارنة إنزيمات الكبد؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل AST طبيعي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل ALT تحسنت؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل هناك تحسن عام؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_0b00d7cc75",
+      "appointments_a6bc08275a",
+      "appointments_56c7c8823d",
+      "appointments_1ac129da8d"
+    ]
+  },
+  {
+    "query": "هل النتائج ضمن النطاق؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "هل هناك قلق من النتائج؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما اتجاه النتائج؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "بناءً على نتائج فحوصاتي، ما التغييرات المطلوبة في العلاج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "بناءً على قراءات الضغط الأخيرة، هل لدي ارتفاع في ضغط الدم؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "Based on my labs, what lifestyle changes do you recommend?",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491"
+    ]
+  },
+  {
+    "query": "هل يوجد قلق من ارتفاع LDL في نتائج الفحص الأخيرة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "ما المسار المتوقع للحالة بناءً على الاتجاهات؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5eafd67395"
+    ]
+  },
+  {
+    "query": "هل يجب تعديل الأدوية بناءً على النتائج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما توصيات العلاج بناءً على التطورات؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "medical_records_420",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "كيف يمكنني تحسين قراءات الغلوكوز؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل يجب زيادة الجرعة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما الخطة العلاجية المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "medical_records_420",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما أفضل نظام غذائي بناءً على النتائج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_5c71d5837e",
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "هل الصيام مفيد بناءً على قراءات sugar؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما أنواع التمارين المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم ساعة نوم مطلوبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_77c3932573"
+    ]
+  },
+  {
+    "query": "كيف أتحكم في القلق والتوتر؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما العلاقة بين الضغط والوزن؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_dc37379c44",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل السمنة تؤثر على النتائج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "medical_records_420",
+      "appointments_a6bc08275a"
+    ]
+  },
+  {
+    "query": "ما العلاقة بين السكر وأمراض القلب؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل يوجد خطر على القلب؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5eafd67395",
+      "appointments_dc37379c44"
+    ]
+  },
+  {
+    "query": "ما الفحوصات المطلوبة للكشف المبكر؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل يجب فحص القلب؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_5eafd67395"
+    ]
+  },
+  {
+    "query": "ما ECG المطلوب؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5eafd67395"
+    ]
+  },
+  {
+    "query": "هل فحص الإيكوكارديوغرام ضروري؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5eafd67395"
+    ]
+  },
+  {
+    "query": "ما توصيات التغذية؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5c71d5837e"
+    ]
+  },
+  {
+    "query": "ما الأطعة التي يجب تجنبها؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5c71d5837e",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "ما الأطعة المفيدة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5c71d5837e"
+    ]
+  },
+  {
+    "query": "هل يجب تقليل الملح؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_dc37379c44",
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "هل يجب تقليل السكر؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "vital_signs_9f32c94491",
+      "appointments_56c7c8823d",
+      "prescriptions_304"
+    ]
+  },
+  {
+    "query": "هل يجب تقليل الدهون؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_a6bc08275a",
+      "appointments_56c7c8823d"
+    ]
+  },
+  {
+    "query": "ما نسبة البروتين المطلوبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "هل يجب أخذ مكملات؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": [
+      "appointments_5c71d5837e"
+    ]
+  },
+  {
+    "query": "ما أفضل وقت للتمارين؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  },
+  {
+    "query": "كم مدة التمارين؟",
+    "tier": "tier_3_complex",
+    "patient_id": 200,
+    "relevant_ids": []
+  }
+]

@@ -1,0 +1,33 @@
+query,intent,router_tier
+ما أسباب ألم الصدر؟,general_knowledge,2
+What are symptoms of diabetes?,general_knowledge,2
+أعراض السكري,general_knowledge,2
+ما هي أعراض فقر الدم؟,general_knowledge,2
+ما هي أعراض نقص فيتامين د؟,general_knowledge,2
+ما هي أعراض نقص vitamin د؟,general_knowledge,2
+ما العلاقة بين ارتفاع ضغط الدم وأمراض القلب؟,ambiguous,3
+ما هي أعراض مرض السكري؟,general_knowledge,2
+ما هو علاج ارتفاع ضغط الدم؟,general_knowledge,2
+ما هي أسباب الصداع؟,general_knowledge,2
+ما هو علاج السكري؟,general_knowledge,2
+ما هي أعراض ارتفاع ضغط الدم؟,general_knowledge,2
+ما هي أعراض مرض السكري,general_knowledge,2
+كيف يتم علاج ارتفاع ضغط الدم,general_knowledge,2
+كيف يتم علاج ارتفاع ضغط الدم؟,general_knowledge,2
+What are the symptoms of diabetes?,general_knowledge,2
+What causes high blood pressure?,general_knowledge,3
+ما الفرق بين الأورام الحميدة والخبيثة؟,general_knowledge,2
+ما هو مرض السكري؟,general_knowledge,2
+كيف يمكن الوقاية من أمراض القلب؟,ambiguous,3
+ما أعراض الربو؟,general_knowledge,2
+ما هو دواء ضغط الدم؟,general_knowledge,2
+ما هي أعراض مرض باركنسون؟,general_knowledge,2
+ما هي أعراض التهابات المسالك البولية؟,general_knowledge,2
+ما هي أعراض السكري؟,general_knowledge,2
+ما هو علاج الصداع؟,general_knowledge,2
+كيف أعالج الصداع النصفي؟,ambiguous,3
+اهلا,ambiguous,2
+ما علاقة التدخين بسرطان الرئة؟,ambiguous,2
+كيف أعرف إذا كان لدي فقر دم؟,patient_record,3
+ما هى اعراض مرض السكرى,ambiguous,2
+ألم حاد في الصدر مع ضيق تنفس,ambiguous,2

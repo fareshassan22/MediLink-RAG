@@ -1,0 +1,1679 @@
+[
+  {
+    "query": "متى موعدي القادم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_359",
+      "appointments_0e4195c720",
+      "appointments_3a9b06a6f6",
+      "appointments_c17a23cc37",
+      "appointments_0bb6e0f3d1",
+      "appointments_3760e26602",
+      "appointments_daed8067f0",
+      "appointments_47f8b3e07d",
+      "appointments_977e8fac28",
+      "appointments_87ad61f3b2",
+      "appointments_28c75a1888",
+      "appointments_acddc3544d",
+      "appointments_c0843df6fa",
+      "appointments_e7d48f8108"
+    ]
+  },
+  {
+    "query": "ما سبب زيارتي الأخيرة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_297",
+      "appointments_363b153c93",
+      "prescriptions_212",
+      "payments_4fb4509c2c"
+    ]
+  },
+  {
+    "query": "ما حالة موعدي الحالي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "appointments_0830823c31",
+      "prescriptions_285",
+      "prescriptions_229",
+      "prescriptions_291"
+    ]
+  },
+  {
+    "query": "ما الأعراض المسجلة في موعدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_435",
+      "diagnoses_a5d04b7d03",
+      "diagnoses_03f5a44e5b",
+      "diagnoses_eb35af353b",
+      "diagnoses_7add8a7639",
+      "diagnoses_7b4fe92b5c",
+      "diagnoses_ff3673a8c1",
+      "diagnoses_f340681236",
+      "diagnoses_0f58255c18",
+      "appointments_1f7d0a0d41",
+      "appointments_5d9525f66f",
+      "appointments_a17fb96acc",
+      "appointments_ecc34cae87",
+      "appointments_6b2473d58d",
+      "appointments_1a7bd91e48",
+      "appointments_1e52111be0",
+      "appointments_4737b06323"
+    ]
+  },
+  {
+    "query": "هل موعدي الأخير كان أول زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "appointments_28d6fb4362",
+      "appointments_e0986ada7a"
+    ]
+  },
+  {
+    "query": "ما ملاحظات الموعد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_431",
+      "prescriptions_209"
+    ]
+  },
+  {
+    "query": "متى كان آخر موعد لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_257",
+      "appointments_967155e93a",
+      "payments_9a0248c388"
+    ]
+  },
+  {
+    "query": "كم عدد مواعيدي المكتملة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "appointments_650e24d62c",
+      "appointments_22aa1fa333",
+      "payments_3510ad883c",
+      "payments_096fd7a464",
+      "payments_79abe91d7a"
+    ]
+  },
+  {
+    "query": "هل لدي مواعيد معلقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "appointments_2b4552f38c",
+      "appointments_eeb8b8b0a0",
+      "appointments_9a04d7a344",
+      "appointments_ca2c8e7723",
+      "appointments_a7be4e23d4",
+      "appointments_b7fcacb3fd",
+      "payments_bee2ba5c1e",
+      "payments_cb07e6fb1b",
+      "payments_bdfe99e31c",
+      "payments_4c043fdbfe"
+    ]
+  },
+  {
+    "query": "هل لدي مواعيد ملغاة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "appointments_24d8409bad",
+      "lab_test_orders_277",
+      "payments_82bda1f8c3"
+    ]
+  },
+  {
+    "query": "ما أكثر سبب متكرر لزياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_c5050ec489",
+      "diagnoses_1a38044e42",
+      "diagnoses_538143efef",
+      "diagnoses_11a82fff7c",
+      "appointments_9430ab079f",
+      "appointments_52735c6e74"
+    ]
+  },
+  {
+    "query": "بناءً على مواعيدي السابقة، متى يجب أن أحجز المتابعة القادمة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": null,
+    "relevant_ids": [
+      "appointments_0d65fdb81a",
+      "appointments_b8895220fb"
+    ]
+  },
+  {
+    "query": "بناءً على أعراضي في المواعيد، هل حالتي تتطور؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_387",
+      "medical_records_361",
+      "medical_records_426",
+      "medical_records_388",
+      "medical_records_429",
+      "appointments_8e25ae3b57",
+      "appointments_724da73a24",
+      "appointments_fe998acbc2",
+      "appointments_1a35612233",
+      "appointments_a32fb45ea4",
+      "appointments_a7be4e23d4",
+      "appointments_6ae876ccac",
+      "appointments_56ee6852b7",
+      "appointments_768fd74a2e",
+      "appointments_7a179780aa",
+      "appointments_9e1679da70",
+      "appointments_2df3f79a86",
+      "appointments_1ff87ff79d",
+      "appointments_59c6b91abb"
+    ]
+  },
+  {
+    "query": "ما النمط الزمني لزياراتي للعيادة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_419",
+      "medical_records_456",
+      "medical_records_335",
+      "medical_records_404",
+      "medical_records_465",
+      "appointments_03020cfbdb",
+      "appointments_16996dac5f",
+      "appointments_b95a23a5c8",
+      "appointments_1ca99146b7",
+      "appointments_310f239090",
+      "appointments_4b4bc64085",
+      "appointments_564c303660",
+      "appointments_f74ead8ed1",
+      "appointments_fa7a5d3355",
+      "appointments_742b780de3",
+      "appointments_8fefdc6af5",
+      "appointments_67fdfa9ddb",
+      "appointments_c1c17e444c",
+      "appointments_5de572cf82",
+      "appointments_7cd88388db",
+      "appointments_f352c9af97",
+      "appointments_ac85100a2c",
+      "appointments_d4445a2bce",
+      "appointments_fee68f1375",
+      "payments_3275a3a269",
+      "payments_5e4fd22e0e",
+      "payments_291cf24f97"
+    ]
+  },
+  {
+    "query": "ما الأدوية الموصوفة لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_312",
+      "prescriptions_217",
+      "prescriptions_331",
+      "prescriptions_224",
+      "prescriptions_218"
+    ]
+  },
+  {
+    "query": "ما جرعة دوائي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "appointments_315457b727",
+      "prescriptions_212"
+    ]
+  },
+  {
+    "query": "كم مرة آخذ الدواء في اليوم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "prescriptions_177",
+      "prescriptions_285",
+      "prescriptions_229",
+      "prescriptions_291"
+    ]
+  },
+  {
+    "query": "ما مدة تناول الدواء؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_378",
+      "medical_records_400",
+      "prescriptions_315",
+      "prescriptions_325",
+      "prescriptions_183",
+      "prescriptions_287"
+    ]
+  },
+  {
+    "query": "ما تعليمات تناول الدواء؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "prescriptions_221",
+      "prescriptions_237",
+      "prescriptions_329",
+      "prescriptions_310"
+    ]
+  },
+  {
+    "query": "ما اسم الدواء الموصوف؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "appointments_d0d10688e1",
+      "prescriptions_312",
+      "prescriptions_209"
+    ]
+  },
+  {
+    "query": "متى صُرفت وصفتي الأخيرة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_262",
+      "prescriptions_259",
+      "prescriptions_184",
+      "prescriptions_297",
+      "prescriptions_272"
+    ]
+  },
+  {
+    "query": "هل تغيرت أدويتي مؤخراً؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "appointments_dd40e77df5",
+      "prescriptions_244"
+    ]
+  },
+  {
+    "query": "ما الأدوية التي أتناولها بانتظام؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_253",
+      "medical_records_282",
+      "prescriptions_289",
+      "prescriptions_198"
+    ]
+  },
+  {
+    "query": "هل هناك دواء يؤخذ قبل النوم؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "appointments_fd5a09dbb7",
+      "appointments_5d5b1ca9b2",
+      "appointments_24d8409bad",
+      "appointments_d68a1073a5",
+      "prescriptions_240"
+    ]
+  },
+  {
+    "query": "كم عدد الأدوية في وصفتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "prescriptions_299",
+      "prescriptions_196"
+    ]
+  },
+  {
+    "query": "بناءً على أدويتي الحالية، هل هناك تعارض محتمل؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": null,
+    "relevant_ids": [
+      "prescriptions_282",
+      "prescriptions_281",
+      "prescriptions_179"
+    ]
+  },
+  {
+    "query": "هل يجب تعديل جرعة دوائي بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_387",
+      "prescriptions_279",
+      "prescriptions_263",
+      "prescriptions_309",
+      "prescriptions_311"
+    ]
+  },
+  {
+    "query": "ما الغرض العلاجي من الأدوية الموصوفة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": null,
+    "relevant_ids": [
+      "prescriptions_303",
+      "prescriptions_328",
+      "prescriptions_243",
+      "prescriptions_290"
+    ]
+  },
+  {
+    "query": "ما تشخيص حالتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_359",
+      "medical_records_303",
+      "medical_records_461",
+      "medical_records_312",
+      "medical_records_304",
+      "diagnoses_158adfd2c7",
+      "diagnoses_2f0bd3512d",
+      "lab_test_orders_318"
+    ]
+  },
+  {
+    "query": "ما المرض المسجل في ملفي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_7c3a38adf1",
+      "prescriptions_212"
+    ]
+  },
+  {
+    "query": "ما الشكوى الرئيسية لدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_443",
+      "diagnoses_15b6daae38",
+      "diagnoses_8db82cb3a9",
+      "diagnoses_0207a27a3f",
+      "diagnoses_a51dc308f0",
+      "diagnoses_55cc0dde63",
+      "appointments_44a4f77c06",
+      "appointments_81e8414c87"
+    ]
+  },
+  {
+    "query": "ما ملخص التشخيص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_435",
+      "medical_records_367",
+      "medical_records_452",
+      "medical_records_261",
+      "medical_records_337",
+      "medical_records_378",
+      "medical_records_400",
+      "medical_records_357",
+      "medical_records_305",
+      "diagnoses_a5d04b7d03",
+      "diagnoses_f9f5fa1f44",
+      "lab_test_orders_222",
+      "lab_test_orders_271",
+      "lab_test_orders_294"
+    ]
+  },
+  {
+    "query": "هل لدي تشخيص مزمن؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_308",
+      "medical_records_457",
+      "medical_records_428",
+      "appointments_123b9ba03d",
+      "appointments_01a1ff88cb",
+      "appointments_9d14c818ed"
+    ]
+  },
+  {
+    "query": "ما الحالة المرضية الأساسية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_8f9b54b645",
+      "diagnoses_a02825b48f",
+      "diagnoses_2fc4b6e22b",
+      "appointments_1e473e9ffa",
+      "appointments_dd79825c3e"
+    ]
+  },
+  {
+    "query": "هل تغير تشخيصي مع الوقت؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_7bf5fbfbb2",
+      "diagnoses_6c614dc431",
+      "diagnoses_4fbede8412",
+      "diagnoses_e8b65db2d8",
+      "diagnoses_3e4bf9038a",
+      "diagnoses_5954c71cc9",
+      "diagnoses_cc723b5ad5"
+    ]
+  },
+  {
+    "query": "ما التشخيصات المتكررة في سجلي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_ba2856b4cd",
+      "diagnoses_f0f1c18519",
+      "diagnoses_86f4e83720"
+    ]
+  },
+  {
+    "query": "هل هناك أكثر من تشخيص؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_b53ca9d13b"
+    ]
+  },
+  {
+    "query": "بناءً على تشخيصي، ما الخطة العلاجية المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_363",
+      "diagnoses_b613e33fd5",
+      "appointments_fd5a09dbb7",
+      "appointments_f8d6a7aea1",
+      "prescriptions_265",
+      "prescriptions_214",
+      "prescriptions_240",
+      "prescriptions_236",
+      "prescriptions_194"
+    ]
+  },
+  {
+    "query": "ما المضاعفات المحتملة لتشخيصي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "appointments_28c75a1888",
+      "lab_test_orders_306"
+    ]
+  },
+  {
+    "query": "ما ملاحظات الطبيب في آخر زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_359",
+      "prescriptions_217"
+    ]
+  },
+  {
+    "query": "ما خطة العلاج الموصوفة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_297",
+      "prescriptions_212"
+    ]
+  },
+  {
+    "query": "متى موعد المتابعة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_397",
+      "medical_records_317",
+      "medical_records_405",
+      "appointments_71b9258e2d"
+    ]
+  },
+  {
+    "query": "ما نوع السجل الطبي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_a5d04b7d03",
+      "diagnoses_03f5a44e5b",
+      "diagnoses_eb35af353b",
+      "diagnoses_7add8a7639",
+      "diagnoses_7b4fe92b5c",
+      "diagnoses_ff3673a8c1",
+      "diagnoses_f340681236",
+      "diagnoses_0f58255c18"
+    ]
+  },
+  {
+    "query": "ما تاريخ آخر زيارة طبية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_308",
+      "medical_records_327",
+      "appointments_28d6fb4362",
+      "appointments_9d14c818ed"
+    ]
+  },
+  {
+    "query": "ما توصيات الطبيب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_431",
+      "prescriptions_312",
+      "prescriptions_209",
+      "lab_test_orders_309"
+    ]
+  },
+  {
+    "query": "ما ملخص زياراتي الطبية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_257",
+      "medical_records_354",
+      "medical_records_262",
+      "medical_records_412",
+      "medical_records_374",
+      "appointments_67193a41a0",
+      "appointments_2f5fbcc9a2",
+      "appointments_510bf4d1cd",
+      "appointments_5f92aa2b5e",
+      "appointments_50940648ab",
+      "appointments_ee8f513c3c",
+      "appointments_348a2344a6",
+      "appointments_93a46a41e2",
+      "appointments_967155e93a",
+      "appointments_a52a01d88d",
+      "appointments_69129444b6",
+      "appointments_3b94c4a89c",
+      "appointments_d106777e78",
+      "prescriptions_259",
+      "prescriptions_184",
+      "prescriptions_297",
+      "prescriptions_272",
+      "lab_test_orders_305",
+      "lab_test_orders_297",
+      "lab_test_orders_226"
+    ]
+  },
+  {
+    "query": "كيف تطورت حالتي عبر الزيارات؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_399",
+      "medical_records_336",
+      "appointments_f3d5a608a8",
+      "appointments_637aa30a50",
+      "appointments_698524d28f",
+      "appointments_dd40e77df5",
+      "appointments_650e24d62c",
+      "appointments_22aa1fa333",
+      "appointments_ba48fb49d2"
+    ]
+  },
+  {
+    "query": "ما خطط العلاج عبر سجلي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_403",
+      "medical_records_253",
+      "medical_records_282",
+      "prescriptions_289",
+      "prescriptions_178",
+      "prescriptions_198"
+    ]
+  },
+  {
+    "query": "بناءً على سجلي الطبي الكامل، ما التوصيات؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_363",
+      "medical_records_299",
+      "medical_records_332",
+      "medical_records_326",
+      "medical_records_276",
+      "diagnoses_7a90cc0980",
+      "diagnoses_3a86e492c8",
+      "diagnoses_b613e33fd5",
+      "diagnoses_031c0df7c6",
+      "diagnoses_d77d29e8ab",
+      "appointments_fd5a09dbb7",
+      "appointments_9d3b06bc0f",
+      "appointments_5d5b1ca9b2",
+      "appointments_14c1db8534",
+      "appointments_24d8409bad",
+      "appointments_f8d6a7aea1",
+      "appointments_d82c543ddd",
+      "appointments_41ee19a8e0",
+      "appointments_96ed3b3fc4",
+      "appointments_3f41c11029",
+      "appointments_d68a1073a5",
+      "appointments_a4417297e1",
+      "prescriptions_265",
+      "prescriptions_214",
+      "prescriptions_240",
+      "prescriptions_236",
+      "prescriptions_194",
+      "lab_test_orders_219",
+      "lab_test_orders_284",
+      "lab_test_orders_206",
+      "lab_test_orders_202"
+    ]
+  },
+  {
+    "query": "ما المسار العلاجي بناءً على سجلاتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_415",
+      "medical_records_302",
+      "medical_records_408",
+      "medical_records_279",
+      "appointments_9669129779",
+      "appointments_d17278788d",
+      "appointments_28c75a1888",
+      "appointments_fb07544c91",
+      "appointments_e78a706cba",
+      "appointments_578d306c94",
+      "prescriptions_299",
+      "prescriptions_294",
+      "prescriptions_196",
+      "lab_test_orders_306"
+    ]
+  },
+  {
+    "query": "ما مستوى السكر في دمي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_f87c9b4f23",
+      "vital_signs_272f349529",
+      "vital_signs_7443f9618e",
+      "vital_signs_8a49854b8d",
+      "vital_signs_af459b4f7b",
+      "appointments_c17a23cc37",
+      "prescriptions_224"
+    ]
+  },
+  {
+    "query": "ما قراءة ضغط الدم لدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_e3c6f734f9"
+    ]
+  },
+  {
+    "query": "كم وزني في آخر فحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_722984f457"
+    ]
+  },
+  {
+    "query": "ما درجة حرارتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_164baab0c2",
+      "vital_signs_f3810adac9",
+      "vital_signs_b3ce5f925d",
+      "vital_signs_7d57c17cd3",
+      "vital_signs_b00c44ae0a",
+      "vital_signs_c279026270",
+      "vital_signs_3f368813ef",
+      "vital_signs_5c1afe903f",
+      "vital_signs_887e7c92f6"
+    ]
+  },
+  {
+    "query": "ما معدل ضربات القلب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_2f81315f69",
+      "vital_signs_6b1c041036",
+      "vital_signs_b3c1732d89",
+      "vital_signs_b2a7cb877c"
+    ]
+  },
+  {
+    "query": "ما معدل التنفس؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_8262107f53",
+      "vital_signs_722422ec5e",
+      "vital_signs_fd27aaea4b"
+    ]
+  },
+  {
+    "query": "ما نسبة الأكسجين في الدم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_6e6fb3a722",
+      "vital_signs_2ef933e633",
+      "vital_signs_6b7c133589",
+      "vital_signs_a42ba5a911",
+      "vital_signs_c767b02abe"
+    ]
+  },
+  {
+    "query": "هل تحسنت قراءات الضغط؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_fba01ef09b",
+      "vital_signs_d9243958be"
+    ]
+  },
+  {
+    "query": "هل هناك تغير في وزني؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_06f3328b33",
+      "vital_signs_94a33ab4e1",
+      "vital_signs_8badbdd7ca"
+    ]
+  },
+  {
+    "query": "هل مستوى السكر مستقر؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_061d070546",
+      "vital_signs_7c3bbda637",
+      "vital_signs_dd52d7b014",
+      "vital_signs_4ec8bdf82b",
+      "vital_signs_24e23ca693",
+      "prescriptions_265"
+    ]
+  },
+  {
+    "query": "ما اتجاه مؤشراتي الحيوية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_aea404c8fd",
+      "vital_signs_2f8e4be522",
+      "vital_signs_1e3bd34f42",
+      "vital_signs_1871c8b40e",
+      "prescriptions_216"
+    ]
+  },
+  {
+    "query": "بناءً على مؤشراتي الحيوية، هل حالتي مستقرة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_2cee282770",
+      "vital_signs_597f225ea0",
+      "vital_signs_81561ba7df",
+      "vital_signs_3889ea81eb",
+      "vital_signs_83866c830a",
+      "vital_signs_9a29b487cc"
+    ]
+  },
+  {
+    "query": "ما دلالة قراءاتي الحيوية على صحتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_b72b506a63",
+      "vital_signs_f5dedb61ca",
+      "vital_signs_c1e710f0a7",
+      "vital_signs_5b5d15b174",
+      "vital_signs_56b3ed237d"
+    ]
+  },
+  {
+    "query": "ما الفحوصات المخبرية المطلوبة لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_359",
+      "medical_records_304",
+      "appointments_28c75a1888",
+      "lab_test_orders_190",
+      "lab_test_orders_318"
+    ]
+  },
+  {
+    "query": "ما حالة فحص فيتامين د؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_170",
+      "lab_test_orders_235",
+      "lab_test_orders_239"
+    ]
+  },
+  {
+    "query": "ما تعليمات الفحص المخبري؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_251",
+      "lab_test_orders_222",
+      "lab_test_orders_271",
+      "lab_test_orders_236",
+      "lab_test_orders_294"
+    ]
+  },
+  {
+    "query": "متى تم طلب الفحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_261",
+      "lab_test_orders_248"
+    ]
+  },
+  {
+    "query": "ما اسم الفحص المطلوب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_309",
+      "lab_test_orders_253"
+    ]
+  },
+  {
+    "query": "ما رمز الفحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_305",
+      "lab_test_orders_297",
+      "lab_test_orders_226"
+    ]
+  },
+  {
+    "query": "هل الفحص مكتمل أم ملغى؟",
+    "tier": "tier_1_simple",
+    "patient_id": 159,
+    "category": null,
+    "relevant_ids": [
+      "appointments_f4f3b19dd7",
+      "appointments_752996d472",
+      "appointments_29bc559e69",
+      "lab_test_orders_301",
+      "lab_test_orders_237",
+      "lab_test_orders_268",
+      "lab_test_orders_171",
+      "lab_test_orders_278"
+    ]
+  },
+  {
+    "query": "هل اكتملت جميع فحوصاتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_219",
+      "lab_test_orders_284",
+      "lab_test_orders_206",
+      "lab_test_orders_202"
+    ]
+  },
+  {
+    "query": "كم عدد الفحوصات المطلوبة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": null,
+    "relevant_ids": [
+      "lab_test_orders_306",
+      "lab_test_orders_241",
+      "lab_test_orders_182"
+    ]
+  },
+  {
+    "query": "ما الفحوصات الملغاة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 162,
+    "category": null,
+    "relevant_ids": [
+      "appointments_f944d28b92",
+      "payments_f247c7d789",
+      "payments_a074885cfb"
+    ]
+  },
+  {
+    "query": "هل هناك فحوصات معلقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 163,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_426",
+      "appointments_724da73a24",
+      "appointments_fe998acbc2",
+      "appointments_a32fb45ea4"
+    ]
+  },
+  {
+    "query": "بناءً على الفحوصات المطلوبة، ماذا يجب أن أتابع؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_419",
+      "medical_records_456",
+      "medical_records_335",
+      "medical_records_404",
+      "medical_records_465",
+      "appointments_b95a23a5c8",
+      "appointments_4b4bc64085",
+      "appointments_5de572cf82",
+      "appointments_7cd88388db",
+      "appointments_f352c9af97",
+      "appointments_d4445a2bce",
+      "prescriptions_328",
+      "prescriptions_243",
+      "prescriptions_290",
+      "lab_test_orders_302",
+      "lab_test_orders_238"
+    ]
+  },
+  {
+    "query": "ما أهمية الفحوصات المطلوبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 165,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_366",
+      "appointments_25a4f25c96",
+      "appointments_3314936ea0",
+      "appointments_4400562df4",
+      "lab_test_orders_221"
+    ]
+  },
+  {
+    "query": "كم رسوم زيارتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "appointments_0e4195c720",
+      "appointments_3a9b06a6f6",
+      "appointments_c17a23cc37",
+      "appointments_0bb6e0f3d1",
+      "appointments_3760e26602",
+      "appointments_daed8067f0",
+      "appointments_47f8b3e07d",
+      "appointments_977e8fac28",
+      "appointments_e7d48f8108",
+      "payments_952ee9a706",
+      "payments_1548859c93",
+      "payments_d28e4b3343",
+      "payments_50897d471b",
+      "payments_bd54109842",
+      "payments_10690db2a7"
+    ]
+  },
+  {
+    "query": "ما تكلفة آخر موعد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": null,
+    "relevant_ids": [
+      "appointments_9ab3ecdc7e",
+      "payments_4fb4509c2c",
+      "payments_2ee2a6ec0b"
+    ]
+  },
+  {
+    "query": "ما رسوم الكشف؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": null,
+    "relevant_ids": [
+      "appointments_0830823c31",
+      "appointments_920afac2d0",
+      "appointments_8ad5230502",
+      "appointments_71b9258e2d",
+      "appointments_27dffe8655",
+      "appointments_8e6da2a0cd",
+      "appointments_98ac94579f",
+      "appointments_e3aa9bbbb3",
+      "payments_c38967ccf3",
+      "payments_6db62ba36f",
+      "payments_fdea01664f",
+      "payments_a875b05795",
+      "payments_e18b748697",
+      "payments_444c8e9c7c",
+      "payments_fd23297e52",
+      "payments_61cf8bcd0c",
+      "payments_09b9d9eaeb",
+      "payments_2bc4170dc6"
+    ]
+  },
+  {
+    "query": "كم دفعت في آخر زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "payments_fe0f6c4929",
+      "payments_3a3aabd29f"
+    ]
+  },
+  {
+    "query": "ما قيمة الفاتورة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": null,
+    "relevant_ids": [
+      "appointments_fea4f39ea9",
+      "appointments_123b9ba03d",
+      "appointments_8147b330fe",
+      "appointments_ed0b1c8704",
+      "appointments_e66ae4c2af",
+      "appointments_a156c7331e",
+      "appointments_19d2bea21b",
+      "appointments_38bd74285d",
+      "appointments_41438a9f49",
+      "appointments_96551c1941",
+      "appointments_28d6fb4362",
+      "payments_2ec21968a0"
+    ]
+  },
+  {
+    "query": "كم إجمالي رسوم زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 156,
+    "category": null,
+    "relevant_ids": [
+      "appointments_93a5cf3d5a",
+      "appointments_e282eca3d0",
+      "appointments_59d41826ea",
+      "appointments_d0d10688e1",
+      "appointments_5dd52161de",
+      "appointments_1e473e9ffa",
+      "appointments_281942ef7e",
+      "appointments_e6425eb006",
+      "appointments_1769b15ff8",
+      "appointments_a7be4e23d4",
+      "appointments_30bd014136",
+      "appointments_e9c710ea92",
+      "appointments_dd79825c3e",
+      "appointments_9fd7b0200b",
+      "appointments_00ee8dcc25",
+      "appointments_1790d97119",
+      "payments_9f54034ca4",
+      "payments_05d95be7dd",
+      "payments_bba413c54e",
+      "payments_1ef4b19a6b",
+      "payments_89c35542ff",
+      "payments_a08e26cda2",
+      "payments_8cdcd5e62f",
+      "payments_bdbde25ee7",
+      "payments_47eafb79be",
+      "payments_5d3e879164"
+    ]
+  },
+  {
+    "query": "ما متوسط تكلفة زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": null,
+    "relevant_ids": [
+      "appointments_67193a41a0",
+      "appointments_2f5fbcc9a2",
+      "appointments_510bf4d1cd",
+      "appointments_5f92aa2b5e",
+      "appointments_50940648ab",
+      "appointments_ee8f513c3c",
+      "appointments_348a2344a6",
+      "appointments_93a46a41e2",
+      "appointments_967155e93a",
+      "appointments_a52a01d88d",
+      "appointments_69129444b6",
+      "appointments_3b94c4a89c",
+      "appointments_d106777e78",
+      "payments_71c50ca9cb",
+      "payments_4286d2655b",
+      "payments_6bbe3b24ed",
+      "payments_b7d0de6310",
+      "payments_987200252e"
+    ]
+  },
+  {
+    "query": "هل تختلف رسوم زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": null,
+    "relevant_ids": [
+      "appointments_b9575ff600",
+      "appointments_635db33efd",
+      "appointments_578ba53b40",
+      "appointments_ba0756c015",
+      "appointments_728ffdac16",
+      "appointments_1f8f976f41",
+      "appointments_f3d5a608a8",
+      "appointments_637aa30a50",
+      "appointments_698524d28f",
+      "appointments_6862573021",
+      "appointments_dd40e77df5",
+      "appointments_650e24d62c",
+      "appointments_22aa1fa333",
+      "appointments_ba48fb49d2",
+      "payments_2400ad3983",
+      "payments_a0307cfc81",
+      "payments_0756ba8c2e",
+      "payments_3510ad883c",
+      "payments_096fd7a464",
+      "payments_79abe91d7a",
+      "payments_fb127a3ead"
+    ]
+  },
+  {
+    "query": "بناءً على حالتي العامة، ما النصائح الصحية المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 169,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_360",
+      "medical_records_259",
+      "medical_records_422",
+      "vital_signs_8b39abb153",
+      "vital_signs_c13a7d45f0",
+      "vital_signs_713845517b",
+      "vital_signs_7e640c0bac",
+      "vital_signs_bac0f0934a",
+      "vital_signs_ce076e5774",
+      "vital_signs_fdda2a507a",
+      "vital_signs_d113278f6d",
+      "vital_signs_25cce16eef",
+      "vital_signs_243f33a396",
+      "diagnoses_c07a32c319",
+      "diagnoses_e5d467b8b1",
+      "diagnoses_4b11c5449c",
+      "diagnoses_cc52b7d4fa",
+      "diagnoses_d4defd7ce0",
+      "diagnoses_3eb14f883a",
+      "diagnoses_51c1329dd3",
+      "diagnoses_dbea300048",
+      "appointments_6d196978fc",
+      "appointments_beaffa1fbb",
+      "appointments_0f47cbf569",
+      "appointments_18bdeb8c72",
+      "appointments_210ca9fc32",
+      "appointments_d6c720c6c5",
+      "appointments_af02fa1a51",
+      "appointments_9aabbd1241",
+      "prescriptions_269",
+      "prescriptions_262",
+      "prescriptions_235",
+      "prescriptions_247",
+      "prescriptions_293",
+      "prescriptions_181",
+      "prescriptions_327",
+      "prescriptions_305",
+      "lab_test_orders_295",
+      "lab_test_orders_218",
+      "lab_test_orders_255",
+      "lab_test_orders_291",
+      "lab_test_orders_209",
+      "lab_test_orders_304",
+      "lab_test_orders_174",
+      "lab_test_orders_315",
+      "lab_test_orders_260"
+    ]
+  },
+  {
+    "query": "ما العلاقة بين تشخيصي وأدويتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 190,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_425",
+      "medical_records_464",
+      "diagnoses_1b1dbece58",
+      "diagnoses_72ffd38f37",
+      "diagnoses_f6a73e6e9e",
+      "diagnoses_ddb122cb5a",
+      "diagnoses_726cac92af",
+      "diagnoses_2ddb767d1e",
+      "diagnoses_ac600dadfe",
+      "diagnoses_9c45cb8aaf",
+      "diagnoses_b8d319253f",
+      "diagnoses_975044aac6",
+      "diagnoses_a1c9ec9312",
+      "diagnoses_a90c55a30c",
+      "diagnoses_1fcc3c1a99",
+      "diagnoses_d29ce9d24f",
+      "diagnoses_cd034efa46",
+      "appointments_c191c74e8d",
+      "prescriptions_260",
+      "prescriptions_300",
+      "prescriptions_219",
+      "prescriptions_201",
+      "prescriptions_189",
+      "prescriptions_210",
+      "prescriptions_286",
+      "prescriptions_203",
+      "prescriptions_308",
+      "prescriptions_333",
+      "lab_test_orders_307",
+      "lab_test_orders_319",
+      "lab_test_orders_266"
+    ]
+  },
+  {
+    "query": "بناءً على سجلي، ما نمط الحياة الموصى به؟",
+    "tier": "tier_3_complex",
+    "patient_id": 154,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_452",
+      "appointments_1e52111be0",
+      "lab_test_orders_222",
+      "lab_test_orders_271",
+      "lab_test_orders_294"
+    ]
+  },
+  {
+    "query": "هل أعراضي تتوافق مع تشخيصي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 177,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_436",
+      "diagnoses_66e1750dc7",
+      "diagnoses_9750ad617f",
+      "appointments_81f26e1472",
+      "appointments_e78675a408",
+      "appointments_80a841a7ca",
+      "lab_test_orders_224"
+    ]
+  },
+  {
+    "query": "ما أفضل نظام غذائي بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 195,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_ca327624f7",
+      "vital_signs_74da01b0de",
+      "vital_signs_301e87980c",
+      "vital_signs_40b5e79208",
+      "vital_signs_946dc26dc3",
+      "vital_signs_a53a6ff301",
+      "appointments_3114ea7521",
+      "appointments_9bf5806917",
+      "appointments_d57265dd32",
+      "appointments_54cd1d9190",
+      "appointments_ac39bd0bab",
+      "appointments_baf225f8c7",
+      "appointments_c6b8718f15",
+      "appointments_c36a135a41",
+      "lab_test_orders_172",
+      "lab_test_orders_229"
+    ]
+  },
+  {
+    "query": "بناءً على مواعيدي وأدويتي، هل ألتزم بالعلاج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 194,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_427",
+      "medical_records_463",
+      "medical_records_381",
+      "appointments_0b3535628a",
+      "appointments_39a0a242d7",
+      "appointments_1a1f8ca81e",
+      "appointments_b77721c125",
+      "appointments_e656d493ef",
+      "appointments_c1ae48f840",
+      "prescriptions_234",
+      "prescriptions_261",
+      "prescriptions_276"
+    ]
+  },
+  {
+    "query": "ما التمارين المناسبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 184,
+    "category": null,
+    "relevant_ids": [
+      "appointments_a1bcd0e9b7",
+      "appointments_f2ba823722"
+    ]
+  },
+  {
+    "query": "كيف أحسّن حالتي الصحية العامة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 174,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_313",
+      "vital_signs_8049d662a5",
+      "vital_signs_6eb49d3dc4",
+      "vital_signs_2b80a71bda",
+      "vital_signs_cddd86ea6b",
+      "vital_signs_5ddae305c1",
+      "vital_signs_d8bb5f35b8",
+      "appointments_e4e6335f9e",
+      "appointments_61744a784c",
+      "appointments_1ff68c02cb",
+      "appointments_cc58772e1e",
+      "appointments_66f20db171",
+      "appointments_a7be4e23d4",
+      "appointments_c483b6fdd8",
+      "prescriptions_182",
+      "prescriptions_251",
+      "lab_test_orders_281",
+      "lab_test_orders_193",
+      "lab_test_orders_213",
+      "lab_test_orders_264",
+      "lab_test_orders_246"
+    ]
+  },
+  {
+    "query": "بناءً على بياناتي، ما عوامل الخطر لدي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 151,
+    "category": null,
+    "relevant_ids": [
+      "vital_signs_f87c9b4f23",
+      "vital_signs_272f349529",
+      "vital_signs_7443f9618e",
+      "vital_signs_8a49854b8d",
+      "vital_signs_af459b4f7b",
+      "diagnoses_158adfd2c7",
+      "appointments_c17a23cc37",
+      "appointments_acddc3544d",
+      "appointments_c5610861e6",
+      "appointments_c2390d87f9",
+      "appointments_bb384f997d",
+      "appointments_eeb57578b6",
+      "appointments_70665362fa",
+      "appointments_099bebf0b4",
+      "lab_test_orders_190",
+      "lab_test_orders_318"
+    ]
+  },
+  {
+    "query": "هل يجب تغيير خطة علاجي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 176,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_418",
+      "medical_records_338",
+      "medical_records_277",
+      "diagnoses_4d67525863",
+      "diagnoses_2a90358e46",
+      "diagnoses_190a753535",
+      "diagnoses_a56ebbb2a9",
+      "diagnoses_de99b67e93",
+      "diagnoses_66f16ba617",
+      "diagnoses_82f69341e0",
+      "diagnoses_6ca7cafa0e",
+      "diagnoses_58a1ab0971",
+      "diagnoses_3e22aba3c5",
+      "diagnoses_2f09c6c8dc",
+      "prescriptions_186",
+      "prescriptions_230",
+      "prescriptions_302",
+      "prescriptions_245",
+      "prescriptions_322",
+      "prescriptions_258"
+    ]
+  },
+  {
+    "query": "ما الإجراءات الوقائية المناسبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": null,
+    "relevant_ids": [
+      "diagnoses_7a90cc0980",
+      "diagnoses_9251636184",
+      "diagnoses_3a86e492c8",
+      "diagnoses_b613e33fd5",
+      "diagnoses_031c0df7c6",
+      "diagnoses_d77d29e8ab",
+      "prescriptions_265"
+    ]
+  },
+  {
+    "query": "بناءً على تاريخي الطبي، ما المتابعة المطلوبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 185,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_278",
+      "medical_records_450",
+      "appointments_e4f7081679",
+      "appointments_cbfc9b7268",
+      "appointments_d813ffe883",
+      "appointments_d7949b3870",
+      "appointments_759be41cb9",
+      "appointments_63918123d2",
+      "appointments_b44bb7f173",
+      "appointments_4a389dfe72",
+      "appointments_213f900c16",
+      "appointments_08b79c9bd0",
+      "appointments_0e66780450",
+      "appointments_7bfdc66bd0",
+      "prescriptions_195",
+      "prescriptions_324",
+      "prescriptions_211",
+      "prescriptions_296",
+      "prescriptions_256",
+      "lab_test_orders_258",
+      "lab_test_orders_243"
+    ]
+  },
+  {
+    "query": "ما تأثير حالتي على نمط حياتي اليومي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_392",
+      "medical_records_274",
+      "medical_records_390",
+      "medical_records_256",
+      "medical_records_280",
+      "medical_records_309",
+      "diagnoses_f27157df76",
+      "diagnoses_972b86912d",
+      "diagnoses_caea6314d2",
+      "diagnoses_451cc967de",
+      "diagnoses_c6b77e164d",
+      "appointments_0d65fdb81a",
+      "prescriptions_281",
+      "prescriptions_179"
+    ]
+  },
+  {
+    "query": "هل هناك ترابط بين أعراضي المختلفة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 181,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_432",
+      "diagnoses_362487cfc0",
+      "diagnoses_148c22a1bc",
+      "diagnoses_6deb0165ce",
+      "diagnoses_1f5d290139",
+      "diagnoses_2feda6b95f",
+      "appointments_80561bb566",
+      "appointments_0d53dcea31",
+      "appointments_1ae8c467a5",
+      "appointments_03d2a699b4",
+      "lab_test_orders_275",
+      "lab_test_orders_234",
+      "lab_test_orders_310"
+    ]
+  },
+  {
+    "query": "ما الأولويات العلاجية بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 183,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_254",
+      "medical_records_442",
+      "medical_records_310",
+      "medical_records_318",
+      "medical_records_316",
+      "medical_records_421",
+      "vital_signs_7c4ecc2c1e",
+      "vital_signs_b39b94e3fd",
+      "vital_signs_cc20ef434b",
+      "vital_signs_065726bdf2",
+      "vital_signs_31b50bcfac",
+      "vital_signs_fb2a02991b",
+      "appointments_4740136ac5",
+      "appointments_ac40ee15c9",
+      "appointments_f45c32aaed",
+      "appointments_08cad19534",
+      "appointments_8bc3021abe",
+      "appointments_58c6eeb5f1",
+      "appointments_83df481ffc",
+      "appointments_28fd0b8159",
+      "appointments_99aad265d5",
+      "prescriptions_318",
+      "prescriptions_222",
+      "prescriptions_228",
+      "lab_test_orders_269",
+      "lab_test_orders_286",
+      "lab_test_orders_195"
+    ]
+  },
+  {
+    "query": "بناءً على كل بياناتي، ما ملخص حالتي الصحية؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": null,
+    "relevant_ids": [
+      "medical_records_419",
+      "medical_records_456",
+      "medical_records_335",
+      "medical_records_404",
+      "medical_records_465",
+      "vital_signs_20ab494bb4",
+      "vital_signs_7dc2088703",
+      "vital_signs_d26a38cb33",
+      "vital_signs_a1a6b3226b",
+      "vital_signs_8a712f48c1",
+      "diagnoses_0d5fd17ec6",
+      "diagnoses_b9fcc99fec",
+      "appointments_03020cfbdb",
+      "appointments_16996dac5f",
+      "appointments_b95a23a5c8",
+      "appointments_1ca99146b7",
+      "appointments_310f239090",
+      "appointments_4b4bc64085",
+      "appointments_564c303660",
+      "appointments_f74ead8ed1",
+      "appointments_fa7a5d3355",
+      "appointments_742b780de3",
+      "appointments_8fefdc6af5",
+      "appointments_67fdfa9ddb",
+      "appointments_c1c17e444c",
+      "appointments_5de572cf82",
+      "appointments_7cd88388db",
+      "appointments_f352c9af97",
+      "appointments_ac85100a2c",
+      "appointments_d4445a2bce",
+      "appointments_fee68f1375",
+      "prescriptions_303",
+      "prescriptions_328",
+      "prescriptions_243",
+      "prescriptions_290",
+      "lab_test_orders_317",
+      "lab_test_orders_302",
+      "lab_test_orders_238"
+    ]
+  }
+]

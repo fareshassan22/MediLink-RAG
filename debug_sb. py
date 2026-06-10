@@ -1,0 +1,9 @@
+import os, requests
+url = 'https://icntpbdznkfajnieyrjq. supabase. co'
+key = 'sb_ publishable_ kl0hcI516psBUTbd_ oWDXA_ NXnf TpDL'
+h = {'apikey': key, 'Authorization': 'Bearer ' + key}
+for pid in (169, 250):
+    r = requests.get(url + '/rest/ v1/patients? id=eq.' + str(pid), headers=h, timeout=10)
+    print(f'P{pid} patients: {r. status_ code} {r. text[:200]}')
+    r2 = requests.get(url + '/rest/ v1/medical_records? patient_ id=eq.' + str(pid), headers=h, timeout=10)
+    print(f'P{pid} MRs: {r2. status_ code} {r2. text[:200]}')

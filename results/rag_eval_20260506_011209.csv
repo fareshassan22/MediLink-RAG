@@ -1,0 +1,28 @@
+query,language,category,num_retrieved,latency_seconds,doc_ids,error
+ما هي أعراض مرض السكري؟,arabic,symptoms,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما أعراض코로나 في الأطفال؟,arabic,symptoms,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما علامات فقر الدم؟,arabic,symptoms,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما علاج ارتفاع ضغط الدم؟,arabic,treatment,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف يعالج الربو؟,arabic,treatment,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما أفضل علاج للصداع النصفي؟,arabic,treatment,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف يتم تشخيص السكري؟,arabic,diagnosis,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما فحوصات تشخيص أمراض القلب؟,arabic,diagnosis,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف أشخص سرطان الثدي مبكراً؟,arabic,diagnosis,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما أسباب فشل القلب؟,arabic,causes,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+لماذا أرتفع ضغط الدم؟,arabic,causes,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما أسباب الصداع المتكرر؟,arabic,causes,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف يمكن الوقاية من السكري؟,arabic,prevention,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما طرق الوقاية من أمراض القلب؟,arabic,prevention,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف أق نفسي من كوفيد-19؟,arabic,prevention,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما الآثار الجانبية للأسبرين؟,arabic,medications,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+هل الميتفورمين آمن؟,arabic,medications,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما تفاعلات أدوية ضغط الدم؟,arabic,medications,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما فحوصات الكشف المبكر عن السرطان؟,arabic,procedures,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما عملية القسطرة القلبية؟,arabic,procedures,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+كيف يتم تنظير المعدة؟,arabic,procedures,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما الأطعة التي تؤثر على ضغط الدم؟,arabic,nutrition,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ما الأطعة التي تخفض الكوليسترول؟,arabic,nutrition,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+هل الصيام مفيد للسكري؟,arabic,nutrition,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+ألم حاد في الصدر مع ضيق تنفس,arabic,emergency,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+صداع مفاجئ مع تشويش رؤية,arabic,emergency,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+نزيف حاد غير متوقف,arabic,emergency,0,-1,[],Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?

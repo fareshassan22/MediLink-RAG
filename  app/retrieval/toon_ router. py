@@ -1,0 +1,185 @@
+"""TOON Router — classifies patient queries into tiers and detects language.
+
+FIXES vs original
+─────────────────
+L1  _ARABIC_RANGE loop replaced with re.search — O(1) vs O(256) per query.
+L2  Removed ^ anchors from all T1 patterns — anchored regex rejects any query
+    that doesn't start the string exactly, e.g. "can you tell me my blood type"
+    silently falls through to T2 even though it's a T1 lookup.
+L3  Added full Arabic keyword sets for all three tiers.
+L4  keywords field now populated with the matched token for debugging.
+L5  Removed unused uuid import.
+L6  route() renamed to classify() so patient_rag_service.py imports work
+    directly from this module. toon.py now delegates here instead of
+    duplicating the logic.
+L7  Added T3 pattern for "my diagnosis" — single-topic queries need
+    LLM synthesis (Tier 3), not a dump of all chunks (Tier 2).
+"""
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+from typing import List
+
+# ─── Language detection ──────────────────────────────────────────────────────
+# Single compiled pattern — checked once per query, not 256 chr() comparisons.
+_AR_RE = re.compile(r'[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]')
+
+
+def detect_language(query: str) -> str:
+    ar_chars = len(_AR_RE.findall(query))
+    total = max(len(query.replace(" ", "")), 1)
+    ratio = ar_chars / total
+    if ratio > 0.5:
+        return "ar"
+    if ratio > 0.1:
+        return "mixed"
+    return "en"
+
+
+# ─── Decision dataclass ──────────────────────────────────────────────────────
+
+@dataclass
+class RouterDecision:
+    tier: int
+    reason: str
+    language: str
+    keywords: List[str] = field(default_factory=list)
+
+
+# ─── Pattern tables ──────────────────────────────────────────────────────────
+# FIX L2: No ^ anchors. A patient asks "can you tell me my blood type?" —
+# the ^ anchor kills that match. Medical queries are rarely the first word.
+# FIX L3: Arabic patterns added for every tier.
+# FIX L7: "my diagnosis" moved to T3 so the LLM synthesises a coherent answer
+# instead of dumping all indexed chunks (which Tier 2 does).
+
+# Tier 1 — single-field exact lookup. BM25 alone can answer these.
+_T1_EN = [
+    re.compile(r"what is my blood type",          re.I),
+    re.compile(r"what.?s my (height|weight)",     re.I),
+    re.compile(r"am i allergic|do i have allerg", re.I),
+    re.compile(r"when is my (next|last) appointment", re.I),
+    re.compile(r"how many prescription",          re.I),
+    re.compile(r"show me my (vitals|appointments|results)", re.I),
+    re.compile(r"how much do i owe",              re.I),
+    re.compile(r"my (blood type|emergency contact)", re.I),
+    re.compile(r"my insurance (number|provider)", re.I),
+    re.compile(r"my (phone|email|address|dob|date of birth)", re.I),
+]
+_T1_AR = [
+    re.compile(r"فصيلة دمي|ما فصيلة",      re.I),
+    re.compile(r"طولي|وزني",                re.I),
+    re.compile(r"هل لدي حساسية|هل أنا حساس", re.I),
+    re.compile(r"موعدي القادم|آخر موعد",    re.I),
+    re.compile(r"كم وصفة",                  re.I),
+    re.compile(r"أريد مشاهدة (العلامات|المواعيد|النتائج)", re.I),
+    re.compile(r"تأميني|رقم التأمين",        re.I),
+    re.compile(r"رقم هاتفي|بريدي|عنواني",   re.I),
+]
+
+# Tier 2 — structured list/display. Hybrid retrieval, no LLM synthesis.
+# FIX L7: "my diagnosis" intentionally NOT here — it goes to T3.
+_T2_EN = [
+    re.compile(r"recent|latest|last \d",    re.I),
+    re.compile(r"(show|get|list|display) my (symptoms|prescription|lab|record|appointment)", re.I),
+    re.compile(r"(what|which) (medication|medicine)",  re. I),
+    re.compile(r"my medical (history|report|records?)", re.I),
+    re.compile(r"(follow.?up|come back)",   re.I),
+    re.compile(r"change in my (blood pressure|weight|glucose)", re.I),
+    re.compile(r"my (appointments|prescriptions|lab (tests?|results?))", re.I),
+    re.compile(r"medical.?records?",        re.I),
+    re.compile(r"(upcoming|past|previous) (visit|appointment)", re.I),
+]
+_T2_AR = [
+    re.compile(r"الأخير|الأحدث|آخر",        re.I),
+    re.compile(r"(اعرض|أظهر|قائمة) (الأعراض|التشخيص|الوصفات|المختبر|المواعيد)", re.I),
+    re.compile(r"(ما|أي) (دواء|علاج|دواء)",  re.I),
+    re.compile(r"سجلاتي الطبية|تاريخي الطبي", re.I),
+    re.compile(r"متابعة|الزيارة القادمة",     re.I),
+    re.compile(r"وصفاتي|مواعيدي|نتائج مختبري", re.I),
+]
+
+# Tier 3 — requires LLM reasoning, synthesis, or clinical judgment.
+# FIX L7: "my diagnosis" added — single-topic query needs LLM synthesis
+# to produce a coherent answer, not a raw chunk dump.
+_T3_EN = [
+    re.compile(r"why (do i|does|is|are|d id|should)", re.I),
+    re.compile(r"what (cause|causes|caused|reason)",  re.I),
+    re.compile(r"how (can i|could i|should i) (manage|deal with|prevent|treat|improve)", re.I),
+    re.compile(r"(is it safe|should i worry|am i at risk|danger)",   re.I),
+    re.compile(r"(should i|do i need to) (stop|avoid|continue|take)", re.I),
+    re.compile(r"what (treatment|therapy|plan|next step)",            re.I),
+    re.compile(r"(explain|meaning of|interpret) my (result|reading|level|report)", re.I),
+    re.compile(r"is my (result|test|reading|level) (normal|high|low|elevated|concerning)", re.I),
+    re.compile(r"my full (record|history|summary)",  re.I),
+    re.compile(r"(drug|medication) interaction",      re.I),
+    re.compile(r"summarize|summary|overview|analyse|analyze", re.I),
+    re.compile(r"(risk|prognosis|outlook|long.?term)", re.I),
+    re.compile(r"compare (my|the) (result|level|reading)", re.I),
+    re.compile(r"my diagnosis",                  re.I),
+]
+_T3_AR = [
+    re.compile(r"لماذا|ما سبب|ما الذي يسبب", re.I),
+    re.compile(r"كيف (يمكنني|أستطيع) (إدارة|التعامل|منع|علاج)", re.I),
+    re.compile(r"(هل هو آمن|هل يجب أن أقلق|هل أنا في خطر)", re.I),
+    re.compile(r"(هل يجب أن أتوقف|هل يجب أن أتجنب|هل يجب أن أستمر)", re.I),
+    re.compile(r"(اشرح|فسّر|معنى) نتيجتي", re.I),
+    re.compile(r"هل نتيجتي (طبيعية|مرتفعة|منخفضة)", re.I),
+    re.compile(r"تفاعل الأدوية|تداخل الأدوية", re.I),
+    re.compile(r"لخّص|ملخص|تحليل",            re.I),
+    re.compile(r"(خطر|تشخيص|خطة العلاج)",     re.I),
+    re.compile(r"تشخيصي",                     re.I),
+]
+
+
+# ─── Classifier ───────────────��─────────────────────────────────────────────
+
+def classify(query: str, patient_ id: int = 0) -> RouterDecision:
+    """
+    Classify query into TOON tier.
+    T3 beats T2 beats T1 — never downgrade a reasoning query.
+    """
+    q = query.strip()
+    if not q:
+        return RouterDecision(tier=2, reason="empty_query", language="en")
+
+    lang = detect_language(q)
+    en_ patterns = lang in ("en", "mixed")
+    ar_ patterns = lang in ("ar", "mixed")
+
+    # T3 checked first — clinical safety demand we never short-circuit a
+    # reasoning or synthesis query into a cheap tier.
+    for patterns in ([_T3_EN] if en_patterns else []) + ([_T3_AR] if ar_patterns else []):
+        for p in patterns:
+            m = p.search(q)
+            if m:
+                return RouterDecision(
+                    tier=3, reason="complex_reasoning",
+                    language=lang, keywords=[m.group(0)]
+                )
+
+    for patterns in ([_T2_EN] if en_patterns else []) + ([_T2_AR] if ar_patterns else []):
+        for p in patterns:
+            m = p.search(q)
+            if m:
+                return RouterDecision(
+                    tier=2, reason="semantic_request",
+                    language=lang, keywords=[m.group(0)]
+                )
+
+    for patterns in ([_T1_EN] if en_patterns else []) + ([_T1_AR] if ar_patterns else []):
+        for p in patterns:
+            m = p.search(q)
+            if m:
+                return RouterDecision(
+                    tier=1, reason="exact_field_lookup",
+                    language=lang, keywords=[m.group(0)]
+                )
+
+    # Unknown intent — default to T2 (safe middle ground)
+    return RouterDecision(tier=2, reason="default_tier2", language=lang)
+
+
+# Alias so toon.py can import classify() from here without duplication
+route = classify

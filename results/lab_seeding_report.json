@@ -1,0 +1,9 @@
+{
+  "summary": "43/153 lab orders in Supabase have an EMPTY result payload. Lab status/metadata queries are answerable, but exact assay VALUES require seeding these results.",
+  "total_lab_orders": 153,
+  "lab_orders_with_empty_result": 43,
+  "distinct_test_codes": {
+    "VITD": 100,
+    "TSH": 53
+  }
+}

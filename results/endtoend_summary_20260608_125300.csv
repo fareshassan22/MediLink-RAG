@@ -1,0 +1,5 @@
+slice,n,grounded_rate,mean_grounding,halluc_rate,mean_halluc_risk,mean_confidence
+OVERALL,102,0.8137,0.7598,0.1569,0.1392,0.7529
+T1,42,0.8333,0.8214,0.0952,0.0857,0.7857
+T2,23,1.0,0.8609,0.0,0.0,0.9174
+T3,37,0.6757,0.627,0.3243,0.2865,0.6135

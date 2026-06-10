@@ -1,0 +1,602 @@
+[
+  {
+    "query": "متى موعدي القادم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "appointments"
+  },
+  {
+    "query": "ما سبب زيارتي الأخيرة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "appointments"
+  },
+  {
+    "query": "ما حالة موعدي الحالي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "appointments"
+  },
+  {
+    "query": "ما الأعراض المسجلة في موعدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "appointments"
+  },
+  {
+    "query": "هل موعدي الأخير كان أول زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "appointments"
+  },
+  {
+    "query": "ما ملاحظات الموعد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "appointments"
+  },
+  {
+    "query": "متى كان آخر موعد لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": "appointments"
+  },
+  {
+    "query": "كم عدد مواعيدي المكتملة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "appointments"
+  },
+  {
+    "query": "هل لدي مواعيد معلقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": "appointments"
+  },
+  {
+    "query": "هل لدي مواعيد ملغاة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": "appointments"
+  },
+  {
+    "query": "ما أكثر سبب متكرر لزياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": "appointments"
+  },
+  {
+    "query": "بناءً على مواعيدي السابقة، متى يجب أن أحجز المتابعة القادمة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": "appointments"
+  },
+  {
+    "query": "بناءً على أعراضي في المواعيد، هل حالتي تتطور؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": "appointments"
+  },
+  {
+    "query": "ما النمط الزمني لزياراتي للعيادة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": "appointments"
+  },
+  {
+    "query": "ما الأدوية الموصوفة لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "meds"
+  },
+  {
+    "query": "ما جرعة دوائي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "meds"
+  },
+  {
+    "query": "كم مرة آخذ الدواء في اليوم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "meds"
+  },
+  {
+    "query": "ما مدة تناول الدواء؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "meds"
+  },
+  {
+    "query": "ما تعليمات تناول الدواء؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "meds"
+  },
+  {
+    "query": "ما اسم الدواء الموصوف؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "meds"
+  },
+  {
+    "query": "متى صُرفت وصفتي الأخيرة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": "meds"
+  },
+  {
+    "query": "هل تغيرت أدويتي مؤخراً؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "meds"
+  },
+  {
+    "query": "ما الأدوية التي أتناولها بانتظام؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": "meds"
+  },
+  {
+    "query": "هل هناك دواء يؤخذ قبل النوم؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": "meds"
+  },
+  {
+    "query": "كم عدد الأدوية في وصفتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": "meds"
+  },
+  {
+    "query": "بناءً على أدويتي الحالية، هل هناك تعارض محتمل؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": "meds"
+  },
+  {
+    "query": "هل يجب تعديل جرعة دوائي بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": "meds"
+  },
+  {
+    "query": "ما الغرض العلاجي من الأدوية الموصوفة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": "meds"
+  },
+  {
+    "query": "ما تشخيص حالتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما المرض المسجل في ملفي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما الشكوى الرئيسية لدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما ملخص التشخيص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "diagnosis"
+  },
+  {
+    "query": "هل لدي تشخيص مزمن؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما الحالة المرضية الأساسية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "diagnosis"
+  },
+  {
+    "query": "هل تغير تشخيصي مع الوقت؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما التشخيصات المتكررة في سجلي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "diagnosis"
+  },
+  {
+    "query": "هل هناك أكثر من تشخيص؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": "diagnosis"
+  },
+  {
+    "query": "بناءً على تشخيصي، ما الخطة العلاجية المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما المضاعفات المحتملة لتشخيصي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 161,
+    "category": "diagnosis"
+  },
+  {
+    "query": "ما ملاحظات الطبيب في آخر زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "records"
+  },
+  {
+    "query": "ما خطة العلاج الموصوفة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "records"
+  },
+  {
+    "query": "متى موعد المتابعة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "records"
+  },
+  {
+    "query": "ما نوع السجل الطبي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "records"
+  },
+  {
+    "query": "ما تاريخ آخر زيارة طبية؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "records"
+  },
+  {
+    "query": "ما توصيات الطبيب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "records"
+  },
+  {
+    "query": "ما ملخص زياراتي الطبية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": "records"
+  },
+  {
+    "query": "كيف تطورت حالتي عبر الزيارات؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "records"
+  },
+  {
+    "query": "ما خطط العلاج عبر سجلي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": "records"
+  },
+  {
+    "query": "بناءً على سجلي الطبي الكامل، ما التوصيات؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": "records"
+  },
+  {
+    "query": "ما المسار العلاجي بناءً على سجلاتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 161,
+    "category": "records"
+  },
+  {
+    "query": "ما مستوى السكر في دمي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "vitals"
+  },
+  {
+    "query": "ما قراءة ضغط الدم لدي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "vitals"
+  },
+  {
+    "query": "كم وزني في آخر فحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "vitals"
+  },
+  {
+    "query": "ما درجة حرارتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "vitals"
+  },
+  {
+    "query": "ما معدل ضربات القلب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "vitals"
+  },
+  {
+    "query": "ما معدل التنفس؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "vitals"
+  },
+  {
+    "query": "ما نسبة الأكسجين في الدم؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": "vitals"
+  },
+  {
+    "query": "هل تحسنت قراءات الضغط؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "vitals"
+  },
+  {
+    "query": "هل هناك تغير في وزني؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 159,
+    "category": "vitals"
+  },
+  {
+    "query": "هل مستوى السكر مستقر؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": "vitals"
+  },
+  {
+    "query": "ما اتجاه مؤشراتي الحيوية؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": "vitals"
+  },
+  {
+    "query": "بناءً على مؤشراتي الحيوية، هل حالتي مستقرة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": "vitals"
+  },
+  {
+    "query": "ما دلالة قراءاتي الحيوية على صحتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 163,
+    "category": "vitals"
+  },
+  {
+    "query": "ما الفحوصات المخبرية المطلوبة لي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "labs"
+  },
+  {
+    "query": "ما حالة فحص فيتامين د؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "labs"
+  },
+  {
+    "query": "ما تعليمات الفحص المخبري؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "labs"
+  },
+  {
+    "query": "متى تم طلب الفحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "labs"
+  },
+  {
+    "query": "ما اسم الفحص المطلوب؟",
+    "tier": "tier_1_simple",
+    "patient_id": 156,
+    "category": "labs"
+  },
+  {
+    "query": "ما رمز الفحص؟",
+    "tier": "tier_1_simple",
+    "patient_id": 157,
+    "category": "labs"
+  },
+  {
+    "query": "هل الفحص مكتمل أم ملغى؟",
+    "tier": "tier_1_simple",
+    "patient_id": 159,
+    "category": "labs"
+  },
+  {
+    "query": "هل اكتملت جميع فحوصاتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 160,
+    "category": "labs"
+  },
+  {
+    "query": "كم عدد الفحوصات المطلوبة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 161,
+    "category": "labs"
+  },
+  {
+    "query": "ما الفحوصات الملغاة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 162,
+    "category": "labs"
+  },
+  {
+    "query": "هل هناك فحوصات معلقة؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 163,
+    "category": "labs"
+  },
+  {
+    "query": "بناءً على الفحوصات المطلوبة، ماذا يجب أن أتابع؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": "labs"
+  },
+  {
+    "query": "ما أهمية الفحوصات المطلوبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 165,
+    "category": "labs"
+  },
+  {
+    "query": "كم رسوم زيارتي؟",
+    "tier": "tier_1_simple",
+    "patient_id": 151,
+    "category": "billing"
+  },
+  {
+    "query": "ما تكلفة آخر موعد؟",
+    "tier": "tier_1_simple",
+    "patient_id": 152,
+    "category": "billing"
+  },
+  {
+    "query": "ما رسوم الكشف؟",
+    "tier": "tier_1_simple",
+    "patient_id": 153,
+    "category": "billing"
+  },
+  {
+    "query": "كم دفعت في آخر زيارة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 154,
+    "category": "billing"
+  },
+  {
+    "query": "ما قيمة الفاتورة؟",
+    "tier": "tier_1_simple",
+    "patient_id": 155,
+    "category": "billing"
+  },
+  {
+    "query": "كم إجمالي رسوم زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 156,
+    "category": "billing"
+  },
+  {
+    "query": "ما متوسط تكلفة زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 157,
+    "category": "billing"
+  },
+  {
+    "query": "هل تختلف رسوم زياراتي؟",
+    "tier": "tier_2_moderate",
+    "patient_id": 158,
+    "category": "billing"
+  },
+  {
+    "query": "بناءً على حالتي العامة، ما النصائح الصحية المناسبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 169,
+    "category": "multi"
+  },
+  {
+    "query": "ما العلاقة بين تشخيصي وأدويتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 190,
+    "category": "multi"
+  },
+  {
+    "query": "بناءً على سجلي، ما نمط الحياة الموصى به؟",
+    "tier": "tier_3_complex",
+    "patient_id": 154,
+    "category": "multi"
+  },
+  {
+    "query": "هل أعراضي تتوافق مع تشخيصي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 177,
+    "category": "multi"
+  },
+  {
+    "query": "ما أفضل نظام غذائي بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 195,
+    "category": "multi"
+  },
+  {
+    "query": "بناءً على مواعيدي وأدويتي، هل ألتزم بالعلاج؟",
+    "tier": "tier_3_complex",
+    "patient_id": 194,
+    "category": "multi"
+  },
+  {
+    "query": "ما التمارين المناسبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 184,
+    "category": "multi"
+  },
+  {
+    "query": "كيف أحسّن حالتي الصحية العامة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 174,
+    "category": "multi"
+  },
+  {
+    "query": "بناءً على بياناتي، ما عوامل الخطر لدي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 151,
+    "category": "multi"
+  },
+  {
+    "query": "هل يجب تغيير خطة علاجي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 176,
+    "category": "multi"
+  },
+  {
+    "query": "ما الإجراءات الوقائية المناسبة لحالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 160,
+    "category": "multi"
+  },
+  {
+    "query": "بناءً على تاريخي الطبي، ما المتابعة المطلوبة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 185,
+    "category": "multi"
+  },
+  {
+    "query": "ما تأثير حالتي على نمط حياتي اليومي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 162,
+    "category": "multi"
+  },
+  {
+    "query": "هل هناك ترابط بين أعراضي المختلفة؟",
+    "tier": "tier_3_complex",
+    "patient_id": 181,
+    "category": "multi"
+  },
+  {
+    "query": "ما الأولويات العلاجية بناءً على حالتي؟",
+    "tier": "tier_3_complex",
+    "patient_id": 183,
+    "category": "multi"
+  },
+  {
+    "query": "بناءً على كل بياناتي، ما ملخص حالتي الصحية؟",
+    "tier": "tier_3_complex",
+    "patient_id": 164,
+    "category": "multi"
+  }
+]

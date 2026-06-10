@@ -1,0 +1,28 @@
+{
+  "timestamp": "20260606_025541",
+  "mode": "full",
+  "n_queries": 100,
+  "router": {
+    "accuracy": 0.34,
+    "per_tier": {
+      "tier_1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 35
+      },
+      "tier_2": {
+        "precision": 0.3299,
+        "recall": 1.0,
+        "f1": 0.4961,
+        "support": 32
+      },
+      "tier_3": {
+        "precision": 0.6667,
+        "recall": 0.0606,
+        "f1": 0.1111,
+        "support": 33
+      }
+    }
+  }
+}

@@ -26,6 +26,8 @@ from app.utils.logger import log_request
 
 # Service layer
 from app.services.rag_pipeline import rag_pipeline
+from app.retrieval.toon_service import patient_rag_service
+from app.retrieval.toon import patient_exists
 
 import logging
 
@@ -145,9 +147,33 @@ class ResponseModel(BaseModel):
     stage_latencies: Optional[Dict[str, float]] = None
 
 
-# ==========================
-# Main RAG Endpoint
-# ==========================
+class PatientQueryRequest(BaseModel):
+    patient_id: int = Field(..., description="Patient ID (integer)")
+    query: str = Field(..., min_length=3, max_length=500)
+    role: str = Field(default="patient")
+
+    @validator("query")
+    def validate_query(cls, v):
+        if not v.strip():
+            raise ValueError("Query must not be empty")
+        return v.strip()
+
+    @validator("patient_id")
+    def validate_patient_id(cls, v):
+        if v <= 0:
+            raise ValueError("Patient ID must be positive")
+        return v
+
+
+class DoctorQueryRequest(BaseModel):
+    patient_id: int = Field(..., description="Patient ID (integer)")
+    query: str = Field(default="", max_length=500)
+
+    @validator("patient_id")
+    def validate_patient_id(cls, v):
+        if v <= 0:
+            raise ValueError("Patient ID must be positive")
+        return v
 
 
 @app.post("/ask", response_model=ResponseModel)
@@ -193,3 +219,128 @@ def ask(request: QueryRequest):
     except Exception as e:
         logger.error("Unexpected error: %s", type(e).__name__, exc_info=True)
         raise HTTPException(status_code=500, detail="internal_server_error")
+
+
+# ==========================
+# TOON Patient Data Endpoint
+# ==========================
+
+
+def _require_patient(patient_id: int) -> None:
+    """Return 404 if the patient does not exist, 503 if the DB is unreachable."""
+    try:
+        exists = patient_exists(patient_id)
+    except ConnectionError:
+        raise HTTPException(status_code=503, detail="patient database unavailable")
+    if not exists:
+        raise HTTPException(status_code=404, detail="patient not found")
+
+
+@app.post("/patient/ask", response_model=ResponseModel)
+def ask_patient(request: PatientQueryRequest):
+    start_time = time.time()
+
+    _require_patient(request.patient_id)
+
+    try:
+        result = patient_rag_service.run(
+            query=request.query,
+            patient_id=request.patient_id,
+            role=request.role,
+        )
+
+        latency = round(time.time() - start_time, 3)
+
+        return ResponseModel(
+            answer=result.answer,
+            confidence=result.confidence,
+            sources=result.sources,
+            grounding_score=result.grounding_score,
+            latency_seconds=latency,
+            status=result.status,
+            stage_latencies=result.stage_latencies,
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("TOON error: %s", type(e).__name__, exc_info=True)
+        raise HTTPException(status_code=500, detail="internal_server_error")
+ 
+
+# ==========================
+# Doctor Endpoints (full patient history)
+# ==========================
+# NOTE: role/identity is NOT yet enforced — callers are trusted to be doctors.
+# Authorization (verifying the caller is a licensed doctor) is deferred.
+
+
+@app.post("/doctor/ask", response_model=ResponseModel)
+def doctor_ask(request: DoctorQueryRequest):
+    start_time = time.time()
+
+    if not request.query.strip():
+        raise HTTPException(status_code=422, detail="query must not be empty")
+
+    _require_patient(request.patient_id)
+
+    try:
+        result = patient_rag_service.run_doctor(
+            query=request.query,
+            patient_id=request.patient_id,
+            mode="ask",
+        )
+
+        latency = round(time.time() - start_time, 3)
+
+        return ResponseModel(
+            answer=result.answer,
+            confidence=result.confidence,
+            sources=result.sources,
+            grounding_score=result.grounding_score,
+            latency_seconds=latency,
+            status=result.status,
+            stage_latencies=result.stage_latencies,
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Doctor ask error: %s", type(e).__name__, exc_info=True)
+        raise HTTPException(status_code=500, detail="internal_server_error")
+
+
+@app.post("/doctor/patient/{patient_id}/summary", response_model=ResponseModel)
+def doctor_summary(patient_id: int):
+    start_time = time.time()
+
+    if patient_id <= 0:
+        raise HTTPException(status_code=422, detail="patient_id must be positive")
+
+    _require_patient(patient_id)
+
+    try:
+        result = patient_rag_service.run_doctor(
+            query="",
+            patient_id=patient_id,
+            mode="summary",
+        )
+
+        latency = round(time.time() - start_time, 3)
+
+        return ResponseModel(
+            answer=result.answer,
+            confidence=result.confidence,
+            sources=result.sources,
+            grounding_score=result.grounding_score,
+            latency_seconds=latency,
+            status=result.status,
+            stage_latencies=result.stage_latencies,
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Doctor summary error: %s", type(e).__name__, exc_info=True)
+        raise HTTPException(status_code=500, detail="internal_server_error")
+ 
