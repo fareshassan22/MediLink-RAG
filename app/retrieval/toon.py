@@ -204,6 +204,38 @@ def _pool_size(default: int, corpus_n: int) -> int:
     return default
 
 
+# Cross-lingual rerank query cache. Patient-record chunks use ENGLISH field
+# labels (status:, scheduled_at:, diagnosis:, ...) while user queries are often
+# ARABIC. Feeding a raw Arabic query to the cross-encoder scores Arabic-query
+# vs English-label pairs, which scrambles the TOP of an otherwise-good RRF pool
+# — the same cross-lingual effect measured on the global corpus (recall@10
+# 0.79 -> 0.50 before the translate-before-rerank fix). T2's profile here
+# (Hit@10 0.92 but Hit@1 0.38) is that exact signature: the pool holds the
+# right row, the monolingual reranker just fails to float it to rank 1.
+# We translate BILINGUALLY (Arabic + English) so English field labels get
+# matched WITHOUT losing Arabic-valued matches (names, diagnoses, notes).
+_RERANK_Q_CACHE: Dict[str, str] = {}
+
+
+def _rerank_query(query: str) -> str:
+    """Return the query to feed the cross-encoder: original for English,
+    Arabic+English for Arabic. Falls back to the original on any failure."""
+    if query in _RERANK_Q_CACHE:
+        return _RERANK_Q_CACHE[query]
+    out = query
+    try:
+        from app.retrieval.query_translator import is_arabic, translate_query_bilingual
+
+        if query and is_arabic(query):
+            t = translate_query_bilingual(query)
+            if t:
+                out = t
+    except Exception as e:  # translation is best-effort, never fatal
+        logger.warning("rerank-query translate failed, using original: %s", e)
+    _RERANK_Q_CACHE[query] = out
+    return out
+
+
 def _cross_encoder_rerank(query: str, candidates: List[Dict]) -> List[Dict]:
     """Rerank candidate row dicts (each with a 'text' key) by joint
     cross-encoder relevance. Falls back to dense rerank, then to the input
@@ -794,7 +826,9 @@ def search_bm25(patient_id: int, query: str, top_k: int = 5, return_ids: bool = 
     pool_size = _pool_size(max(top_k * 5, 30), len(getattr(bm25, "documents", []) or []))
     results = bm25.search(query, k=pool_size)
     if rerank and results:
-        results = _cross_encoder_rerank(query, results)
+        # Translate Arabic -> EN+AR for the reranker (English field labels);
+        # keep the ORIGINAL query for date-intent (Arabic regexes).
+        results = _cross_encoder_rerank(_rerank_query(query), results)
     results = _apply_date_intent(query, results)
     results = results[:top_k]
     if return_ids:
@@ -867,7 +901,9 @@ def search_hybrid(patient_id: int, query: str, top_k: int = 10, return_ids: bool
     # sharpens precision at the top.
     pool = [{"text": text, "metadata": {"doc_id": text_to_id.get(text, "")}}
             for text, _ in ranked[:pool_each]]
-    pool = _cross_encoder_rerank(query, pool)
+    # Translate Arabic -> EN+AR for the reranker (English field labels);
+    # keep the ORIGINAL query for date-intent (Arabic regexes).
+    pool = _cross_encoder_rerank(_rerank_query(query), pool)
     pool = _apply_date_intent(query, pool)
     top = pool[:top_k]
 
